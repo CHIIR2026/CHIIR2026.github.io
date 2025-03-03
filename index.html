@@ -78,10 +78,11 @@
     <!-- Hero Section Begin -->
     <section class="hero-section" 
     style="background-image: url('img/hero.png') !important; 
-           background-size: contain !important; 
+           background-size: 100% auto !important; /* Ensures full width, height auto-adjusts */
            background-repeat: no-repeat !important; 
-           background-position: top center !important; 
-           min-height: 60vh !important; 
+           background-position: top center !important; /* Aligns image to top, crops bottom */
+           height: 60vh !important; /* Controls section height */
+           overflow: hidden !important; /* Hides the cropped bottom */
            display: flex !important; 
            flex-direction: column !important; 
            justify-content: flex-end !important;">
