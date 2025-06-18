@@ -1313,7 +1313,7 @@ ol {
 	font-size: 16px;
 	color: #6a6b7c;
 	line-height: 30px;
-	list-style: none;
+	list-style: disc;
 }
 
 .about-text ul li span {
