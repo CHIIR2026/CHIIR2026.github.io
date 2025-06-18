@@ -2513,4 +2513,12 @@ ul li, ol li {
 	list-style: disc;
 }
 
+	.about-text ul {
+	padding-left: 40px;
+}
+
+.about-text ul li {
+	list-style: disc;
+}
+
 }
