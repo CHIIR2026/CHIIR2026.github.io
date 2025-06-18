@@ -297,7 +297,7 @@ ol {
 
 .nav-menu .mainmenu ul li {
 	display: inline-block;
-	list-style: none;
+	list-style: disc;
 	margin-right: 40px;
 	position: relative;
 }
