@@ -2504,4 +2504,13 @@ a:focus {
 	color: #0b0080; /* Darker blue on hover */
 	text-decoration: underline;
 }
+	ul, ol {
+	padding-left: 40px;
+	margin: 1em 0;
+}
+
+ul li, ol li {
+	list-style: disc;
+}
+
 }
