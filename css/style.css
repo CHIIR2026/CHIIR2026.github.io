@@ -517,7 +517,7 @@ ol {
 }
 
 .ha-text ul li {
-	list-style: none;
+	list-style: disc;
 	font-size: 16px;
 	line-height: 30px;
 	color: #6a6b7c;
@@ -711,7 +711,7 @@ ol {
 }
 
 .schedule-tab .st-content .sc-text ul li {
-	list-style: none;
+	list-style: disc;
 	display: inline-block;
 	font-size: 16px;
 	color: #6a6b7c;
@@ -740,7 +740,7 @@ ol {
 }
 
 .schedule-tab .st-content .sc-widget li {
-	list-style: none;
+	list-style: disc;
 	font-size: 16px;
 	color: #6a6b7c;
 	line-height: 32px;
@@ -836,7 +836,7 @@ ol {
 }
 
 .price-item ul li {
-	list-style: none;
+	list-style: disc;
 	font-size: 16px;
 	color: #6a6b7c;
 	line-height: 38px;
@@ -1081,7 +1081,7 @@ ol {
 	font-size: 18px;
 	color: #171822;
 	line-height: 36px;
-	list-style-type: none;
+	list-style-type: disc;
 	display: inline-block;
 	margin-right: 42px;
 }
@@ -1162,7 +1162,7 @@ ol {
 }
 
 .footer-text ul li {
-	list-style: none;
+	list-style: disc;
 	display: inline-block;
 	margin-right: 52px;
 }
@@ -1799,7 +1799,7 @@ ol {
 	color: #ffffff;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	list-style: none;
+	list-style: disc;
 	display: inline-block;
 	margin-right: 45px;
 	position: relative;
