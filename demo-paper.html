@@ -14,6 +14,54 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        .section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .email {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+            color: blue;
+            text-decoration: none;
+        }
+        .email:hover {
+            text-decoration: underline;
+        }
+        .person {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .person img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .person-info {
+            font-size: 14px;
+        }
+        .person-info strong {
+            font-weight: bold;
+        }
+    </style>
+
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -47,14 +95,14 @@
                         <li ><a href="./index.html">Home</a></li>
                         <li class = "active"><a href="#">Calls</a>
                                 <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
-                                    <li><a href="#">Calls for Full Papers</a></li>
-                                    <li><a href="#">Calls for Short Papers</a></li>
-                                    <li><a href="#">Calls for Prespective Papers</a></li>
-                                    <li><a href="#">Calls for Demo & Resource Papers</a></li>
+                                    <li><a href="full-paper.html">Calls for Full Papers</a></li>
+                                    <li><a href="short-paper.html">Calls for Short Papers</a></li>
+                                    <li><a href="#">Call for Perspective Papers</a></li>
+                                    <li><a href="demo-paper.html">Calls for Demo & Resource Papers</a></li>
                                     <li><a href="#">Calls for Doctoral Consortium Papers</a></li>
                                     <li><a href="#">Calls for Workshops</a></li>
                                     <li><a href="#">Calls for Tutorials</a></li>
-                                    <li><a href="#">Calls for Sponsership</a></li>   
+                                    <li><a href="#">Calls for Sponsorship</a></li>   
                                 </ul>
                             </li>
                         <li><a href="./program.html">Program</a>
@@ -119,16 +167,93 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ha-text">
-                        <h2>IN BRIEF</h2>
-                        <!-- <p>The annual CHIIR Conference is the premier international forum for presenting new research results and showcasing innovative systems and techniques in the broad field of Information Retrieval (IR). 
-                            The 48th ACM SIGIR Conference on Research and Development in Information Retrieval will take place from July 13–18, 2025, in Padova, Italy.</p> -->
-                        <h2> IMPORTANT DATES</h2>
+
+
+                        <h3>Demonstration Papers</h3>
+
+  <p>
+    Demonstration papers (maximum of 4 pages plus references in ACM two-column format) should enable presenters to give participants 
+    first-hand experience of novel research prototypes, operational systems, or in-progress concepts in development. They provide 
+    the opportunity to exchange ideas gained from implementing IR systems and to obtain feedback from expert users.
+  </p>
+
+  <p>
+    A demonstration submission should both describe and show the proposed solution, addressing questions such as:
+  </p>
+
+  <ul>
+    <li>What problem does the prototype/system/concept seek to address?</li>
+    <li>How does it do so?</li>
+    <li>Who are the target users?</li>
+    <li>How will you demonstrate this work?</li>
+    <li>How does the work compare with those that exist already?</li>
+    <li>Finally, how, where, and when will your technology have a technical or commercial impact?</li>
+  </ul>
+
+  <h3>Important Dates</h3>
+  <ul>
+    <li><strong>Demo Paper Submission:</strong> October 29th, 2025 (AoE)</li>
+    <li><strong>Notification:</strong> December 10th, 2025</li>
+    <li><strong>Conference:</strong> March 22 – 26, 2026</li>
+  </ul>
+
+  <h3>Submission Instructions</h3>
+  <p>
+    Submissions of demo papers must be in English and submitted as PDF files. Papers must not exceed 4 pages, including all content 
+    (e.g., figures, tables, proofs, appendices), but excluding references and acknowledgments, which may extend beyond this 4-page limit.
+    All submissions must follow the current ACM two-column conference format.
+  </p>
+
+  <p>
+    Please note that for demo papers, an abstract submission is not mandatory.
+  </p>
+
+  <p>
+    Authors should submit a short video of the demo in addition to the paper describing the work. Authors are also encouraged (but not 
+    required) to include a URL where the demo itself can be accessed.
+  </p>
+
+  <p>
+    Appropriate presentation technologies will be provided for all demonstrations. Accepted demonstration papers will be included in the 
+    conference proceedings.
+  </p>
+
+  <h3>Anonymity Policy</h3>
+  <p>
+    The full and short paper review process is double-blind. Authors must take all reasonable steps to preserve the anonymity of their 
+    submission. The submission must not include author information; citations or discussion of your prior work should be written in the 
+    third person form.
+  </p>
+  <p>
+    It is acceptable to refer to companies or organizations that provided datasets, hosted experiments, or deployed solutions if reviewers 
+    cannot infer that the authors are currently affiliated with these organizations.
+  </p>
+  <p>
+    The demonstration papers review process is single-blind; submissions should explicitly include author names and affiliations.
+  </p>
+
+  <h3>Authorship Policy</h3>
+  <p>
+    Authors should carefully go through <a href="https://www.acm.org/publications/policies/authorship" target="_blank">ACM’s authorship policy</a> 
+    before submitting a paper. Please ensure that all authors are identified in EasyChair before the submission deadline.
+  </p>
+  <p>
+    To support the identification of reviewers with conflicts of interest, the full author list must be specified at abstract submission time 
+    for full and prospective papers and submission deadlines for short, demo, resource, tutorial, workshop, and doctoral consortium papers.
+  </p>
+  <p>
+    No changes to authorship, under any circumstances, will be permitted after the abstract submission deadline or for the camera-ready 
+    submission. So, please ensure you have listed authors correctly at abstract submission time.
+  </p>
+
+                        <h3>Use of AI</h3>
+  <p>
+    All submissions must comply with the 
+    <a href="https://www.acm.org/publications/policies/new-policy-on-authorship">ACM policy on using Artificial Intelligence</a>.
+  </p>
+
+
                         
-                        <h2> SUBMISSION GUIDELINES</h2>
-
-
-
-                        <h2> TUTORIAL CHAIRS </h2>
                     </div>
                 </div>
             </div>
