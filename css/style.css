@@ -2589,3 +2589,108 @@ ul li, ol li {
 
 }
 
+	@media only screen and (max-width: 767px) {
+	/* Hide MENU text */
+	.slicknav_menu .slicknav_menutxt {
+		display: none !important;
+	}
+
+	/* Hamburger icon */
+	.slicknav_btn {
+		background: #ffffff !important;
+		border: none !important;
+		padding: 10px;
+		border-radius: 6px;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	}
+	.slicknav_icon-bar {
+		background-color: #001f5b !important;
+	}
+
+	/* Main mobile menu container */
+	.slicknav_nav {
+		background: #f7f7f7 !important;
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		overflow-y: auto;
+		z-index: 9999;
+		padding: 80px 0 20px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		font-family: 'Work Sans', sans-serif;
+	}
+
+	/* Menu items */
+	.slicknav_nav ul {
+		margin: 0;
+		padding: 0 20px;
+	}
+	.slicknav_nav li {
+		list-style: none !important;
+		margin-bottom: 10px;
+		background: #eaeaea;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+	.slicknav_nav li a {
+		display: block;
+		padding: 16px 20px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #222;
+		text-decoration: none;
+		position: relative;
+	}
+
+	/* Dropdown arrows */
+	.slicknav_collapsed:after,
+	.slicknav_open:after {
+		content: "▾";
+		position: absolute;
+		right: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 14px;
+		color: #666;
+	}
+	.slicknav_open:after {
+		content: "▴";
+	}
+
+	/* Remove triangle bullets or extra symbols */
+	.slicknav_parent > a::after,
+	.slicknav_parent > span::after {
+		display: none !important;
+		content: none !important;
+	}
+	.slicknav_nav li::before,
+	.slicknav_nav li::after {
+		display: none !important;
+		content: none !important;
+	}
+
+	/* Prevent gray/outline when clicked */
+	.slicknav_nav a:focus,
+	.slicknav_nav a:active {
+		background: none !important;
+		color: inherit !important;
+		outline: none !important;
+		box-shadow: none !important;
+	}
+
+	/* Close button */
+	.mobile-close-btn {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 26px;
+		font-weight: bold;
+		color: #000;
+		cursor: pointer;
+		z-index: 10000;
+	}
+}
+
+
