@@ -2578,5 +2578,14 @@ ul li, ol li {
 		display: none !important;
 		content: none !important;
 	}
+
+	/* Kill off SlickNav triangle indicators */
+.slicknav_item a:after,
+.slicknav_parent > a:after,
+.slicknav_parent > span:after {
+	content: none !important;
+	display: none !important;
+}
+
 }
 
