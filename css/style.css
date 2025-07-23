@@ -2547,17 +2547,13 @@ ul li, ol li {
 		padding-left: 15px;
 	}
 	.slicknav_nav ul li {
-	list-style: none !important; /* removes bullet/triangle */
-	position: relative;
-	padding-left: 10px;
-}
+		list-style: none !important;
+		padding-left: 10px;
+	}
 
-.slicknav_nav ul li::before {
-	content: '›'; /* better arrow */
-	color: #f44949;
-	position: absolute;
-	left: 0;
-	top: 0;
+	.slicknav_nav ul li::before {
+		content: none !important;
+	}
 }
 
 
