@@ -2721,4 +2721,25 @@ ul li, ol li {
   }
 }
 
+/* Hide menu toggle by default (desktop) */
+.menu-toggle {
+  display: none !important;
+}
+
+/* Show menu toggle only on small screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #1a237e; /* match your logo */
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+
 
