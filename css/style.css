@@ -2396,23 +2396,22 @@ ol {
 		border-radius: 0;
 	}
 	.slicknav_nav {
-		background: #222;
+		background: #ffffff;
 	}
 	.slicknav_nav .slicknav_row,
 	.slicknav_nav a {
-		margin: 0;
-		padding: 10px 20px;
-		-webkit-transition: all 0.3s;
-		-o-transition: all 0.3s;
-		transition: all 0.3s;
+		color: #171822; /* black text */
+		font-size: 16px;
+		font-weight: 600;
+		text-transform: uppercase;
 	}
 	.slicknav_nav ul {
-		margin: 0;
+		border-left: 3px solid #f44949;
+	padding-left: 15px;
 	}
 	.slicknav_nav a:hover {
-		border-radius: 0;
-		background: #f44949;
-		color: #ffffff;
+		background: #f0f0f0; /* light gray on hover */
+	color: #f44949; /* your brand accent color */
 	}
 	.slicknav_nav .slicknav_row:hover {
 		border-radius: 0;
@@ -2520,5 +2519,34 @@ ul li, ol li {
 .about-text ul li {
 	list-style: disc;
 }
+	@media only screen and (max-width: 767px) {
+	.slicknav_nav {
+		background: #ffffff !important;
+	}
+
+	.slicknav_nav .slicknav_row,
+	.slicknav_nav a {
+		color: #171822 !important;
+		font-size: 16px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	.slicknav_nav a:hover,
+	.slicknav_nav .slicknav_row:hover {
+		background: #f0f0f0 !important;
+		color: #f44949 !important;
+	}
+
+	.slicknav_nav ul {
+		border-left: 3px solid #f44949;
+		padding-left: 15px;
+	}
+
+	.slicknav_menu {
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+}
+
 
 }
