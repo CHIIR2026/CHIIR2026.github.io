@@ -88,18 +88,63 @@
     <!-- Header End -->
 
     <style>
-        .section h2 {
-	font-family: 'Work Sans', sans-serif;  /* or another elegant font */
-	font-size: 22px;
-	font-weight: 600;
-	letter-spacing: 0.5px;
+        .section {
+	text-align: center;
+	padding: 50px 0;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.section:last-of-type {
+	border-bottom: none;
+}
+
+.section h2 {
+	font-size: 24px;
+	font-weight: 700;
 	text-transform: uppercase;
-	margin-bottom: 30px;
-	color: #111111;
-	text-align: center; 
-	padding-bottom: 40px;
+	letter-spacing: 1px;
 	margin-bottom: 40px;
-	border-top: 1px solid #ddd; /* Light gray divider */
+	color: #111;
+	font-family: 'Work Sans', sans-serif;
+}
+
+/* Direct child divs hold people in flex */
+.section > div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 40px;
+}
+
+/* Each person */
+.section > div > div {
+	max-width: 200px;
+	text-align: center;
+}
+
+.section img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	margin-bottom: 12px;
+}
+
+.section strong {
+	display: block;
+	font-size: 16px;
+	font-weight: 600;
+	color: #111;
+	margin-bottom: 4px;
+}
+
+.section span {
+	font-size: 14px;
+	color: #555;
+	line-height: 1.4;
+}
+
 }
         .email {
             display: block;
