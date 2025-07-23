@@ -2742,4 +2742,23 @@ ul li, ol li {
 }
 
 
+	/* Hide the SlickNav menu (button) by default — for desktop */
+.slicknav_menu {
+  display: none;
+}
+
+/* Show it only on small screens (mobile) */
+@media (max-width: 768px) {
+  .slicknav_menu {
+    display: block;
+  }
+
+  /* Optional: hide "MENU" text, show only ☰ icon */
+  .slicknav_menutxt {
+    display: none !important;
+  }
+}
+
+
+
 
