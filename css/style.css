@@ -2759,6 +2759,12 @@ ul li, ol li {
   }
 }
 
+.slicknav_menu,
+.site-header,
+.header,
+.navbar {
+  background-color: white !important;
+}
 
 
 
