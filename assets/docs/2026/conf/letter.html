@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CHIIR 2026 - Secure Visa Invitation Request">
+    <meta name="keywords" content="CHIIR2026, Visa, Invitation Letter">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Invitation Letter Request for Visa Purposes - CHIIR 2026</title>
+    
+    <style>
+        a {
+            color: #1a0dab;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #0b0080;
+        }
+        
+        .secure-form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .security-header {
+            background: linear-gradient(135deg, #c2d7ee, #c2d7ee);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .security-header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .security-header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+        
+        .required {
+            color: #dc3545;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .security-notice {
+            background: #e8f5e8;
+            border: 1px solid #28a745;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .security-notice h4 {
+            color: #28a745;
+            margin: 0 0 10px 0;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .submit-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .encryption-info {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .success-message {
+            display: none;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        
+        .error-message {
+            display: none;
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+    </style>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7715F5KP2L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7715F5KP2L');
+    </script>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="img/logo.png" alt="" style="width: 140px; height: auto;">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <br>
+                    <br>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#">Calls</a>
+                                <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
+                                    <li><a href="full-paper.html">Call for Full Papers</a></li>
+                                    <li><a href="short-paper.html">Call for Short Papers</a></li>
+                                    <li><a href="resource-papers.html">Call for Resource Papers</a></li>
+                                    <li><a href="perspective-paper.html">Call for Perspective Papers</a></li>
+                                    <li><a href="demo-paper.html">Call for Demonstration Papers</a></li>
+                                    <li><a href="tutorials.html">Call for Tutorials</a></li>
+                                    <li><a href="workshops.html">Call for Workshops</a></li>
+                                    <li><a href="dc-paper.html">Call for Doctoral Consortium Papers</a></li>
+                                    <li><hr class="dropdown-divider"></li> 
+                                    <li><a href="topics.html">Relevant Topics</a></li>
+                                    <li><a href="arxiv-policy.html">Pre-print/arXiv Policy</a></li>
+                                </ul>
+                            </li>
+                        
+                           <li><a href="#">Program</a>
+                            <ul class="dropdown" style="font-size: 14px;">
+                                <li><a href="#">Program Schedule</a></li>
+                                <li><a href="program.html#keynotes">Keynotes</a></li>
+                                <li><a href="#">Special Events</a></li>
+                                <li><a href="#">Workshops</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="#">Sponsors</a>
+                            <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
+                                <li><a href="index.html#sponsors">Sponsors</a></li>
+                                <li><a href="sponsorship.html">Call for Sponsorship</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Attend</a>
+                            <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
+                                <li><a href="attend.html#why-seattle">Why Seattle</a></li>
+                                <li><a href="attend.html#why-chiir">Why CHIIR</a></li>
+                                <li><a href="attend.html#travel">Travel Information</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./organizers.html">Organizers</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Password Protection -->
+    <div id="password-protection" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 40px; border-radius: 10px; text-align: center; max-width: 400px;">
+            <h2 style="color: #007bff; margin-bottom: 20px;"><i class="fa fa-lock"></i> Secure Access</h2>
+            <p style="margin-bottom: 20px;">This form is only available to approved individuals. Please enter the access code provided by the conference organizers.</p>
+            <input type="password" id="access-code" placeholder="Enter access code" style="width: 100%; padding: 12px; margin-bottom: 20px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 16px;">
+            <button onclick="checkAccess()" style="background: #007bff; color: white; padding: 12px 30px; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">Access Form</button>
+            <p id="error-message" style="color: red; margin-top: 10px; display: none;">Invalid access code. Please contact the organizers.</p>
+        </div>
+    </div>
+
+    <div class="secure-form" id="main-content" style="display: none;">
+        <div class="form-container">
+            <div class="security-header">
+                <h1><i class="fa fa-shield-alt"></i> Invitation Letter Request for Visa Purposes </h1>
+                <p>ACM CHIIR 2026 - Conference on Human Information Interaction and Retrieval</p>
+            </div>
+            
+            <!-- <div class="encryption-info">
+                <strong><i class="fa fa-lock"></i> Security Notice:</strong> This form uses end-to-end encryption to protect your sensitive information. All data is transmitted securely and will be used solely for generating your visa invitation letter.
+            </div> -->
+            
+            <form id="visaForm" onsubmit="submitForm(event)">
+                <!-- Personal Information -->
+                <h3 style="color: #007bff; margin-bottom: 20px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">
+                    <i class="fa fa-user"></i> Personal Information
+                </h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name <span class="required">*</span></label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name <span class="required">*</span></label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="affiliation">Current Affiliation/Institution <span class="required">*</span></label>
+                    <input type="text" id="affiliation" name="affiliation" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="position">Position/Title <span class="required">*</span></label>
+                    <input type="text" id="position" name="position" required>
+                </div>
+                
+                <!-- Passport Information -->
+                <h3 style="color: #007bff; margin: 30px 0 20px 0; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">
+                    <i class="fa fa-passport"></i> Passport Information
+                </h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="passportNumber">Passport Number <span class="required">*</span></label>
+                        <input type="text" id="passportNumber" name="passportNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passportCountry">Passport Issuing Country <span class="required">*</span></label>
+                        <input type="text" id="passportCountry" name="passportCountry" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="passportIssueDate">Passport Issue Date <span class="required">*</span></label>
+                        <input type="date" id="passportIssueDate" name="passportIssueDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passportExpiryDate">Passport Expiry Date <span class="required">*</span></label>
+                        <input type="date" id="passportExpiryDate" name="passportExpiryDate" required>
+                    </div>
+                </div>
+                
+                <!-- Address Information -->
+                <h3 style="color: #007bff; margin: 30px 0 20px 0; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">
+                    <i class="fa fa-map-marker-alt"></i> Address Information
+                </h3>
+                
+                <div class="form-group">
+                    <label for="address">Full Address <span class="required">*</span></label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City <span class="required">*</span></label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State <span class="required">*</span></label>
+                        <input type="text" id="state" name="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">Postal Code <span class="required">*</span></label>
+                        <input type="text" id="postalCode" name="postalCode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country <span class="required">*</span></label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                </div>
+                
+                <!-- Conference Information -->
+                <h3 style="color: #007bff; margin: 30px 0 20px 0; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">
+                    <i class="fa fa-calendar-alt"></i> Conference Information
+                </h3>
+                
+                <div class="form-group">
+                    <label for="submissionType">Type of Submission (if any)</label>
+                    <select id="submissionType" name="submissionType">
+                        <option value="">Select submission type</option>
+                        <option value="full-paper">Full Paper</option>
+                        <option value="short-paper">Short Paper</option>
+                        <option value="resource-paper">Resource Paper</option>
+                        <option value="perspective-paper">Perspective Paper</option>
+                        <option value="demo-paper">Demo Paper</option>
+                        <option value="tutorial">Tutorial</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="dc-paper">Doctoral Consortium</option>
+                        <option value="attendee-only">Attendee Only</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="paperTitle">Paper/Submission Title (if applicable)</label>
+                    <input type="text" id="paperTitle" name="paperTitle">
+                </div>
+                
+                <!-- <div class="security-notice">
+                    <h4><i class="fa fa-shield-alt"></i> Data Protection</h4>
+                    <p>Your personal information will be used exclusively for generating your invitation letter. All data is encrypted during transmission and storage. The information will be deleted after the letter is generated and sent to you.</p>
+                </div> -->
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Generating your invitation letter...</p>
+                </div>
+                
+                <div class="success-message" id="successMessage">
+                    <h4><i class="fa fa-check-circle"></i> Success!</h4>
+                    <p>Your invitation letter has been generated and downloaded to your device.</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Check your downloads folder for the PDF file</li>
+                        <li>Use this letter for your visa application</li>
+                        <li>Keep a copy for your records</li>
+                    </ul>
+                </div>
+                
+                <div class="error-message" id="errorMessage">
+                    <h4><i class="fa fa-exclamation-triangle"></i> Error</h4>
+                    <p id="errorText">There was an error processing your request. Please try again or contact the organizers.</p>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <i class="fa fa-paper-plane"></i> Generate Invitation Letter
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-text">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./attend.html">Attend</a></li>
+                            <li><a href="./organizers.html">Organisers</a></li>
+                        </ul>
+                        <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="ft-social">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- jsPDF for client-side PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script>
+        // Password protection
+        /*
+        function checkAccess() {
+            const accessCode = document.getElementById('access-code').value;
+            const correctCode = 'CHIIR2026'; // Change this to your preferred code
+            
+            if (accessCode === correctCode) {
+                document.getElementById('password-protection').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('access-code').value = '';
+            }
+        }
+        
+        // Allow Enter key to submit
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('access-code').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    checkAccess();
+                }
+            });
+        });
+        */
+        
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('visaForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Show loading
+            loading.style.display = 'block';
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing...';
+            
+            // Collect form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            try {
+                // Generate PDF
+                generateInvitationLetter(data);
+                
+                // Hide loading and show success
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    
+                    // Reset form
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fa fa-paper-plane"></i> Generate Invitation Letter';
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                loading.style.display = 'none';
+                errorMessage.style.display = 'block';
+                document.getElementById('errorText').textContent = 'There was an error generating your invitation letter. Please try again.';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa fa-paper-plane"></i> Generate Invitation Letter';
+            }
+        }
+        
+        function generateInvitationLetter(data, previewMode = false) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Add CHIIR logo in top left
+            try {
+                // Add logo image (resized to fit)
+                doc.addImage('img/logo.png', 'PNG', 20, 15, 25, 15);
+            } catch (e) {
+                // Fallback to text if image fails
+                doc.setFontSize(12);
+                doc.setFont(undefined, 'normal');
+                doc.text('CHIIR', 20, 25);
+            }
+            
+            // Title in top right
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'normal');
+            doc.text('CHIIR 2026 Invitation Letter', 180, 25, { align: 'right' });
+            
+            // Applicant details in two columns
+            let yPos = 50;
+            
+            // Left column
+            doc.setFontSize(7);
+            doc.setFont(undefined, 'normal');
+            doc.text(`Badge Name: ${data.firstName} ${data.lastName}`, 20, yPos);
+            doc.text(`Email: ${data.email}`, 20, yPos + 4);
+            
+            // Right column
+            doc.text(`Passport Name: ${data.firstName} ${data.lastName}`, 110, yPos);
+            doc.text(`Passport Number: ${data.passportNumber}`, 110, yPos + 4);
+            doc.text(`Passport Issued by: ${data.passportCountry}`, 110, yPos + 8);
+            doc.text(`Birth Date:`, 110, yPos + 12);
+            doc.text(`Address: ${data.address}`, 110, yPos + 16);
+            doc.text(`${data.city}, ${data.country}`, 110, yPos + 20);
+            
+            // Date
+            const currentDate = new Date().toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+            doc.setFontSize(8);
+            doc.text(currentDate, 20, yPos + 30);
+            
+            // Salutation
+            doc.setFontSize(9);
+            doc.text(`Dear ${data.firstName} ${data.lastName},`, 20, yPos + 40);
+            
+            // Body text
+            yPos += 50;
+            doc.setFontSize(8);
+            doc.setFont(undefined, 'normal');
+            
+            const bodyText = [
+                'You are invited to participate in the ACM SIGIR Conference on Human Information Interaction and Retrieval (CHIIR). The Tutorials, Conference and Workshops will take place from March 22nd to 26th, 2026 at Seattle, Washington, USA. These dates do not include travel time.',
+                '',
+                'On behalf of the organization committee, we have the pleasure to invite you to attend the conference. CHIIR is the premier international conference for research on human-information interaction and information retrieval. It brings together researchers and practitioners from academia and industry to share the latest advances in the field. Regularly updated information of the conference, the schedule, and the facilities is available at https://chiir2026.github.io/. Your presence and contribution would be highly appreciated.',
+                '',
+                'All participants are ultimately responsible for all expenses related to the conference and are solely responsible for obtaining any required travel Visas to the host country. We authorize that this electronic version of the invitation letter can be used for visa purposes.'
+            ];
+            
+            // Add body text with tighter line spacing
+            bodyText.forEach(line => {
+                if (line === '') {
+                    yPos += 3;
+                } else {
+                    const lines = doc.splitTextToSize(line, 170);
+                    lines.forEach(textLine => {
+                        doc.text(textLine, 20, yPos);
+                        yPos += 3.5;
+                    });
+                }
+            });
+            
+            // Closing
+            yPos += 6;
+            doc.text('Sincerely,', 20, yPos);
+            yPos += 12;
+            
+            // Signatures section with smaller fonts
+            doc.setFontSize(8);
+            doc.text('Chirag Shah', 20, yPos);
+            doc.text('Ryen W. White', 110, yPos);
+            yPos += 3;
+            
+            // Signatory details in two columns
+            doc.setFontSize(6);
+            doc.text('General Chair, CHIIR 2026', 20, yPos);
+            doc.text('General Chair, CHIIR 2026', 110, yPos);
+            yPos += 3;
+            
+            // doc.text('Associate Professor', 20, yPos);
+            // doc.text('Principal Researcher', 110, yPos);
+            // yPos += 3;
+            
+            doc.text('University of Washington', 20, yPos);
+            doc.text('Microsoft Research', 110, yPos);
+            yPos += 3;
+            
+            doc.text('Seattle, WA, USA', 20, yPos);
+            doc.text('Redmond, WA, USA', 110, yPos);
+            yPos += 3;
+            
+            // doc.text('chiir26-generalchairs@easychair.org', 20, yPos);
+            // doc.text('chiir26-generalchairs@easychair.org', 110, yPos);
+            
+            // Contact Information section
+            yPos += 10;
+            doc.setFontSize(7);
+            doc.setFont(undefined, 'normal');
+            doc.text('Contact Information ACM SIGIR CHIIR 2026 Conference', 20, yPos);
+            yPos += 4;
+            
+            doc.setFontSize(6);
+            doc.text('c/o General Chairs', 20, yPos);
+            yPos += 3;
+            doc.text('chiir26-generalchairs@easychair.org', 20, yPos);
+            yPos += 3;
+            doc.text('https://chiir2026.github.io', 20, yPos);
+            
+            // Footer disclaimer
+            yPos += 8;
+            doc.setFontSize(5);
+            doc.text('Invitation Letters are generated for conference participants. For questions about this letter or registration status, email chiir26-generalchairs@easychair.org.', 20, yPos);
+            
+            // Save or preview the PDF
+            const fileName = `CHIIR2026_Invitation_${data.firstName}_${data.lastName}.pdf`;
+            doc.save(fileName);
+        }
+        
+//         function sendUsageNotification(data) {
+//             // Simple notification to organizers - no sensitive data
+//             const emailSubject = `Visa Letter Generated - ${data.firstName} ${data.lastName}`;
+//             const emailBody = `
+// A visa invitation letter was generated for:
+
+// Name: ${data.firstName} ${data.lastName}
+// Email: ${data.email}
+// Date: ${new Date().toLocaleDateString()}
+//             `;
+            
+//             // mailto link
+//             const mailtoLink = `mailto:chiir26-generalchairs@easychair.org?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+//             // Open email client (this will prompt user to send)
+//             window.open(mailtoLink);
+//         }
+        
+//         function checkAccess() {
+//             const accessCode = document.getElementById('access-code').value;
+//             const correctCode = 'CHIIR2026'; // Change this to desired password
+            
+//             if (accessCode === correctCode) {
+//                 document.getElementById('password-protection').style.display = 'none';
+//                 document.getElementById('main-content').style.display = 'block';
+//             } else {
+//                 document.getElementById('error-message').style.display = 'block';
+//                 document.getElementById('access-code').value = '';
+//             }
+//         }
+        
+        // Form validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('visaForm');
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            
+            inputs.forEach(input => {
+                input.addEventListener('blur', validateField);
+                input.addEventListener('input', clearError);
+            });
+            
+            function validateField(event) {
+                const field = event.target;
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#dc3545';
+                } else {
+                    field.style.borderColor = '#28a745';
+                }
+            }
+            
+            function clearError(event) {
+                const field = event.target;
+                if (field.value.trim()) {
+                    field.style.borderColor = '#e0e0e0';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
