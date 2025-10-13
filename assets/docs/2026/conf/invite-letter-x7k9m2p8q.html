@@ -346,6 +346,13 @@
                 
                 <div class="form-row">
                     <div class="form-group">
+                        <label for="birthDate">Date of Birth <span class="required">*</span></label>
+                        <input type="date" id="birthDate" name="birthDate" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
                         <label for="passportIssueDate">Passport Issue Date <span class="required">*</span></label>
                         <input type="date" id="passportIssueDate" name="passportIssueDate" required>
                     </div>
@@ -617,7 +624,7 @@
             doc.text(`Passport Name: ${data.firstName} ${data.lastName}`, 110, yPos);
             doc.text(`Passport Number: ${data.passportNumber}`, 110, yPos + 4);
             doc.text(`Passport Issued by: ${data.passportCountry}`, 110, yPos + 8);
-            doc.text(`Birth Date:`, 110, yPos + 12);
+            doc.text(`Birth Date: ${data.birthDate}`, 110, yPos + 12);
             doc.text(`Address: ${data.address}`, 110, yPos + 16);
             doc.text(`${data.city}, ${data.country}`, 110, yPos + 20);
             
@@ -701,15 +708,15 @@
             // yPos += 3;
             
             doc.text('University of Washington', 20, yPos);
-            doc.text('Microsoft Research', 110, yPos);
+            doc.text('Microsoft', 110, yPos);
             yPos += 3;
             
             doc.text('Seattle, WA, USA', 20, yPos);
             doc.text('Redmond, WA, USA', 110, yPos);
             yPos += 3;
             
-            // doc.text('chiir26-generalchairs@easychair.org', 20, yPos);
-            // doc.text('chiir26-generalchairs@easychair.org', 110, yPos);
+            // doc.text('chiir26-registration@easychair.org', 20, yPos);
+            // doc.text('chiir26-registration@easychair.org', 110, yPos);
             
             // Contact Information section
             yPos += 10;
@@ -728,7 +735,7 @@
             // Footer disclaimer
             yPos += 8;
             doc.setFontSize(5);
-            doc.text('Invitation Letters are generated for conference participants. For questions about this letter or registration status, email chiir26-generalchairs@easychair.org.', 20, yPos);
+            doc.text('Invitation Letters are generated for conference participants. For questions about this letter or registration status, email chiir26-registration@easychair.org.', 20, yPos);
             
             // Save or preview the PDF
             const fileName = `CHIIR2026_Invitation_${data.firstName}_${data.lastName}.pdf`;
@@ -747,7 +754,7 @@
 //             `;
             
 //             // mailto link
-//             const mailtoLink = `mailto:chiir26-generalchairs@easychair.org?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+//             const mailtoLink = `mailto:chiir26-registration@easychair.org?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
             
 //             // Open email client (this will prompt user to send)
 //             window.open(mailtoLink);
