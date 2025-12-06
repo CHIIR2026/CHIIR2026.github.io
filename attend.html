@@ -651,11 +651,20 @@
                 $(this).addClass('active');
                 
                 if (target.startsWith('#')) {
+                    // Update URL hash
+                    window.location.hash = target;
                     $('html, body').animate({
                         scrollTop: $(target).offset().top - 100
                     }, 800);
                 }
             });
+            
+            // Update active state based on current hash on page load
+            if (window.location.hash) {
+                const hash = window.location.hash;
+                $('.section-nav a').removeClass('active');
+                $('.section-nav a[href="' + hash + '"]').addClass('active');
+            }
         });
     </script>
 </body>
