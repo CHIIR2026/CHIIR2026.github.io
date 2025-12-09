@@ -104,6 +104,15 @@
         font-size: 14px;
     }
     
+    .keynote-title {
+        color: #0A3D62;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 15px 0;
+        padding: 15px 0;
+        border-top: 2px solid #e0e0e0;
+    }
+    
     .keynote-bio {
         max-height: 0;
         overflow: hidden;
@@ -232,12 +241,12 @@
                                 </ul>
                             </li>
                         
-                           <li class="active"><a href="#">Program</a>
+                           <li class="active"><a href="program.html">Program</a>
                             <ul class="dropdown" style="font-size: 14px;">
-                                <li><a href="#">Program Schedule</a></li>
-                                <li><a href="#keynotes">Keynotes</a></li>
-                                <li><a href="#">Special Events</a></li>
-                                <li><a href="#">Workshops</a></li>
+                                <li><a href="program.html#keynotes">Keynotes</a></li>
+                                <li><a href="program.html">Program Schedule</a></li>
+                                <li><a href="program.html">Special Events</a></li>
+                                <li><a href="program.html">Workshops</a></li>
                             </ul>
                         </li>
                         
@@ -247,7 +256,6 @@
                                 <li><a href="sponsorship.html">Call for Sponsorship</a></li>
                             </ul>
                         </li>
-                        <li><a href="./organizers.html">Organizers</a></li>
                         <li><a href="attend.html">Attend</a>
                             <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
                                 <li><a href="attend.html#venue">Venue</a></li>
@@ -258,6 +266,8 @@
                                 <li><a href="attend.html#why-seattle">Why Seattle</a></li>
                             </ul>
                         </li>
+                        <li><a href="./register.html">Register</a></li>
+                        <li><a href="./organizers.html">Organizers</a></li>
                     </ul>
                 </nav>
             </div>
@@ -320,12 +330,11 @@
                                 <p>University of Maryland, College Park, MD, USA</p>
                             </div>
                         </div>
+                        <div class="keynote-title">Human-Centered AI: Supertools for Taking Control of Search</div>
                         <button class="expand-btn" onclick="toggleKeynote(this)">
-                            Learn More <i class="fa fa-chevron-down"></i>
+                            More <i class="fa fa-chevron-down"></i>
                         </button>
                         <div class="keynote-bio">
-                            <h4 style="color: #0A3D62; margin-bottom: 15px; font-size: 20px;">Human-Centered AI: Supertools for Taking Control of Search</h4>
-                            
                             <p style="margin-bottom: 20px;">
                                 <strong>Abstract:</strong>
                             </p>
@@ -365,18 +374,22 @@
                                 <p><strong>Principal Scientist at Meta Reality Labs</strong></p>
                             </div>
                         </div>
+                        <div class="keynote-title">From Sight to Insight: Visual Memory for Smarter Assistants</div>
                         <button class="expand-btn" onclick="toggleKeynote(this)">
-                            Learn More <i class="fa fa-chevron-down"></i>
+                            More <i class="fa fa-chevron-down"></i>
                         </button>
                         <div class="keynote-bio">
-                            <p>
-                                [Add first paragraph about Xin Luna Dong's background, research contributions, and significance to the field]
+                            <p style="margin-bottom: 20px;">
+                                <strong>Abstract:</strong>
                             </p>
                             <p>
-                                [Add second paragraph about her keynote topic, research interests, or notable achievements]
+                                [Abstract details coming soon]
+                            </p>
+                            <p style="margin-top: 25px; margin-bottom: 10px;">
+                                <strong>About the Speaker:</strong>
                             </p>
                             <p>
-                                [Add third paragraph if needed - could be about her impact on information systems, specific contributions, or what attendees can expect from her keynote]
+                                [Speaker bio details coming soon]
                             </p>
                         </div>
                     </div>
@@ -717,11 +730,11 @@
             if (bio.classList.contains('expanded')) {
                 bio.classList.remove('expanded');
                 button.classList.remove('expanded');
-                button.innerHTML = 'Learn More <i class="fa fa-chevron-down"></i>';
+                button.innerHTML = 'More <i class="fa fa-chevron-down"></i>';
             } else {
                 bio.classList.add('expanded');
                 button.classList.add('expanded');
-                button.innerHTML = 'Show Less <i class="fa fa-chevron-up"></i>';
+                button.innerHTML = 'Less <i class="fa fa-chevron-up"></i>';
             }
         }
     </script>
