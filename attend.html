@@ -33,6 +33,11 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     
+    <!-- Leaflet CSS for Hotels Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7715F5KP2L"></script>
     <script>
@@ -192,6 +197,99 @@
             background: #0A3D62;
             color: white;
         }
+        
+        /* Hotel Section Styles */
+        .hotel-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hotel-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .hotel-category {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .hotel-category.high-end {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .hotel-category.mid-range {
+            background: #fff3e0;
+            color: #e65100;
+        }
+        
+        .hotel-category.budget {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .hotel-info-item {
+            margin: 10px 0;
+            color: #666;
+        }
+        
+        .hotel-info-item strong {
+            color: #0A3D62;
+        }
+        
+        .hotel-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .hotel-link:hover {
+            text-decoration: underline;
+        }
+        
+        .hotels-map-container {
+            margin: 40px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        #hotels-map {
+            z-index: 1;
+        }
+        
+        .custom-marker {
+            background: transparent !important;
+            border: none !important;
+        }
+        
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+        }
+        
+        .leaflet-popup-content h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 
@@ -231,16 +329,16 @@
                                 </ul>
                             </li>
                         
-                           <li><a href="#">Program</a>
+                           <li><a href="program.html">Program</a>
                             <ul class="dropdown" style="font-size: 14px;">
-                                <li><a href="#">Program Schedule</a></li>
                                 <li><a href="program.html#keynotes">Keynotes</a></li>
-                                <li><a href="#">Special Events</a></li>
-                                <li><a href="#">Workshops</a></li>
+                                <li><a href="program.html">Program Schedule</a></li>
+                                <li><a href="program.html">Special Events</a></li>
+                                <li><a href="program.html">Workshops</a></li>
                             </ul>
                         </li>
                         
-                        <li><a href="#">Sponsors</a>
+                        <li><a href="index.html#sponsors">Sponsors</a>
                             <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
                                 <li><a href="index.html#sponsors">Sponsors</a></li>
                                 <li><a href="sponsorship.html">Call for Sponsorship</a></li>
@@ -251,10 +349,12 @@
                                 <li><a href="#why-seattle">Why Seattle</a></li>
                                 <li><a href="#why-chiir">Why CHIIR</a></li>
                                 <li><a href="#travel">Travel Information</a></li>
-                                <li><a href="#venue">Venue Information</a></li>
+                                <li><a href="#venue">Venue</a></li>
+                                <li><a href="#hotels">Accommodation Options</a></li>
                                 <li><a href="#visa">Visa Invitation Letter</a></li>
                             </ul>
                         </li>
+                        <li><a href="./register.html">Register</a></li>
                         <li><a href="./organizers.html">Organizers</a></li>
                         </ul>
                 </nav>
@@ -267,15 +367,17 @@
     <!-- Section Navigation -->
     <section class="section-nav">
         <div class="container">
-            <a href="#why-seattle" class="active">Why Seattle</a>
+            <a href="#venue" class="active">Venue</a>
+            <a href="#visa">Invitation Letter for Visa</a>
+            <a href="#travel">Travel</a>
+            <a href="#hotels">Accommodation</a>
             <a href="#why-chiir">Why CHIIR</a>
-            <a href="#travel">Travel Information</a>
-            <a href="#venue">Venue</a>
+            <a href="#why-seattle">Why Seattle</a>
         </div>
     </section>
 
     <!-- Seattle Hero Section with Background Carousel -->
-    <section class="seattle-carousel" id="why-seattle">
+    <section class="seattle-carousel">
         <!-- Background Images -->
         <div class="seattle-bg active" style="background-image: url('img/1.png');"></div>
         <div class="seattle-bg" style="background-image: url('img/2.jpg');"></div>
@@ -299,136 +401,6 @@
         </div>
     </section>
 
-    <!-- Why Seattle Section -->
-    <section class="why-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title text-center">
-                        <h2>Why Seattle for CHIIR 2026?</h2>
-                        <p>Seattle offers the perfect blend of innovation, accessibility, and inspiration for our conference</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="why-card">
-                        <p>Seattle offers a vibrant setting for CHIIR 2026, with a strong culture of research, collaboration, and innovation across universities, research institutes, and technology communities.</p>
-                        
-                        <p>From the iconic Space Needle to the beautiful Puget Sound, Seattle offers an inspiring backdrop for networking and scholarly exchange. The city's coffee culture and vibrant neighborhoods create welcoming spaces for informal discussions and collaboration.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why CHIIR Section -->
-    <section class="why-section" id="why-chiir" style="background: #f8f9fa;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title text-center">
-                        <h2>Why CHIIR?</h2>
-                        <p>Discover what makes CHIIR the premier conference for human-information interaction research</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="why-card">
-                                <h3>Single Track Conference</h3>
-                                <p>CHIIR's single-track format ensures enhanced interactions and networking opportunities. Every attendee experiences the same high-quality program, fostering deeper discussions and stronger community connections.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="why-card">
-                                <h3>Low Registration Costs</h3>
-                                <p>We're committed to making CHIIR accessible to researchers from all backgrounds. Our affordable registration fees ensure that cost is never a barrier to participation in cutting-edge research discussions.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="why-card">
-                                <h3>Strong HCI Community</h3>
-                                <p>Connect with the vibrant human-computer interaction community. CHIIR brings together leading researchers, practitioners, and students from around the world to share insights and build lasting collaborations.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="why-card">
-                                <h3>Industry Connections</h3>
-                                <p>Bridge the gap between academia and industry. CHIIR provides unique opportunities to engage with technology companies and startups, fostering real-world applications of research innovations.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title text-center">
-                        <h2>Discover Seattle</h2>
-                        <p>Experience the beauty and innovation of the Emerald City</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="video-container">
-                        <div style="display: flex; justify-content: center; align-items: center; height: auto; text-align: center;">
-                            <iframe width="800" height="450" 
-                                    src="https://www.youtube.com/embed/2sInnVwH_fM" 
-                                    title="YouTube video player" frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Travel Information Section -->
-    <section class="why-section" id="travel">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title text-center">
-                        <h2>Travel Information</h2>
-                        <p>Everything you need to know about getting to and around Seattle</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="why-card">
-                        <h3>Getting to Seattle</h3>
-                        <p><strong>By Air:</strong> Seattle-Tacoma International Airport (SEA) is the main airport, located about 15 miles from downtown Seattle. The airport is served by major airlines and offers direct flights from many international destinations.</p>
-                        
-                        <p><strong>By Train:</strong> Amtrak's Coast Starlight and Empire Builder routes serve Seattle, connecting the city to major destinations along the West Coast and across the country.</p>
-                        
-                        <p><strong>By Bus:</strong> Greyhound and other bus services provide affordable transportation options to Seattle from various cities.</p>
-                        
-                        <h3>Getting Around Seattle</h3>
-                        <p><strong>Public Transit:</strong> King County Metro operates buses and the Link light rail system, providing convenient access throughout the city and surrounding areas.</p>
-                        
-                        <p><strong>Rideshare & Taxis:</strong> Uber, Lyft, and traditional taxi services are readily available throughout the city.</p>
-                        
-                        <p><strong>Walking & Biking:</strong> Seattle is a walkable city with many bike lanes and bike-sharing programs available.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Venue Information Section -->
     <section class="why-section" id="venue" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
         <div class="container">
@@ -436,7 +408,7 @@
                 <div class="col-lg-12">
                     <div class="section-title text-center">
                         <h2>Conference Venue</h2>
-                        <p>CHIIR 2026 will be held at the Husky Union Building (HUB) at the University of Washington</p>
+                        <p>CHIIR 2026 will be held at the Husky Union Building (HUB) at the University of Washington Seattle Campus</p>
                     </div>
                 </div>
             </div>
@@ -523,6 +495,14 @@
     <section class="why-section" id="visa">
         <div class="container">
             <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2>Conference Invitation Letter</h2>
+                        <p>Request an invitation letter for visa purposes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="why-card" style="background: #f8f9fa; border-left: 4px solid #007bff;">
                         <h3><i class="fa fa-passport" style="color: #007bff; margin-right: 10px;"></i>Conference Invitation Letter</h3>
@@ -549,6 +529,438 @@
                                 <i class="fa fa-shield-alt" style="color: #28a745; margin-right: 8px;"></i>
                                 <strong>Secure Process:</strong> We will send you a secure link to fill out your passport and personal details. Your information is processed locally on your device and automatically generates your invitation letter. We do not store your sensitive data.
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Information Section -->
+    <section class="why-section" id="travel">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2>Travel Information</h2>
+                        <p>Everything you need to know about getting to and around Seattle</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="why-card">
+                        <h3>Getting to Seattle</h3>
+                        <p><strong>By Air (International & Domestic):</strong> Seattle-Tacoma International Airport (SEA) is the main airport, located approximately 20 miles (32 km) south of the University of Washington campus. The airport is served by major international and domestic airlines, offering direct flights from many international destinations as well as connections throughout the United States.</p>
+                        
+                        <p><strong>By Train:</strong> Amtrak's Coast Starlight and Empire Builder routes serve Seattle, connecting the city to major destinations along the West Coast and across the United States.</p>
+                        
+                        <p><strong>By Bus:</strong> Greyhound and other bus services provide affordable transportation options to Seattle from various cities within the United States.</p>
+                        
+                        <h3>Getting from SEA Airport to UW Campus</h3>
+                        <p><strong>Link Light Rail (Recommended):</strong> The Link Light Rail provides direct service from Sea-Tac Airport to the University of Washington Station. The journey takes approximately 50-60 minutes and costs around $3.25. From the UW Station, it is a short walk to the HUB (conference venue). This is the most convenient and cost-effective option.</p>
+                        
+                        <p><strong>Rideshare (Uber/Lyft):</strong> Rideshare services are available at the airport. The trip to UW campus typically takes 30-45 minutes depending on traffic and costs approximately $35-50.</p>
+                        
+                        <p><strong>Taxis:</strong> Traditional taxis are available at the airport. The fare to UW campus is typically $45-60, depending on traffic.</p>
+                        
+                        <p><strong>Airport Shuttles:</strong> Several shuttle services operate between Sea-Tac Airport and the University District. Advance reservations are recommended.</p>
+                        
+                        <h3>Getting Around Seattle</h3>
+                        <p><strong>Public Transit:</strong> King County Metro operates buses and the Link light rail system, providing convenient access throughout the city and surrounding areas. A single ride costs approximately $2.75-$3.25. The U District Station and the University of Washington Station on the Link Light Rail are very close to the UW campus.</p>
+                        
+                        <p><strong>Rideshare & Taxis:</strong> Uber, Lyft, and traditional taxi services are readily available throughout the city.</p>
+                        
+                        <p><strong>Walking & Biking:</strong> The University District and UW campus are very walkable. Many hotels are within walking distance of the conference venue. Seattle also has bike lanes and bike-sharing programs available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section class="why-section" id="hotels" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2>Accommodation Options</h2>
+                        <p>Suggested hotels near the University of Washington campus, organized by price range</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disclaimer -->
+            <!-- <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 30px;">
+                        <p style="margin: 0; color: #856404; font-size: 14px;">
+                            <i class="fa fa-info-circle" style="margin-right: 8px;"></i>
+                            <strong>Note:</strong> These are suggested accommodation options, not exclusive choices. Rates are approximate and may vary based on dates and availability. 
+                            We recommend booking early, especially for March dates.
+                            You may also search for other accommodation options in the University District or nearby areas.
+                        </p>
+                    </div>
+                </div>
+            </div> -->
+            
+            <!-- Hotels Map Section -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 style="color: #0A3D62; margin-bottom: 20px; text-align: center;">
+                        <i class="fa fa-map-marker" style="margin-right: 8px; color: #dc3545;"></i>Hotel Locations Map
+                    </h4>
+                    <div class="hotels-map-container">
+                        <div id="hotels-map" style="width: 100%; height: 500px; border-radius: 10px;"></div>
+                    </div>
+                    <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #666;">
+                        <strong>Map Legend:</strong> 
+                        <span style="color: #dc3545;">●</span> Conference Venue (HUB) | 
+                        <span style="color: #2e7d32;">●</span> Premium hotels | 
+                        <span style="color: #e65100;">●</span> Standard hotels | 
+                        <span style="color: #1565c0;">●</span> Economy hotels
+                    </p>
+                    <p style="text-align: center; margin-top: 10px; font-size: 14px; color: #666;">
+                        <i class="fa fa-info-circle" style="margin-right: 5px;"></i>
+                        Click on any marker to see details. The conference venue (HUB) is shown in red for reference. All hotels are within walking distance or a short transit ride from the UW campus.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Premium Hotels -->
+            <div class="row" style="margin-top: 60px;">
+                <div class="col-lg-12">
+                    <h3 style="color: #0A3D62; margin-bottom: 30px; text-align: center;">
+                        <i class="fa fa-star" style="color: #ffc107; margin-right: 10px;"></i>Premium Hotels
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Graduate Seattle -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="hotel-card">
+                        <span class="hotel-category high-end">Premium</span>
+                        <!-- <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" 
+                             alt="Graduate Seattle" 
+                             class="hotel-image"
+                             onerror="this.src='img/about-us.jpg';"> -->
+                        <h4 style="color: #0A3D62; margin-bottom: 15px;">Graduate Seattle (Graduate by Hilton Seattle)</h4>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-map-marker" style="margin-right: 5px;"></i>Location:</strong> 
+                            4507 Brooklyn Avenue Northeast, Seattle, WA 98105
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-dollar-sign" style="margin-right: 5px;"></i>Typical March Rate:</strong> 
+                            USD $140–220+ per night (standard/double rooms)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-users" style="margin-right: 5px;"></i>Sharing:</strong> 
+                            Many rooms are available for sharing at ~$70–110 per person per night (2 people)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-bus" style="margin-right: 5px;"></i>Transportation:</strong> 
+                            5-10 minute walk (0.7 mile) to UW campus. Near U District light-rail station. Light-rail or bus: ~$3. Rideshare: $10–15
+                        </div>
+                        <a href="https://www.hilton.com/en/hotels/seagsgu-graduate-seattle/" 
+                           target="_blank" 
+                           class="hotel-link">
+                            <i class="fa fa-external-link" style="margin-right: 5px;"></i>Visit Hotel Website
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Silver Cloud Hotel -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="hotel-card">
+                        <span class="hotel-category high-end">Premium</span>
+                        <!-- <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop" 
+                             alt="Silver Cloud Hotel Seattle – University District" 
+                             class="hotel-image"
+                             onerror="this.src='img/about-us.jpg';"> -->
+                        <h4 style="color: #0A3D62; margin-bottom: 15px;">Silver Cloud Hotel Seattle – UW District</h4>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-map-marker" style="margin-right: 5px;"></i>Location:</strong> 
+                            5036 25th Ave NE, Seattle, WA 98105
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-dollar-sign" style="margin-right: 5px;"></i>Typical March Rate:</strong> 
+                            USD $180–330 per night (standard rooms)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-users" style="margin-right: 5px;"></i>Sharing:</strong> 
+                            ~$90–165 per person per night (2 people) depending on dates and availability
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-bus" style="margin-right: 5px;"></i>Transportation:</strong> 
+                            Near the University Village shopping center. 5 min by car, 15–20 min by bus (~$3), or 20–25 min walk to UW campus. Rideshare: $10–15
+                        </div>
+                        <a href="https://www.silvercloud.com/university/" 
+                           target="_blank" 
+                           class="hotel-link">
+                            <i class="fa fa-external-link" style="margin-right: 5px;"></i>Visit Hotel Website
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Residence Inn by Marriott -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="hotel-card">
+                        <span class="hotel-category high-end">Premium</span>
+                        <!-- <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop" 
+                             alt="Residence Inn by Marriott Seattle University District" 
+                             class="hotel-image"
+                             onerror="this.src='img/about-us.jpg';"> -->
+                        <h4 style="color: #0A3D62; margin-bottom: 15px;">Residence Inn by Marriott Seattle University District</h4>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-map-marker" style="margin-right: 5px;"></i>Location:</strong> 
+                            4501 12th Ave NE, Seattle, WA 98105
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-dollar-sign" style="margin-right: 5px;"></i>Typical March Rate:</strong> 
+                            USD $160–260+ per night (suites with kitchenettes)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-users" style="margin-right: 5px;"></i>Sharing:</strong> 
+                            ~$80–130 per person per night (2 people, suites with sofa beds)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-bus" style="margin-right: 5px;"></i>Transportation:</strong> 
+                            15-minute walk to UW campus. Public transit/rideshare generally not needed
+                        </div>
+                        <a href="https://www.marriott.com/en-us/hotels/seaud-residence-inn-seattle-university-district/overview/" 
+                           target="_blank" 
+                           class="hotel-link">
+                            <i class="fa fa-external-link" style="margin-right: 5px;"></i>Visit Hotel Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Standard Hotels -->
+            <div class="row" style="margin-top: 60px;">
+                <div class="col-lg-12">
+                    <h3 style="color: #0A3D62; margin-bottom: 30px; text-align: center;">
+                        <i class="fa fa-star-half-o" style="color: #ff9800; margin-right: 10px;"></i>Standard Hotels
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Staypineapple University Inn -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="hotel-card">
+                        <span class="hotel-category mid-range">Standard</span>
+                        <!-- <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=600&fit=crop" 
+                             alt="Staypineapple, University Inn" 
+                             class="hotel-image"
+                             onerror="this.src='img/about-us.jpg';"> -->
+                        <h4 style="color: #0A3D62; margin-bottom: 15px;">Staypineapple, University Inn</h4>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-map-marker" style="margin-right: 5px;"></i>Location:</strong> 
+                            4140 Roosevelt Way NE, Seattle, WA 98105
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-dollar-sign" style="margin-right: 5px;"></i>Typical March Rate:</strong> 
+                            USD $95–180 per night (2 people, starting around $90–100 in low season)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-users" style="margin-right: 5px;"></i>Sharing:</strong> 
+                            ~$50–100 per person per night (2 people, standard double-bed rooms)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-bus" style="margin-right: 5px;"></i>Transportation:</strong> 
+                            10–15 minute walk to UW campus. Several bus routes along Roosevelt Way NE: ~$3. Rideshare: under $10
+                        </div>
+                        <a href="https://www.staypineapple.com/university-inn-seattle-wa" 
+                           target="_blank" 
+                           class="hotel-link">
+                            <i class="fa fa-external-link" style="margin-right: 5px;"></i>Visit Hotel Website
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Staypineapple Watertown Hotel -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="hotel-card">
+                        <span class="hotel-category mid-range">Standard</span>
+                        <!-- <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop" 
+                             alt="Staypineapple, Watertown Hotel" 
+                             class="hotel-image"
+                             onerror="this.src='img/about-us.jpg';"> -->
+                        <h4 style="color: #0A3D62; margin-bottom: 15px;">Staypineapple, Watertown Hotel</h4>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-map-marker" style="margin-right: 5px;"></i>Location:</strong> 
+                            4242 Roosevelt Way NE, Seattle, WA 98105
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-dollar-sign" style="margin-right: 5px;"></i>Typical March Rate:</strong> 
+                            USD $115–150+ per night (queen rooms in low/shoulder seasons)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-users" style="margin-right: 5px;"></i>Sharing:</strong> 
+                            ~$60–90 per person per night (2 people, double-queen rooms)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-bus" style="margin-right: 5px;"></i>Transportation:</strong> 
+                            15 minute walk to UW campus. Buses along Roosevelt Way NE: ~$3. Rideshare: under $10
+                        </div>
+                        <a href="https://www.staypineapple.com/watertown-hotel-seattle-wa" 
+                           target="_blank" 
+                           class="hotel-link">
+                            <i class="fa fa-external-link" style="margin-right: 5px;"></i>Visit Hotel Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Economy Hotels -->
+            <div class="row" style="margin-top: 60px;">
+                <div class="col-lg-12">
+                    <h3 style="color: #0A3D62; margin-bottom: 30px; text-align: center;">
+                        <i class="fa fa-bed" style="color: #2196f3; margin-right: 10px;"></i>Economy Hotels
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <!-- College Inn Hotel -->
+                <div class="col-lg-6 col-md-6 mx-auto">
+                    <div class="hotel-card">
+                        <span class="hotel-category budget">Economy</span>
+                        <!-- <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop" 
+                             alt="College Inn Hotel" 
+                             class="hotel-image"
+                             onerror="this.src='img/about-us.jpg';"> -->
+                        <h4 style="color: #0A3D62; margin-bottom: 15px;">College Inn Hotel</h4>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-map-marker" style="margin-right: 5px;"></i>Location:</strong> 
+                            4000 University Way NE, Seattle, WA 98105
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-dollar-sign" style="margin-right: 5px;"></i>Rate:</strong> 
+                            USD $99–150 per night (standard rooms, deals starting around $95–110 for 2 people)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-users" style="margin-right: 5px;"></i>Room Types:</strong> 
+                            Premium rooms with private bathrooms, or European-style rooms with shared bathrooms (lower cost)
+                        </div>
+                        <div class="hotel-info-item">
+                            <strong><i class="fa fa-bus" style="margin-right: 5px;"></i>Transportation:</strong> 
+                            Directly across from UW campus. 5-minute walk (0.3 mile). No transit needed for most conference events. Buses/light rail from U District Station: ~$3
+                        </div>
+                        <a href="https://www.collegeinnseattle.com/" 
+                           target="_blank" 
+                           class="hotel-link">
+                            <i class="fa fa-external-link" style="margin-right: 5px;"></i>Visit Hotel Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Note Section -->
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-lg-10 mx-auto">
+                    <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 20px; border-radius: 8px;">
+                        <p style="margin: 0; color: #1565c0;">
+                            <i class="fa fa-info-circle" style="margin-right: 8px;"></i>
+                            <strong>Note:</strong> These are suggested accommodation options, not exclusive choices. Rates are approximate and may vary based on dates and availability. 
+                            We recommend booking early, especially for March dates. 
+                            You may also search for other accommodation options in the University District or nearby areas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why CHIIR Section -->
+    <section class="why-section" id="why-chiir" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2>Why CHIIR?</h2>
+                        <p>Discover what makes CHIIR the premier conference for human-information interaction research</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="why-card">
+                                <h3>Single Track Conference</h3>
+                                <p>CHIIR's single-track format ensures enhanced interactions and networking opportunities. Every attendee experiences the same high-quality program, fostering deeper discussions and stronger community connections.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="why-card">
+                                <h3>Low Registration Costs</h3>
+                                <p>We're committed to making CHIIR accessible to researchers from all backgrounds. Our affordable registration fees ensure that cost is never a barrier to participation in cutting-edge research discussions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="why-card">
+                                <h3>Strong HCI Community</h3>
+                                <p>Connect with the vibrant human-computer interaction community. CHIIR brings together leading researchers, practitioners, and students from around the world to share insights and build lasting collaborations.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="why-card">
+                                <h3>Industry Connections</h3>
+                                <p>Bridge the gap between academia and industry. CHIIR provides unique opportunities to engage with technology companies and startups, fostering real-world applications of research innovations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Seattle Section -->
+    <section class="why-section" id="why-seattle">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2>Why Seattle for CHIIR 2026?</h2>
+                        <p>Seattle offers the perfect blend of innovation, accessibility, and inspiration for our conference</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="why-card">
+                        <p>Seattle offers a vibrant setting for CHIIR 2026, with a strong culture of research, collaboration, and innovation across universities, research institutes, and technology communities.</p>
+                        
+                        <p>From the iconic Space Needle to the beautiful Puget Sound, Seattle offers an inspiring backdrop for networking and scholarly exchange. The city's coffee culture and vibrant neighborhoods create welcoming spaces for informal discussions and collaboration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2>Discover Seattle</h2>
+                        <p>Experience the beauty and innovation of the Emerald City</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="video-container">
+                        <div style="display: flex; justify-content: center; align-items: center; height: auto; text-align: center;">
+                            <iframe width="800" height="450" 
+                                    src="https://www.youtube.com/embed/2sInnVwH_fM" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -602,6 +1014,12 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Leaflet JS for Hotels Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
 
     <script>
         // Background Image Carousel
@@ -666,6 +1084,131 @@
                 $('.section-nav a[href="' + hash + '"]').addClass('active');
             }
         });
+        
+        // Initialize Hotels Map with Leaflet
+        $(document).ready(function() {
+            // Wait a bit to ensure the map container is rendered
+            setTimeout(function() {
+                const mapContainer = document.getElementById('hotels-map');
+                if (mapContainer && typeof L !== 'undefined') {
+                    // Center on University District (approximate center of all hotels)
+                    const map = L.map('hotels-map').setView([47.658, -122.308], 14);
+                    
+                    // Add OpenStreetMap tiles
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                        maxZoom: 19
+                    }).addTo(map);
+                    
+                    // Hotel locations with coordinates
+                    const hotels = [
+                        // High-end hotels
+                        {
+                            name: 'Graduate Seattle',
+                            lat: 47.66167,
+                            lng: -122.31455,
+                            category: 'high-end',
+                            color: '#2e7d32',
+                            url: 'https://www.hilton.com/en/hotels/seagsgu-graduate-seattle/',
+                            address: '4507 Brooklyn Avenue NE, Seattle, WA 98105'
+                        },
+                        {
+                            name: 'Silver Cloud Hotel Seattle – University District',
+                            lat: 47.6655,
+                            lng: -122.3007,
+                            category: 'high-end',
+                            color: '#2e7d32',
+                            url: 'https://www.silvercloud.com/university/',
+                            address: '5036 25th Avenue NE, Seattle, WA 98105'
+                        },
+                        {
+                            name: 'Residence Inn by Marriott Seattle University District',
+                            lat: 47.6580,
+                            lng: -122.3100,
+                            category: 'high-end',
+                            color: '#2e7d32',
+                            url: 'https://www.marriott.com/en-us/hotels/seaud-residence-inn-seattle-university-district/overview/',
+                            address: 'University District, Seattle, WA'
+                        },
+                        // Mid-range hotels
+                        {
+                            name: 'Staypineapple, University Inn',
+                            lat: 47.6620,
+                            lng: -122.3120,
+                            category: 'mid-range',
+                            color: '#e65100',
+                            url: 'https://www.staypineapple.com/university-inn-seattle-wa',
+                            address: 'University District, Seattle, WA'
+                        },
+                        {
+                            name: 'Staypineapple, Watertown Hotel',
+                            lat: 47.6600,
+                            lng: -122.3110,
+                            category: 'mid-range',
+                            color: '#e65100',
+                            url: 'https://www.staypineapple.com/watertown-hotel-seattle-wa',
+                            address: 'University District, Seattle, WA'
+                        },
+                        // Budget hotels
+                        {
+                            name: 'College Inn Hotel',
+                            lat: 47.6554843,
+                            lng: -122.3129637,
+                            category: 'budget',
+                            color: '#1565c0',
+                            url: 'https://www.collegeinnseattle.com/',
+                            address: '4000 University Way NE, Seattle, WA 98105'
+                        }
+                    ];
+                    
+                    // Create custom icons for each category
+                    function createIcon(color, size) {
+                        size = size || 20;
+                        return L.divIcon({
+                            className: 'custom-marker',
+                            html: '<div style="background-color: ' + color + '; width: ' + size + 'px; height: ' + size + 'px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>',
+                            iconSize: [size, size],
+                            iconAnchor: [size/2, size/2]
+                        });
+                    }
+                    
+                    // Add HUB marker (Conference Venue) - make it larger and distinct
+                    const hubMarker = L.marker([47.6556, -122.3035], {
+                        icon: createIcon('#dc3545', 24)
+                    }).addTo(map);
+                    
+                    hubMarker.bindPopup(
+                        '<div style="min-width: 200px;">' +
+                        '<h4 style="margin: 0 0 10px 0; color: #0A3D62;">Husky Union Building (HUB)</h4>' +
+                        '<p style="margin: 5px 0; color: #666; font-size: 12px;"><strong>Conference Venue</strong></p>' +
+                        '<p style="margin: 5px 0; color: #666; font-size: 12px;"><strong>Address:</strong> University of Washington, Seattle, WA</p>' +
+                        '<p style="margin: 10px 0 5px 0; color: #28a745; font-size: 12px; font-weight: 600;"><i class="fa fa-info-circle"></i> Reference point for hotel distances</p>' +
+                        '</div>'
+                    );
+                    
+                    // Add markers for each hotel
+                    hotels.forEach(function(hotel) {
+                        const marker = L.marker([hotel.lat, hotel.lng], {
+                            icon: createIcon(hotel.color)
+                        }).addTo(map);
+                        
+                        const categoryLabel = hotel.category === 'high-end' ? 'Premium Hotel' :
+                                            hotel.category === 'mid-range' ? 'Standard Hotel' : 'Economy Hotel';
+                        
+                        marker.bindPopup(
+                            '<div style="min-width: 200px;">' +
+                            '<h4 style="margin: 0 0 10px 0; color: #0A3D62;">' + hotel.name + '</h4>' +
+                            '<p style="margin: 5px 0; color: #666; font-size: 12px;"><strong>Category:</strong> ' + categoryLabel + '</p>' +
+                            '<p style="margin: 5px 0; color: #666; font-size: 12px;"><strong>Address:</strong> ' + hotel.address + '</p>' +
+                            '<a href="' + hotel.url + '" target="_blank" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none; font-weight: 600;">' +
+                            'Visit Hotel Website <i class="fa fa-external-link" style="font-size: 10px;"></i></a>' +
+                            '</div>'
+                        );
+                    });
+                }
+            }, 500);
+        });
+        
     </script>
 </body>
 

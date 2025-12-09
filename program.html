@@ -45,6 +45,130 @@
         justify-content: center;
         gap: 40px;
     }
+    
+    /* Keynote Card Styles */
+    .keynote-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 30px;
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        transition: all 0.3s ease;
+    }
+    
+    .keynote-card:hover {
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .keynote-header {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 20px;
+    }
+    
+    .keynote-header img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        flex-shrink: 0;
+    }
+    
+    .keynote-header img[alt="Ben Shneiderman"] {
+        object-position: center 30%;
+    }
+    
+    .keynote-info h3 {
+        margin: 0 0 10px 0;
+        color: #0A3D62;
+        font-size: 24px;
+    }
+    
+    .keynote-info h3 a {
+        color: #0A3D62;
+        text-decoration: none;
+    }
+    
+    .keynote-info h3 a:hover {
+        color: #007bff;
+    }
+    
+    .keynote-info p {
+        margin: 5px 0;
+        color: #666;
+        font-size: 14px;
+    }
+    
+    .keynote-bio {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.5s ease;
+        padding: 0 20px;
+    }
+    
+    .keynote-bio.expanded {
+        max-height: 2000px;
+        padding: 20px;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 20px;
+    }
+    
+    .keynote-bio p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+    
+    .keynote-bio p:last-child {
+        margin-bottom: 0;
+    }
+    
+    .expand-btn {
+        background: #0A3D62;
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+    }
+    
+    .expand-btn:hover {
+        background: #007bff;
+        transform: translateY(-2px);
+    }
+    
+    .expand-btn.expanded {
+        background: #6c757d;
+    }
+    
+    .expand-btn i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+    
+    .expand-btn.expanded i {
+        transform: rotate(180deg);
+    }
+    
+    .tbd-notice {
+        background: #f8f9fa;
+        border-left: 4px solid #ffc107;
+        padding: 15px;
+        border-radius: 5px;
+        color: #856404;
+        font-style: italic;
+        text-align: center;
+    }
   </style>
 
     <!-- Google Font -->
@@ -117,20 +241,21 @@
                             </ul>
                         </li>
                         
-                        <li><a href="#">Sponsors</a>
+                        <li><a href="index.html#sponsors">Sponsors</a>
                             <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
                                 <li><a href="index.html#sponsors">Sponsors</a></li>
                                 <li><a href="sponsorship.html">Call for Sponsorship</a></li>
                             </ul>
                         </li>
                         <li><a href="./organizers.html">Organizers</a></li>
-                        <li><a href="#">Attend</a>
+                        <li><a href="attend.html">Attend</a>
                             <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
-                                <li><a href="attend.html#why-seattle">Why Seattle</a></li>
+                                <li><a href="attend.html#venue">Venue</a></li>
+                                <li><a href="attend.html#visa">Invitation Letter for Visa</a></li>
+                                <li><a href="attend.html#travel">Travel</a></li>
+                                <li><a href="attend.html#hotels">Accommodation</a></li>
                                 <li><a href="attend.html#why-chiir">Why CHIIR</a></li>
-                                <li><a href="attend.html#travel">Travel Information</a></li>
-                                <li><a href="attend.html#venue">Venue Information</a></li>
-                                <li><a href="attend.html#visa">Visa Invitation Letter</a></li>
+                                <li><a href="attend.html#why-seattle">Why Seattle</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -185,21 +310,74 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="people">
-                        <div class="person">
-                            <img src="img/ben_shneiderman.jpg" alt="Ben Shneiderman">
-                            <div class="person-info">
-                                <strong><a href="https://www.cs.umd.edu/~ben/" target="_blank">Ben Shneiderman</a></strong><br>
-                                Retired Emeritus Professor, Computer Science, UMIACS<br>
-                                University of Maryland, College Park
+                    <!-- Keynote Speaker 1: Ben Shneiderman -->
+                    <div class="keynote-card">
+                        <div class="keynote-header">
+                            <img src="img/ben.jpg" alt="Ben Shneiderman">
+                            <div class="keynote-info">
+                                <h3><a href="https://www.cs.umd.edu/~ben/" target="_blank">Ben Shneiderman</a></h3>
+                                <p><strong>Emeritus Distinguished University Professor, Dept. of Computer Science & Human-Computer Interaction Lab</strong></p>
+                                <p>University of Maryland, College Park, MD, USA</p>
                             </div>
                         </div>
-                        <div class="person">
+                        <button class="expand-btn" onclick="toggleKeynote(this)">
+                            Learn More <i class="fa fa-chevron-down"></i>
+                        </button>
+                        <div class="keynote-bio">
+                            <h4 style="color: #0A3D62; margin-bottom: 15px; font-size: 20px;">Human-Centered AI: Supertools for Taking Control of Search</h4>
+                            
+                            <p style="margin-bottom: 20px;">
+                                <strong>Abstract:</strong>
+                            </p>
+                            
+                            <p>
+                                A new synthesis is emerging that integrates AI technologies with Human-Computer Interaction to produce Human-Centered AI (HCAI). Advocates of this new synthesis design supertools that amplify, augment, enhance human abilities, and empower people. Effective supertools build the user's self-efficacy, support creativity, clarify responsibility, and promote social connections.
+                            </p>
+                            
+                            <p>
+                                The foundational design principles suggest offering comprehensible, predictable, and controllable user interfaces that have compact control panels, clear sequences of action, show abundant information, and allow rapid exploration or alternatives.
+                            </p>
+                            
+                            <p>
+                                Improved search tools will come from researchers who embrace human-centered approaches by giving users control over the scope of search (personal collections as in NotebookLM, time periods as in Google Scholar, limited tasks as in digital navigation), offering rich sets of options (as in Amazon shopping's faceted menus and the Bloomberg Terminal), and ranking/clustering search results (as in Google Search and Netflix). These strategies are especially important when using Generative AI, which is startlingly impressive, but alarmingly flawed.
+                            </p>
+                            
+                            <p style="margin-top: 25px; margin-bottom: 10px;">
+                                <strong>About the Speaker:</strong>
+                            </p>
+                            
+                            <p>
+                                <a href="http://www.cs.umd.edu/~ben" target="_blank" style="color: #007bff;"><strong>Ben Shneiderman</strong></a> is an Emeritus Distinguished University Professor in the Department of Computer Science, Founding Director (1983-2000) of the <a href="http://hcil.umd.edu" target="_blank" style="color: #007bff;">Human-Computer Interaction Laboratory</a>, and a Member of the UM Institute for Advanced Computer Studies (UMIACS) at the University of Maryland. He is a Fellow of the AAAS, ACM, IEEE, NAI, and the Visualization Academy and a Member of the U.S. National Academy of Engineering. He has received six honorary doctorates in recognition of his pioneering contributions to human-computer interaction and information visualization. His widely-used contributions include the clickable highlighted web-links, high-precision touchscreen keyboards for mobile devices, and tagging for photos. Shneiderman's information visualization innovations include dynamic query sliders for Spotfire, development of treemaps for viewing hierarchical data, novel network visualizations for NodeXL, and event sequence analysis for electronic health records.
+                            </p>
+                            
+                            <p>
+                                Ben is the lead author of <em>Designing the User Interface: Strategies for Effective Human-Computer Interaction</em> (6th ed., 2016). He co-authored <em>Readings in Information Visualization: Using Vision to Think</em> (1999) and <em>Analyzing Social Media Networks with NodeXL</em> (2nd edition, 2019). His book <em>Leonardo's Laptop</em> (MIT Press) won the IEEE book award for Distinguished Literary Contribution. <em>The New ABCs of Research: Achieving Breakthrough Collaborations</em> (Oxford, 2016) describes how research can produce higher impacts. His book, <a href="https://global.oup.com/academic/product/human-centered-ai-9780192845290" target="_blank" style="color: #007bff;"><em>Human-Centered AI</em></a>, published by Oxford University Press, won the Association of American Publishers award for Computer and Information Systems.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Keynote Speaker 2: Xin Luna Dong -->
+                    <div class="keynote-card">
+                        <div class="keynote-header">
                             <img src="img/lunadong.jpeg" alt="Luna Dong">
-                            <div class="person-info">
-                                <strong><a href="https://lunadong.com/" target="_blank">Xin Luna Dong</a></strong><br>
-                                Principal Scientist at Meta Reality Labs
+                            <div class="keynote-info">
+                                <h3><a href="https://lunadong.com/" target="_blank">Xin Luna Dong</a></h3>
+                                <p><strong>Principal Scientist at Meta Reality Labs</strong></p>
                             </div>
+                        </div>
+                        <button class="expand-btn" onclick="toggleKeynote(this)">
+                            Learn More <i class="fa fa-chevron-down"></i>
+                        </button>
+                        <div class="keynote-bio">
+                            <p>
+                                [Add first paragraph about Xin Luna Dong's background, research contributions, and significance to the field]
+                            </p>
+                            <p>
+                                [Add second paragraph about her keynote topic, research interests, or notable achievements]
+                            </p>
+                            <p>
+                                [Add third paragraph if needed - could be about her impact on information systems, specific contributions, or what attendees can expect from her keynote]
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -529,6 +707,24 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // Toggle keynote bio expansion
+        function toggleKeynote(button) {
+            const card = button.closest('.keynote-card');
+            const bio = card.querySelector('.keynote-bio');
+            
+            if (bio.classList.contains('expanded')) {
+                bio.classList.remove('expanded');
+                button.classList.remove('expanded');
+                button.innerHTML = 'Learn More <i class="fa fa-chevron-down"></i>';
+            } else {
+                bio.classList.add('expanded');
+                button.classList.add('expanded');
+                button.innerHTML = 'Show Less <i class="fa fa-chevron-up"></i>';
+            }
+        }
+    </script>
 </body>
 
 </html>
