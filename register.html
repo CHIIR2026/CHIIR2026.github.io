@@ -48,11 +48,7 @@
         }
         
         .registration-card {
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
         }
         
         .registration-card h2 {
@@ -81,7 +77,7 @@
         
         .pricing-table th,
         .pricing-table td {
-            padding: 15px;
+            padding: 10px 12px;
             text-align: left;
             border: 1px solid #e0e0e0;
         }
@@ -89,6 +85,11 @@
         .pricing-table th {
             font-weight: 600;
             text-align: center;
+            font-size: 0.95rem;
+        }
+        
+        .pricing-table td {
+            font-size: 0.95rem;
         }
         
         .pricing-table tbody tr:nth-child(even) {
@@ -97,6 +98,38 @@
         
         .pricing-table tbody tr:hover {
             background: #e8f4f8;
+        }
+        
+        .pricing-section {
+            margin-bottom: 5px;
+        }
+        
+        .registration-link-section {
+            background: #f6faff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-section h4 {
+            color: #0A3D62;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0A3D62;
+        }
+        
+        .pricing-note {
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        .pricing-note::before {
+            content: "* ";
+            color: #dc3545;
+            font-weight: bold;
         }
         
         .register-button {
@@ -179,9 +212,10 @@
                            <li><a href="program.html">Program</a>
                             <ul class="dropdown" style="font-size: 14px;">
                                 <li><a href="program.html#keynotes">Keynotes</a></li>
-                                <li><a href="program.html">Program Schedule</a></li>
-                                <li><a href="program.html">Special Events</a></li>
-                                <li><a href="program.html">Workshops</a></li>
+                                <li><a href="schedule.html">Program Schedule</a></li>
+                                <li><a href="events.html">Special Events</a></li>
+                                <li><a href="workshops-program.html">Workshops</a></li>
+                                <li><a href="tutorials-program.html">Tutorials</a></li>
                             </ul>
                         </li>
                         
@@ -211,90 +245,218 @@
     </header>
     <!-- Header End -->
 
+    <!-- Hero Section Begin -->
+    <section class="hero-section" 
+    style="position: relative; 
+           background-image: url('img/1.png') !important; 
+           background-size: cover !important; 
+           background-repeat: no-repeat !important; 
+           background-position: center center !important; 
+           min-height: 50vh !important; 
+           display: flex !important; 
+           flex-direction: column !important; 
+           justify-content: center !important; 
+           align-items: center !important; 
+           text-align: center !important; 
+           color: white !important; 
+           width: 100% !important;">
+
+    <!-- Dark Overlay -->
+    <div style="position: absolute; 
+                top: 0; left: 0; 
+                width: 100%; height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 1;">
+    </div>
+
+    <!-- Content -->
+    <div style="position: relative; z-index: 2;">
+        <h2 style="color: white !important; font-family: 'Pauta One', sans-serif; font-weight: bold;">
+            REGISTRATION
+        </h2> 
+    </div>
+</section>
+    <!-- Hero Section End -->
+
     <!-- Registration Section Begin -->
-    <section class="registration-section">
+    <section class="home-about-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title text-center">
-                        <h1>Registration Information</h1>
+                    <div class="ha-text">
+                        <h3>Registration Information</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Registration Link Section -->
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="registration-link-section">
+                        <p style="font-size: 16px; margin-bottom: 15px;">Registration is via ACM's CVENT system, <a href="https://cvent.me/bWeYZL" target="_blank" class="register-button" style="display: inline-block; padding: 10px 25px; font-size: 16px; margin: 0 10px; vertical-align: middle;">on this link</a>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Registration Costs Section -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ha-text">
+                        <h3>Registration Costs</h3>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <div class="registration-card">
-                        <h2>Registration Costs</h2>
-                        <p>Registration prices are given in US Dollars. All prices are indicative and subject to change.</p>
+                        <p style="margin-bottom: 30px;">Registration prices are given in US Dollars.</p>
+
+                        <!-- Main Conference Pricing -->
+                        <div class="pricing-section" style="margin-top: 20px;">
+                            <h4>Main Conference</h4>
+                            <table class="pricing-table">
+                                <thead>
+                                    <tr>
+                                        <th>Attendance Type</th>
+                                        <th>Early<br><small>(before 01/30/2026)</small></th>
+                                        <th>Standard<br><small>(01/30 - 02/20/2026)</small></th>
+                                        <th>Late<br><small>(after 02/20/2026)</small></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Members</strong></td>
+                                        <td style="text-align: center;">$550.00</td>
+                                        <td style="text-align: center;">$650.00</td>
+                                        <td style="text-align: center;">$750.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Non-Members</strong></td>
+                                        <td style="text-align: center;">$650.00</td>
+                                        <td style="text-align: center;">$750.00</td>
+                                        <td style="text-align: center;">$850.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Student Member</strong></td>
+                                        <td style="text-align: center;">$300.00</td>
+                                        <td style="text-align: center;">$400.00</td>
+                                        <td style="text-align: center;">$500.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Student Non-Member</strong></td>
+                                        <td style="text-align: center;">$350.00</td>
+                                        <td style="text-align: center;">$450.00</td>
+                                        <td style="text-align: center;">$550.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Retiree</strong></td>
+                                        <td style="text-align: center;">$200.00</td>
+                                        <td style="text-align: center;">$250.00</td>
+                                        <td style="text-align: center;">$300.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         
-                        <div class="info-box">
-                            <p><strong>Registration is via ACM's CVENT system.</strong> The registration link will be available here once the registration system is set up.</p>
-                            <p style="margin-top: 10px; margin-bottom: 0;">All registrations include attendance at tutorials and workshops at no additional cost. Please note that lunch will be provided for the entire program.</p>
+                        <p style="margin-top: 20px; margin-bottom: 25px; color: #666;">Registration fee includes almost all meals, technical and social program, and more. We will also have awesome swag!</p>
+
+                        <!-- Tutorials Pricing -->
+                        <div class="pricing-section">
+                            <h4>Tutorials</h4>
+                            <table class="pricing-table">
+                                <thead>
+                                    <tr>
+                                        <th>Attendance Type</th>
+                                        <th>Early<br><small>(before 01/30/2026)</small></th>
+                                        <th>Standard<br><small>(01/30 - 02/20/2026)</small></th>
+                                        <th>Late<br><small>(after 02/20/2026)</small></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Members</strong></td>
+                                        <td style="text-align: center;">$60.00</td>
+                                        <td style="text-align: center;">$80.00</td>
+                                        <td style="text-align: center;">$100.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Non-Members</strong></td>
+                                        <td style="text-align: center;">$80.00</td>
+                                        <td style="text-align: center;">$100.00</td>
+                                        <td style="text-align: center;">$120.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Student Member</strong></td>
+                                        <td style="text-align: center;">$30.00</td>
+                                        <td style="text-align: center;">$50.00</td>
+                                        <td style="text-align: center;">$70.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Student Non-Member</strong></td>
+                                        <td style="text-align: center;">$40.00</td>
+                                        <td style="text-align: center;">$60.00</td>
+                                        <td style="text-align: center;">$80.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Retiree</strong></td>
+                                        <td style="text-align: center;">$40.00</td>
+                                        <td style="text-align: center;">$60.00</td>
+                                        <td style="text-align: center;">$80.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
 
-                        <table class="pricing-table">
-                            <thead>
-                                <tr>
-                                    <th>Attendance Type</th>
-                                    <th>Early Bird<br><small>(TBD)</small></th>
-                                    <th>Regular<br><small>(TBD)</small></th>
-                                    <th>Late</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>ACM Member</strong></td>
-                                    <td style="text-align: center;">TBD</td>
-                                    <td style="text-align: center;">TBD</td>
-                                    <td style="text-align: center;">TBD</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Non-Member</strong></td>
-                                    <td style="text-align: center;">TBD</td>
-                                    <td style="text-align: center;">TBD</td>
-                                    <td style="text-align: center;">TBD</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Student</strong></td>
-                                    <td style="text-align: center;">TBD</td>
-                                    <td style="text-align: center;">TBD</td>
-                                    <td style="text-align: center;">TBD</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div style="text-align: center; margin: 40px 0;">
-                            <a href="#" class="register-button" id="cvent-register-link" style="pointer-events: none; opacity: 0.6;">
-                                <i class="fa fa-external-link" style="margin-right: 10px;"></i>Register via ACM CVENT
-                            </a>
-                            <p style="color: #666; font-size: 14px; margin-top: 10px;">
-                                <em>Registration link will be available soon</em>
-                            </p>
+                        <!-- Workshops Pricing -->
+                        <div class="pricing-section">
+                            <h4>Workshops</h4>
+                            <table class="pricing-table">
+                                <thead>
+                                    <tr>
+                                        <th>Attendance Type</th>
+                                        <th>Early<br><small>(before 01/30/2026)</small></th>
+                                        <th>Standard<br><small>(01/30 - 02/20/2026)</small></th>
+                                        <th>Late<br><small>(after 02/20/2026)</small></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Members</strong></td>
+                                        <td style="text-align: center;">$60.00</td>
+                                        <td style="text-align: center;">$80.00</td>
+                                        <td style="text-align: center;">$100.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Non-Members</strong></td>
+                                        <td style="text-align: center;">$80.00</td>
+                                        <td style="text-align: center;">$100.00</td>
+                                        <td style="text-align: center;">$120.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Student Member</strong></td>
+                                        <td style="text-align: center;">$30.00</td>
+                                        <td style="text-align: center;">$50.00</td>
+                                        <td style="text-align: center;">$70.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Student Non-Member</strong></td>
+                                        <td style="text-align: center;">$40.00</td>
+                                        <td style="text-align: center;">$60.00</td>
+                                        <td style="text-align: center;">$80.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Retiree</strong></td>
+                                        <td style="text-align: center;">$40.00</td>
+                                        <td style="text-align: center;">$60.00</td>
+                                        <td style="text-align: center;">$80.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
 
-                        <div class="info-box warning">
-                            <p><strong>Note:</strong> Registration dates and pricing will be announced once the ACM CVENT registration system is configured. Please check back for updates.</p>
-                        </div>
+                        <p class="pricing-note" style="margin-top: 30px;">These rates are not final and subject to SIGIR approval.</p>
 
-                        <h3 style="margin-top: 40px;">What's Included</h3>
-                        <ul style="line-height: 2; color: #666;">
-                            <li>Access to all conference sessions</li>
-                            <li>Attendance at tutorials and workshops (no additional cost)</li>
-                            <li>Lunch provided for the entire program</li>
-                            <li>Conference materials and proceedings</li>
-                            <li>Welcome reception and conference events</li>
-                        </ul>
-
-                        <h3 style="margin-top: 40px;">Registration Policies</h3>
-                        <ul style="line-height: 2; color: #666;">
-                            <li>All registrations must be completed through the official ACM CVENT registration system</li>
-                            <li>Early bird registration rates apply until the specified deadline</li>
-                            <li>Student rates require valid student identification</li>
-                            <li>ACM member rates require a valid ACM membership number</li>
-                            <li>Cancellation and refund policies will be available in the registration system</li>
-                        </ul>
-
-                        <div class="info-box success" style="margin-top: 30px;">
+                        <div class="info-box success" style="margin-top: 40px;">
                             <p><strong>Need Help?</strong> For registration inquiries, please contact the registration team at <a href="mailto:chiir-reg@acm.org" style="color: #155724; font-weight: bold;">chiir-reg@acm.org</a></p>
                         </div>
                     </div>
@@ -302,7 +464,7 @@
             </div>
         </div>
     </section>
-    <!-- Registration Section End -->
+    <!-- Home About Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
@@ -313,7 +475,7 @@
                         <ul>
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="./attend.html">Attend</a></li>
-                            <li><a href="./organizers.html">Organisers</a></li>
+                            <li><a href="./organizers.html">Organizers</a></li>
                         </ul>
                         <div class="copyright-text"><p>
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
