@@ -147,6 +147,17 @@
             line-height: 1.6;
         }
         
+        /* Sightseeing Section Styles */
+        @media (max-width: 768px) {
+            .sightseeing-item {
+                flex-direction: column !important;
+            }
+            .sightseeing-item > div:first-child {
+                width: 100% !important;
+                margin-bottom: 15px;
+            }
+        }
+        
         .cta-section {
             background: linear-gradient(135deg, #f7f9f9, #f8f8f9);
             color: white;
@@ -175,17 +186,19 @@
         /* Section Navigation */
         .section-nav {
             background: #f8f9fa;
-            padding: 20px 0;
+            padding: 15px 0;
             text-align: center;
         }
         
         .section-nav a {
             color: #0A3D62;
             text-decoration: none;
-            margin: 0 20px;
-            padding: 10px 20px;
+            margin: 0 8px;
+            padding: 8px 12px;
             border-radius: 25px;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
         
         .section-nav a:hover, .section-nav a.active {
@@ -342,12 +355,13 @@
                         </li>
                         <li class="active"><a href="#">Attend</a>
                             <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
-                                <li><a href="#why-seattle">Why Seattle</a></li>
-                                <li><a href="#why-chiir">Why CHIIR</a></li>
-                                <li><a href="#travel">Travel Information</a></li>
                                 <li><a href="#venue">Venue</a></li>
-                                <li><a href="#hotels">Accommodation Options</a></li>
-                                <li><a href="#visa">Visa Invitation Letter</a></li>
+                                <li><a href="#visa">Invitation Letter for Visa</a></li>
+                                <li><a href="#travel">Travel</a></li>
+                                <li><a href="#hotels">Accommodation</a></li>
+                                <li><a href="#why-chiir">Why CHIIR</a></li>
+                                <li><a href="#why-seattle">Why Seattle</a></li>
+                                <li><a href="#sightseeing">Things to do in Seattle</a></li>
                                 <li><a href="volunteers.html">Call for Volunteers</a></li>
                             </ul>
                         </li>
@@ -370,6 +384,7 @@
             <a href="#hotels">Accommodation</a>
             <a href="#why-chiir">Why CHIIR</a>
             <a href="#why-seattle">Why Seattle</a>
+            <a href="#sightseeing">Things to do in Seattle</a>
         </div>
     </section>
 
@@ -931,6 +946,177 @@
                         <p>Seattle offers a vibrant setting for CHIIR 2026, with a strong culture of research, collaboration, and innovation across universities, research institutes, and technology communities.</p>
                         
                         <p>From the iconic Space Needle to the beautiful Puget Sound, Seattle offers an inspiring backdrop for networking and scholarly exchange. The city's coffee culture and vibrant neighborhoods create welcoming spaces for informal discussions and collaboration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sightseeing and Food Section -->
+    <section class="why-section" id="sightseeing" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2>Things to do in Seattle</h2>
+                        <p>Discover iconic attractions and culinary experiences during your visit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="why-card">
+                        <h3 style="color: #0A3D62; margin-bottom: 30px; font-size: 1.5rem;">Sightseeing Recommendations</h3>
+                        
+                        <!-- University of Washington -->
+                        <div style="margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                                <div style="flex-shrink: 0; width: 200px;">
+                                    <img src="img/uw-campus.jpg" alt="University of Washington" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" onerror="this.src='img/1.png';">
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #0A3D62; margin-bottom: 10px;">University of Washington</h4>
+                                    <p>Founded in 1861, the University of Washington is the oldest public university on the U.S. West Coast and one of the most beautiful campuses in the country. It blends historic Gothic architecture with lush green spaces and views of Mount Rainier and Lake Washington.</p>
+                                    <ul style="line-height: 1.8; color: #666; margin-top: 10px;">
+                                        <li>Visit the iconic "Harry Potter" Suzzallo Library.</li>
+                                        <li>Walk around Red Square, Union Bay and Drumheller Fountain for stunning views of Mount Rainier on clear days.</li>
+                                        <li>Cherry Blossoms: The famous 29 Yoshino cherry trees in the Liberal Arts Quad (the "Quad") typically reach peak bloom in late March to early April (often the third week of March).</li>
+                                    </ul>
+                                    <p style="margin-top: 15px; color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <strong>Located:</strong> <a href="https://maps.app.goo.gl/o38KHFUKv5jTpaiE7" target="_blank" style="color: #007bff;">University of Washington</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Space Needle -->
+                        <div style="margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                                <div style="flex-shrink: 0; width: 200px;">
+                                    <img src="img/8.jpg" alt="Space Needle" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" onerror="this.src='img/1.png';">
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #0A3D62; margin-bottom: 10px;">Space Needle</h4>
+                                    <p>Seattle's most iconic landmark with panoramic views of the city, Mount Rainier, Elliott Bay and the Olympics. Best time to go near sunset and city lights at night.</p>
+                                    <ul style="line-height: 1.8; color: #666; margin-top: 10px;">
+                                        <li><a href="https://sn.web.ticketing.siaticketing.com/tickets/main/?utm_source=navbutton&utm_medium=website" target="_blank" style="color: #007bff;">Tickets</a> start at $49.</li>
+                                        <li>Can be accessible via light rail from UDistrict Station (30 mins.)</li>
+                                    </ul>
+                                    <p style="margin-top: 15px; color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <strong>Located:</strong> <a href="https://maps.app.goo.gl/6w2DDFVEfjFAvr8N8" target="_blank" style="color: #007bff;">Space Needle</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chihuly Garden -->
+                        <div style="margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                                <div style="flex-shrink: 0; width: 200px;">
+                                    <img src="img/chihuli.jpg" alt="Chihuly Garden and Glass" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" onerror="this.src='img/1.png';">
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #0A3D62; margin-bottom: 10px;">Chihuly Garden and Glass</h4>
+                                    <p>Chihuly Garden and Glass is a museum in the Seattle Center showcasing the studio glass of Dale Chihuly. This must-see museum exhibits creative and colorful blown glass sculptures indoors and in garden spaces.</p>
+                                    <ul style="line-height: 1.8; color: #666; margin-top: 10px;">
+                                        <li>Buy a combined ticket with Space Needle (starting at $69) for cost savings or get a <a href="https://www.citypass.com/seattle-c3?p=seattle-c3&s=&lang=en&mv_source=rkg&mtm_campaign=gads-20712352035&mtm_source=google-ads&mtm_medium=ppc&gad_source=1&gad_campaignid=20712352035&gbraid=0AAAAAD6xuDXwwVTVbfSah3e31nl4Vnxjz&gclid=CjwKCAiAl-_JBhBjEiwAn3rN7ecS7beSmEG8JgHuC94OVpfMowB-sjDKCFSQltzeQCdueX_OEbK-ZBoCKq4QAvD_BwE" target="_blank" style="color: #007bff;">C3 Seattle City Pass</a> for 3 city attractions.</li>
+                                        <li>Accessible via light rail, near the same area as Space Needle.</li>
+                                    </ul>
+                                    <p style="margin-top: 15px; color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <strong>Located:</strong> <a href="https://maps.app.goo.gl/wnodkyGrqR3Cw72N9" target="_blank" style="color: #007bff;">Chihuly Garden and Glass</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The Gum Wall -->
+                        <div style="margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                                <div style="flex-shrink: 0; width: 200px;">
+                                    <img src="img/gumwall.jpg" alt="The Gum Wall" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" onerror="this.src='img/1.png';">
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #0A3D62; margin-bottom: 10px;">The Gum Wall</h4>
+                                    <p>Stick a gum in the most iconic gum wall located in Post Alley near Pike Place Market. This is an alley where visitors stick their chewed gum (don't touch!).</p>
+                                    <ul style="line-height: 1.8; color: #666; margin-top: 10px;">
+                                        <li>No tickets required.</li>
+                                        <li>20 mins. away via light rail from UDistrict Station.</li>
+                                    </ul>
+                                    <p style="margin-top: 15px; color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <strong>Located:</strong> <a href="https://maps.app.goo.gl/QCEmp6GSQ3qVnYAQ6" target="_blank" style="color: #007bff;">The Gum Wall</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pike Place Market -->
+                        <div style="margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #e0e0e0;">
+                            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                                <div style="flex-shrink: 0; width: 200px;">
+                                    <img src="img/7.jpg" alt="Pike Place Market" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" onerror="this.src='img/1.png';">
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #0A3D62; margin-bottom: 10px;">Pike Place Market and Seattle Waterfront</h4>
+                                    <p>Historic public market with fresh seafood, local produce, pastries, coffee and hidden food gems. Watch the famous fish toss, grab coffee from the <a href="https://maps.app.goo.gl/R4EmgVTtfGBQwLdk8" target="_blank" style="color: #007bff;">world's first Starbucks</a> and enjoy a scenic walk along the <a href="https://maps.app.goo.gl/nEwyPTJtEmZcRWBo7" target="_blank" style="color: #007bff;">Seattle waterfront</a>.</p>
+                                    <ul style="line-height: 1.8; color: #666; margin-top: 10px;">
+                                        <li>Plenty of things to see and do all packed in one area.</li>
+                                        <li>18 mins. away via light rail from UDistrict Station.</li>
+                                    </ul>
+                                    <p style="margin-top: 15px; color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <strong>Located:</strong> <a href="https://maps.app.goo.gl/ke86ZcHzSAneAbQt8" target="_blank" style="color: #007bff;">Pike Place Market</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kerry Park -->
+                        <div style="margin-bottom: 20px;">
+                            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                                <div style="flex-shrink: 0; width: 200px;">
+                                    <img src="img/Seattle_Kerry_Park_Skyline.jpg" alt="Kerry Park" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" onerror="this.src='img/1.png';">
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="color: #0A3D62; margin-bottom: 10px;">Kerry Park</h4>
+                                    <p>A small public park located on the south slope of Queen Anne Hill, Kerry Park offers panoramic views of downtown Seattle, Elliott Bay, and on clear days, Mount Rainier. It is one of the most iconic viewpoints in Seattle and a popular spot for photography, especially at sunset.</p>
+                                    <ul style="line-height: 1.8; color: #666; margin-top: 10px;">
+                                        <li>Features the 15-foot steel sculpture "Changing Form" by artist Doris Totten Chase.</li>
+                                        <li>Open daily from 6 a.m. to 10 p.m.</li>
+                                    </ul>
+                                    <p style="margin-top: 15px; color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <strong>Located:</strong> <a href="https://maps.app.goo.gl/g24LLAgSR2PJx7hz9" target="_blank" style="color: #007bff;">Kerry Park</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Food Recommendations -->
+                        <div style="margin-top: 50px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+                            <h3 style="color: #0A3D62; margin-bottom: 30px; font-size: 1.5rem;">Food Recommendations</h3>
+                            
+                            <div style="margin-bottom: 25px;">
+                                <h4 style="color: #0A3D62; margin-bottom: 8px; font-size: 1.2rem;">Pike Place Chowder</h4>
+                                <p style="color: #666; margin-bottom: 8px;">Award-winning clam chowder and seafood bisque.</p>
+                                <p style="color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <a href="https://www.google.com/maps/search/Pike+Place+Chowder+Seattle" target="_blank" style="color: #007bff;">View on Google Maps</a></p>
+                            </div>
+                            
+                            <div style="margin-bottom: 25px;">
+                                <h4 style="color: #0A3D62; margin-bottom: 8px; font-size: 1.2rem;">Beecher's Handmade Cheese</h4>
+                                <p style="color: #666; margin-bottom: 8px;">Seattle's famous mac & cheese.</p>
+                                <p style="color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <a href="https://www.google.com/maps/search/Beecher's+Handmade+Cheese+Seattle" target="_blank" style="color: #007bff;">View on Google Maps</a></p>
+                            </div>
+                            
+                            <div style="margin-bottom: 25px;">
+                                <h4 style="color: #0A3D62; margin-bottom: 8px; font-size: 1.2rem;">Original Starbucks</h4>
+                                <p style="color: #666; margin-bottom: 8px;">The world's first Starbucks.</p>
+                                <p style="color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <a href="https://www.google.com/maps/search/Original+Starbucks+Pike+Place+Market+Seattle" target="_blank" style="color: #007bff;">View on Google Maps</a></p>
+                            </div>
+                            
+                            <div style="margin-bottom: 25px;">
+                                <h4 style="color: #0A3D62; margin-bottom: 8px; font-size: 1.2rem;">Piroshky Piroshky</h4>
+                                <p style="color: #666; margin-bottom: 8px;">Fresh Russian pastries, sweet and savory.</p>
+                                <p style="color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <a href="https://www.google.com/maps/search/Piroshky+Piroshky+Seattle" target="_blank" style="color: #007bff;">View on Google Maps</a></p>
+                            </div>
+                            
+                            <div style="margin-bottom: 25px;">
+                                <h4 style="color: #0A3D62; margin-bottom: 8px; font-size: 1.2rem;">Rachel's Ginger Beer</h4>
+                                <p style="color: #666; margin-bottom: 8px;">House-made ginger beer with bold flavors.</p>
+                                <p style="color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <a href="https://www.google.com/maps/search/Rachel's+Ginger+Beer+Seattle" target="_blank" style="color: #007bff;">View on Google Maps</a></p>
+                            </div>
+                            
+                            <div style="margin-bottom: 10px;">
+                                <h4 style="color: #0A3D62; margin-bottom: 8px; font-size: 1.2rem;">Thai Tom</h4>
+                                <p style="color: #666; margin-bottom: 8px;">Local Thai food near UW.</p>
+                                <p style="color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <a href="https://www.google.com/maps/search/Thai+Tom+University+District+Seattle" target="_blank" style="color: #007bff;">View on Google Maps</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
