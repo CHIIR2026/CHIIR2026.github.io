@@ -36,6 +36,108 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    
+    <style>
+    /* Tutorial Styles */
+    .tutorial-card {
+        margin-bottom: 40px;
+        padding: 25px 35px;
+        border-radius: 8px;
+    }
+    
+    .tutorial-card:first-child {
+        background: #f6faff;
+    }
+    
+    .tutorial-card:nth-of-type(2) {
+        background: #f8f9fa;
+    }
+    
+    .tutorial-card:nth-of-type(3) {
+        background: #f6faff;
+    }
+    
+    .tutorial-title {
+        color: #0A3D62;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 0 15px 0;
+        padding: 0;
+        line-height: 1.4;
+    }
+    
+    .tutorial-bio {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.5s ease;
+        padding: 0 20px;
+    }
+    
+    .tutorial-bio.expanded {
+        max-height: 3000px;
+        padding: 20px;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 20px;
+    }
+    
+    .tutorial-bio p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+    
+    .tutorial-bio p:last-child {
+        margin-bottom: 0;
+    }
+    
+    .tutorial-bio strong {
+        color: #0A3D62;
+        display: inline-block;
+        margin-right: 8px;
+    }
+    
+    .tutorial-bio ul {
+        margin: 10px 0 15px 20px;
+        color: #555;
+        line-height: 1.8;
+    }
+    
+    .tutorial-bio li {
+        margin-bottom: 10px;
+    }
+    
+    .expand-btn {
+        background: #0A3D62;
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+    }
+    
+    .expand-btn:hover {
+        background: #007bff;
+        transform: translateY(-2px);
+    }
+    
+    .expand-btn.expanded {
+        background: #6c757d;
+    }
+    
+    .expand-btn i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+    
+    .expand-btn.expanded i {
+        transform: rotate(180deg);
+    }
+    </style>
 </head>
 
 <body>
@@ -152,13 +254,83 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ha-text">
-                        <h3>Tutorials</h3>
-                        <p style="font-size: 18px; color: #666; text-align: center; padding: 40px 0;">
-                            <strong>To Be Announced</strong>
-                        </p>
-                        <p style="text-align: center; color: #666;">
-                            Information about tutorials will be available soon. Please check back later for updates.
-                        </p>
+                        <h3>Accepted Tutorials</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Tutorial 1: Information-Seeking Agents -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-title">
+                            Information Seeking in the Age of Agentic AI (Half-day Tutorial)
+                        </div>
+                        <button class="expand-btn" onclick="toggleTutorial(this)">
+                           Learn More <i class="fa fa-chevron-down"></i>
+                        </button>
+                        <div class="tutorial-bio">
+                            <p><strong>Abstract:</strong> Agentic AI systems are changing how people seek and use information. However, many common methods for studying, building, and assessing these systems were developed for more static settings, and they often miss the interactive, temporal, and evidence-driven dynamics of real information seeking. This half-day tutorial equips the CHIIR community with a concise, practice-oriented methodology for designing and evaluating information-seeking agents. We first establish a shared vocabulary for agentic systems and connect it to user-centered IR constructs. We then show how to design agent workflows that elicit effective evidence seeking under temporal change, including planning, tool choice, and grounding. Finally, we introduce trace-based rubrics that score correctness, evidence support, sufficiency, and cost. Short case studies and optional demonstrations using open frameworks (for example, Perplexica, local LLMs via Ollama, and metasearch engines such as SearXNG) illustrate how these ideas map to real systems. Attendees will receive reusable materials, including slides and selected supplemental resources (for example, example traces and optional demo notebooks), suitable for research and teaching. The tutorial assumes familiarity with core IR concepts but does not require prior experience with agentic frameworks.</p>
+                            
+                            <p style="margin-top: 25px;"><strong>Presenters:</strong></p>
+                            
+                            <p style="margin-top: 15px;"><strong>Preetam Dammu</strong> (University of Washington)<br>
+                            Email: <a href="mailto:preetams@uw.edu" style="color: #007bff;">preetams@uw.edu</a><br>
+                            Website: <a href="https://preetamdammu.github.io/" target="_blank" style="color: #007bff;">https://preetamdammu.github.io/</a></p>
+                            <p>Preetam Dammu is a Ph.D. candidate in Information Science at the University of Washington. He works at the intersection of Information Retrieval and Generative AI, studying how people and AI systems seek, verify, and use information in dynamic, open-world environments. His current research focuses on making information-seeking agents and retrieval-augmented systems more reliable, auditable, and safe, with an emphasis on evidence-grounded behavior, robustness to changing information, and careful evaluation in real-world settings. His work appears in venues including SIGIR, WSDM, EMNLP, IJCAI, and WebConf, and has also received broader media attention through MIT Technology Review. He brings experience from both academia and industry research, including roles at UW, Amazon Science, and AWS AI, and is an inventor on multiple U.S. patents.</p>
+                            
+                            <p style="margin-top: 20px;"><strong>Tanya Roosta</strong> (UC Berkeley & Amazon)<br>
+                            Email: <a href="mailto:troosta@ischool.berkeley.edu" style="color: #007bff;">troosta@ischool.berkeley.edu</a><br>
+                            Website: <a href="https://www.ischool.berkeley.edu/people/tanya-roosta" target="_blank" style="color: #007bff;">https://www.ischool.berkeley.edu/people/tanya-roosta</a></p>
+                            <p>Tanya is a senior science manager at Amazon, working on generative AI techniques for natural language processing and information retrieval problems, and leading feature development for various aspects of Amazon Shopping. She concurrently holds a lecturer position at Department of Information Science at UC Berkeley. Prior to Amazon, she worked at an early-stage Fintech startup as the lead research scientist working on efficient topic modeling, sentiment analysis and social media trending-topic detection. Her research used deep neural networks, and advanced statistical modeling, and the resulting features were implemented through AWS APIs. Tanya also has over 9 years of work experience in quantitative finance and investment banking, working as a director of risk and finance analytics at Moody's, quantitative researcher at the Economic department of Federal Reserve Bank of San Francisco, and quantitative modeling for systematic portfolio management at Allianz. She holds a Ph.D. in Electrical Engineering, a Masters in Mathematical finance, and a Masters in Statistics. She has published in several conferences and journals, and holds patents as part of her industry work.</p>
+                            
+                            <p style="margin-top: 25px;"><strong>Tutorial Website:</strong> <a href="https://isa-tutorial.github.io/isa-tutorial/" target="_blank" style="color: #007bff;">https://isa-tutorial.github.io/isa-tutorial/</a> <em>(website is still being updated)</em></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Tutorial 2: Placeholder -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-title">
+                            Simulation of Interactive Information Retrieval: A Guided Tour (Half-day Tutorial)
+                        </div>
+                        <button class="expand-btn" onclick="toggleTutorial(this)">
+                            Learn More <i class="fa fa-chevron-down"></i>
+                        </button>
+                        <div class="tutorial-bio">
+                            <p><strong>Abstract:</strong>Interactive information retrieval (IIR) systems, including search engines and conversational systems, are increasingly central to user experiences. However, rigorously evaluating their performance, particularly as interactions become highly personalized, remains a scientific challenge. While user simulation offers a powerful methodology for reproducible evaluation, its adoption is hindered by a steep learning curve and a fragmented landscape of complex tools. This half-day tutorial provides a practical, hands-on introduction to user simulation at varying levels of complexity, from foundational statistical models to advanced, LLM-driven frameworks. Through a series of guided problems, participants will acquire practical skills in using popular libraries, learning user models from data, and applying large language models (LLMs) to simulate user behavior. The tutorial concludes with evaluating the simulators themselves, providing participants with guidance on appropriate use cases and fidelity assessment.</p>
+                                
+                            <p style="margin-top: 25px;"><strong>Presenters:</strong></p>
+                                
+                            <p style="margin-top: 15px;"><strong>Dr Saber Zerhoudi</strong> (University of Passau)<br>
+                            Dr. Saber Zerhoudi is a Postdoctoral Researcher at the University of Passau, Germany. His research is centered on interactive information retrieval, with a particular focus on modeling and simulating user search behaviors. His recent work involves developing user-centric agents for retrieval-augmented generation (RAG) frameworks and investigating novel methodologies for next-generation search. He is an active member of the IR community, having co-organized tutorials and workshops on user simulation and open web search at SIGIR'25 and ECIR'24-25.
+
+                            <p style="margin-top: 15px;"><strong>Dr Adam Roegiest</strong> (Zuva)<br>
+                            Dr. Adam Roegiest is the VP of Research and Technology at Zuva, a Toronto-based legal AI startup. Adam's research has focused on the application of information retrieval and machine learning technologies to legal retrieval tasks. More recently, he has extended his research into how these technologies interact with human-computer interaction and accessibility. Adam previously organised both iterations of the TREC Total Recall track, one iteration of the TREC Real-Time Summarization track, workshops at CHIIR 2024 and ECIR 2025 focusing on the future of IR, and a tutorial at CHIIR 2025. Adam is also a steering committee member for CHIIR.
+                                
+                            <p style="margin-top: 15px;"><strong>Dr Johanne Trippas</strong> (RMIT University)<br>
+                            Dr. Johanne Trippas is a Vice-Chancellor's Senior Research Fellow at RMIT University, specializing in intelligent systems, focusing on digital assistants and conversational information seeking. Their research aims to enhance information accessibility through conversational systems, interactive information retrieval, and human-computer interaction. Additionally, Johanne is part of the NIST TREC program committee and is an ACM CHIIR steering committee member. They serve as vice-chair of the SIGIR Artifact Evaluation Committee, workshop chair for ACM CHIIR'25, and program chair for ACM CHIIR'26. Johanne has organized the ACM Conversational User Interfaces (CUI'24) conference, workshops (CHIIR'20-22, '24, ECIR'24--26), a TREC Track (CAsT'22), and tutorials (CHIIR'21, '25, SIGIR'22, WebConf'23, and ECIR'24).</p>
+
+                            <p style="margin-top: 25px;"><strong>Tutorial Website:</strong> <a href="https://searchsim.org/events/chiir-2026" target="_blank" style="color: #007bff;">https://searchsim.org/events/chiir-2026</a></p>
+                        </div>
+                    </div>
+
+                        <!-- Tutorial 3: Placeholder -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-title">
+                            Controlled Experimentation of Model Search Behaviour with Geniie-Lab (Half-day Tutorial)
+                        </div>
+                        <button class="expand-btn" onclick="toggleTutorial(this)">
+                            Learn More <i class="fa fa-chevron-down"></i>
+                        </button>
+                        <div class="tutorial-bio">
+                            <p><strong>Abstract:</strong> This half-day tutorial presents systematic methods for analysing model search behaviour in retrieval-augmented applications. Using an open experimental framework, participants will design and conduct controlled experiments to examine how generative models perform core search actions such as query formulation, document selection, relevance judgement, and query reformulation. The session addresses the growing diversity of generative models and their role in search, emphasising rigorous experimental design, reproducibility, and behavioural interpretation.</p>
+                            
+                            <p style="margin-top: 25px;"><strong>Presenter:</strong></p>
+                            
+                            <p style="margin-top: 15px;"><strong>Hideo Joho</strong> (University of Tsukuba)<br>
+                                Hideo Joho is a Full Professor of Informatics at the Institute of Library, Information and Media Studies, University of Tsukuba, Japan. He is a member of Information Retrieval Research Group at Tsukuba. His research interests include interactive information retrieval, human information interaction, and more recently, model search behaviour. He received his MSc (1999) and PhD (2007) from the Department of Information Studies, University of Sheffield, UK, and is currently an Honorary Research Fellow at the University of Glasgow (2024-2026). Prof. Joho is a co-founding member and the inaugural Chair of the Tokyo ACM SIGIR Chapter. His service to the community includes roles as General Co-Chair of SIGIR 2017, Program Co-Chair of CHIIR 2019 and 2021, AIRS 2015, and NTCIR-8, 9, and 10. He has also served as an Associate Editor (2014-2016) and Editorial Board Member (until 2020) of Information Processing & Management, and is currently a Steering Committee Member of SIGIR-AP.</p>
+                            
+                            <p style="margin-top: 25px;"><strong>Tutorial Website:</strong> <a href="https://geniie-lab.github.io/chiir2026/" target="_blank" style="color: #007bff;">https://geniie-lab.github.io/chiir2026/</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -199,5 +371,23 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // Toggle tutorial expansion
+        function toggleTutorial(button) {
+            const card = button.closest('.tutorial-card');
+            const bio = card.querySelector('.tutorial-bio');
+            
+            if (bio.classList.contains('expanded')) {
+                bio.classList.remove('expanded');
+                button.classList.remove('expanded');
+                button.innerHTML = 'More <i class="fa fa-chevron-down"></i>';
+            } else {
+                bio.classList.add('expanded');
+                button.classList.add('expanded');
+                button.innerHTML = 'Less <i class="fa fa-chevron-up"></i>';
+            }
+        }
+    </script>
 </body>
 </html>

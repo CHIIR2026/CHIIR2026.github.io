@@ -36,6 +36,104 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    
+    <style>
+    /* Workshop Styles */
+    .workshop-card {
+        margin-bottom: 40px;
+        padding: 25px 35px;
+        border-radius: 8px;
+    }
+    
+    .workshop-card:first-child {
+        background: #f6faff;
+    }
+    
+    .workshop-card:nth-of-type(2) {
+        background: #f8f9fa;
+    }
+    
+    .workshop-title {
+        color: #0A3D62;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 0 15px 0;
+        padding: 0;
+        line-height: 1.4;
+    }
+    
+    .workshop-bio {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.5s ease;
+        padding: 0 20px;
+    }
+    
+    .workshop-bio.expanded {
+        max-height: 3000px;
+        padding: 20px;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 20px;
+    }
+    
+    .workshop-bio p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+    
+    .workshop-bio p:last-child {
+        margin-bottom: 0;
+    }
+    
+    .workshop-bio strong {
+        color: #0A3D62;
+        display: inline-block;
+        margin-right: 8px;
+    }
+    
+    .workshop-bio ul {
+        margin: 10px 0 15px 20px;
+        color: #555;
+        line-height: 1.8;
+    }
+    
+    .workshop-bio li {
+        margin-bottom: 10px;
+    }
+    
+    .expand-btn {
+        background: #0A3D62;
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+    }
+    
+    .expand-btn:hover {
+        background: #007bff;
+        transform: translateY(-2px);
+    }
+    
+    .expand-btn.expanded {
+        background: #6c757d;
+    }
+    
+    .expand-btn i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+    
+    .expand-btn.expanded i {
+        transform: rotate(180deg);
+    }
+    </style>
 </head>
 
 <body>
@@ -152,13 +250,92 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ha-text">
-                        <h3>Workshops</h3>
-                        <p style="font-size: 18px; color: #666; text-align: center; padding: 40px 0;">
-                            <strong>To Be Announced</strong>
-                        </p>
-                        <p style="text-align: center; color: #666;">
-                            Information about workshops will be available soon. Please check back later for updates.
-                        </p>
+                        <h3>Accepted Workshops</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Workshop 1: Placeholder -->
+                    <div class="workshop-card">
+                        <div class="workshop-title">
+                            Workshop on Generative AI and Academic Search (GAI&AS)
+                        </div>
+                        <button class="expand-btn" onclick="toggleWorkshop(this)">
+                            Learn More <i class="fa fa-chevron-down"></i>
+                        </button>
+                        <div class="workshop-bio">
+                            <p><strong>Abstract:</strong> The rapid development of artificial intelligence (AI) is reshaping how people seek, access, and use information, with significant implications for researchers, educators, and students. Increasingly, academic search engines, bibliographic databases, and digital libraries are integrating AI features, including generated and synthesized content, conversational interfaces, and intelligent recommendations. These tools promise to support discovery, synthesis, and learning, yet they also raise critical questions about search integrity, fairness, accountability, transparency, and ethics (FATE). In academic contexts, where reliability and credibility are paramount, the design and use of AI-mediated search systems require novel ideas and approaches. Building on previous work in interactive information retrieval, search as learning, and search user interface design, this workshop invites the CHIIR community to examine opportunities and challenges in developing and using AI-powered academic search systems for research and higher education.</p>
+                            
+                            <p style="margin-top: 25px;"><strong>Organizers:</strong></p>
+                            
+                            <p style="margin-top: 15px;"><strong>Yifan Liu</strong> (Ph.D. Candidate, School of Information, University of British Columbia)<br>
+                            Email: <a href="mailto:yiifan@student.ubc.ca" style="color: #007bff;">yiifan@student.ubc.ca</a><br>
+                            Yifan's research focuses on the intersection of interactive information retrieval and scholarly communication, specifically how AI shapes researchers' information practices and workflows. She studies researchers' interactions with AI-enhanced academic search systems, with the goal of designing user-oriented solutions that enhance usability, transparency, and impact in academic contexts.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Jaime Arguello</strong> (Professor, School of Information and Library Science, University of North Carolina at Chapel Hill)<br>
+                            Email: <a href="mailto:jarguell@email.unc.edu" style="color: #007bff;">jarguell@email.unc.edu</a><br>
+                            Within the area of search as learning, Jaime's research has investigated how different factors impact learning during search: (1) working memory capacity, (2) task complexity, and (3) tools that support goal setting. He has also written about different approaches to measuring learning during search, along with their respective benefits and drawbacks. For the series Foundations and Trends in Information Retrieval, he co-authored an extensive review of prior work on search as learning, highlighting opportunities for future research. His most recent research investigates how people use generative AI systems to learn about complex topics.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Orland Hoeber</strong> (Professor, Department of Computer Science, University of Regina)<br>
+                            Email: <a href="mailto:orland.hoeber@uregina.ca" style="color: #007bff;">orland.hoeber@uregina.ca</a><br>
+                            Orland's primary research interest lies at the intersection of interactive information retrieval and information visualization. He leads an active research team focused on the design, development, and study of visual and interactive software to support exploration, analysis, reasoning, and discovery in a broad range of information-centric domains. His recent research has focused on supporting exploratory search within academic libraries, public libraries, and digital humanities archives. His team has been exploring how generative AI can be used to support cross-session searching through workspace organization and summarization.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Chang Liu</strong> (Associate Professor, Department of Information Management, Peking University)<br>
+                            Email: <a href="mailto:imliuc@pku.edu.cn" style="color: #007bff;">imliuc@pku.edu.cn</a><br>
+                            Chang's research spans the fields of information behavior and cognition, interactive information retrieval and interface design, search as learning, and digital literacy. In recent years, her focus has been on analyzing information behavior in scientific research and innovation activities, along with designing intelligent systems. Specifically, her team has conducted research on how cognitive and metacognitive strategies can influence researchers' academic search processes and performance during thesis proposal development, and compared these behaviors before and after the advent of generative AI.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Soo Young Rieh</strong> (Brooke E. Sheldon Professor of Management and Leadership, School of Information, University of Texas at Austin)<br>
+                            Email: <a href="mailto:rieh@ischool.utexas.edu" style="color: #007bff;">rieh@ischool.utexas.edu</a><br>
+                            Soo's research interests include human information behavior, search as learning, creativity support in search, and information and AI literacy. Her earlier work conceptualized search as a learning process and evaluated learning outcomes during web searching. Her research has also examined how to foster critical thinking and creativity in search, with a particular emphasis on the intersection of information search strategies and idea generation. Recently, she has co-authored papers on the use of metacognitive prompts to support critical thinking in generative AI-based academic search.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Luanne Sinnamon</strong> (Professor, School of Information, University of British Columbia)<br>
+                            Email: <a href="mailto:luanne.sinnamon@ubc.ca" style="color: #007bff;">luanne.sinnamon@ubc.ca</a><br>
+                            Luanne's research focuses on human information interaction and behaviour, task-based approaches to search, and search as learning, with current work centred on critical perspectives on the impacts of generative AI search systems on information access and epistemics. Recent work with PhD students includes analysis of bias, authority, and trust in AI search overviews, as well as transparency in AI-enhanced academic search systems.</p>
+
+                            <p style="margin-top: 25px;"><strong>Workshop Website:</strong> <a href="https://sites.google.com/view/chiir-gaias-workshop/home" target="_blank" style="color: #007bff;">https://sites.google.com/view/chiir-gaias-workshop/home</a></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Workshop 2: Placeholder -->
+                    <div class="workshop-card">
+                        <div class="workshop-title">
+                            Workshop on Human-Centered Proactive and Personalized Agents for Interactive Information Access
+                        </div>
+                        <button class="expand-btn" onclick="toggleWorkshop(this)">
+                            Learn More <i class="fa fa-chevron-down"></i>
+                        </button>
+                        <div class="workshop-bio">
+                            <p><strong>Abstract:</strong> As AI agents become more capable of anticipating intent and taking initiative, the ways humans seek, interpret, and act on information are being quietly reshaped. Yet at the heart of every interaction lies a human -- curious, uncertain, and contextually situated, whose goals and boundaries cannot be fully captured by data alone. This workshop centers on the human experience of proactivity and personalization in interactive information access, asking how agents can assist without overriding agency, adapt without imposing assumptions, and anticipate without eroding trust. Building on CHIIR's tradition of bridging information retrieval and human-computer interaction, the workshop will explore when and how proactivity supports human information behavior - enhancing exploration, sense-making, and learning - and when it risks diminishing transparency or control. Through co-design sessions and participatory discussions, we will interrogate concrete design and evaluation dimensions of proactive systems, including timing of initiative, transparency of intent, user control, and their effects on exploration, sense-making, and trust. Ultimately, this workshop seeks to reimagine proactivity not as automation of the search process, but as a collaborative partnership where agents act as companions in the human pursuit of understanding.</p>
+                            
+                            <p style="margin-top: 25px;"><strong>Organizers:</strong></p>
+                            
+                            <p style="margin-top: 15px;"><strong>Kirandeep Kaur</strong> (University of Washington)<br>
+                            Webpage: <a href="https://i-kiran.github.io/" target="_blank" style="color: #007bff;">https://i-kiran.github.io/</a><br>
+                            Kirandeep is a PhD student at the Paul G. Allen School of Computer Science, University of Washington. Her research focuses on designing proactive, agentic frameworks to anticipate emergent behaviors and manage risks and opportunities in uncertain environments. Her research is supported by Microsoft Endowed Fellowship.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Vinayak Gupta</strong> (Lawrence Livermore National Laboratory)<br>
+                            Webpage: <a href="https://gvinayak.github.io/" target="_blank" style="color: #007bff;">https://gvinayak.github.io/</a><br>
+                            Vinayak is a Researcher at the Lawrence Livermore National Laboratory. Previously, he was a Postdoctoral Scholar at the University of Washington and has worked with IBM Research, Amazon, and Siemens. His work has appeared in leading AI venues such as NeurIPS, AAAI, KDD, EMNLP, and AISTATS.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Madhura Raju</strong> (TikTok)<br>
+                            Webpage: <a href="https://www.linkedin.com/in/madhuraraju" target="_blank" style="color: #007bff;">https://www.linkedin.com/in/madhuraraju</a><br>
+                            Madhura Raju is a Staff Product Manager at TikTok, focusing on improving the recommended feed, and the Founder of Podcraft. She previously held product management roles at Meta and Microsoft, working on recommendation and personalization engines, and has early experience in engineering and ML research.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Tanya Roosta</strong> (UC Berkeley & Amazon)<br>
+                            Webpage: <a href="https://tanyaroosta.github.io/" target="_blank" style="color: #007bff;">https://tanyaroosta.github.io/</a><br>
+                            Tanya is a Senior Science Manager at Amazon, specializing in generative AI for NLP and information retrieval, and also lectures at UC Berkeley. She previously led AI research at a fintech startup and has extensive experience in quantitative finance. Tanya holds a Ph.D. in Electrical Engineering from UC Berkeley.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Grace Hui Yang</strong> (Georgetown University)<br>
+                            Webpage: <a href="https://infosense.cs.georgetown.edu/grace" target="_blank" style="color: #007bff;">https://infosense.cs.georgetown.edu/grace</a><br>
+                            Dr. Yang is an Associate Professor in the Department of Computer Science at Georgetown University, where she leads the InfoSense group. She earned her Ph.D. from Carnegie Mellon University in 2011, and her research spans deep reinforcement learning, dynamic and privacy-preserving information retrieval, IoT, and information organization. She has also served on multiple SIGIR, WSDM, ICTIR, and CIKM committees and was on the editorial board of Information Retrieval from 2014-2017.</p>
+                            
+                            <p style="margin-top: 15px;"><strong>Chirag Shah</strong> (University of Washington)<br>
+                            Webpage: <a href="https://chiragshah.org" target="_blank" style="color: #007bff;">https://chiragshah.org</a><br>
+                            Chirag is a Professor at the Information School and Adjunct Professor in Computer Science & Engineering and HCDE at the University of Washington, founding director of the InfoSeeking Lab and co-director of RAISE. His research focuses on intelligent information access, task-oriented search, proactive recommendations, and agentic AI using large language models. He also collaborate with global research labs and are a Distinguished Member of ACM and ASIS&T.</p>
+
+                            <p style="margin-top: 25px;"><strong>Workshop Website:</strong> <a href="https://proactive-chiir.github.io/" target="_blank" style="color: #007bff;">https://proactive-chiir.github.io/</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -199,5 +376,23 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // Toggle workshop expansion
+        function toggleWorkshop(button) {
+            const card = button.closest('.workshop-card');
+            const bio = card.querySelector('.workshop-bio');
+            
+            if (bio.classList.contains('expanded')) {
+                bio.classList.remove('expanded');
+                button.classList.remove('expanded');
+                button.innerHTML = 'Learn More <i class="fa fa-chevron-down"></i>';
+            } else {
+                bio.classList.add('expanded');
+                button.classList.add('expanded');
+                button.innerHTML = 'Less <i class="fa fa-chevron-up"></i>';
+            }
+        }
+    </script>
 </body>
 </html>
