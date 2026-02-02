@@ -15,7 +15,11 @@ permissions:
   pages: write
   id-token: write
 
-# No concurrency group: every push gets a run that completes (no queued runs cancelled by newer pushes).
+# Only one deployment at a time; newer pushes cancel older runs so the latest deploy runs without a long queue.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:
