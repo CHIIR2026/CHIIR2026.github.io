@@ -1,4 +1,8 @@
 # Map Cursor Agent commits to Shawon Sarkar so they show under your name in GitHub Contributors.
+# Cursor Agent: username cursoragent, name "Cursor Agent", email cursoragent@cursor.com
+# You: username sarshaw, name "Shawon Sarkar", emails ss288@uw.edu and shawonsarkar2007@gmail.com
 Shawon Sarkar <ss288@uw.edu> Cursor Agent <cursoragent@cursor.com>
 Shawon Sarkar <ss288@uw.edu> cursoragent <cursoragent@cursor.com>
 Shawon Sarkar <ss288@uw.edu> CursorAgent <cursoragent@cursor.com>
+# Consolidate both your emails under one identity
+Shawon Sarkar <ss288@uw.edu> Shawon Sarkar <shawonsarkar2007@gmail.com>
