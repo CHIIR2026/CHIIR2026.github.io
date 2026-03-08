@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CHIIR 2026 Detailed Program">
+    <meta name="keywords" content="CHIIR 2026, program, schedule, detailed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detailed Program - CHIIR 2026</title>
+    <style>
+    a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #0b0080;
+    }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7715F5KP2L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7715F5KP2L');
+    </script>
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <style>
+        .table { width: 100%; margin-bottom: 1.5rem; color: #212529; font-size: 0.95rem; }
+        .table-bordered { border: 1px solid #dee2e6; }
+        .table-bordered th, .table-bordered td { border: 1px solid #dee2e6; padding: 10px 12px; vertical-align: top; }
+        .table thead th { background-color: #d3dae0; color: rgb(37, 36, 36); font-weight: 600; vertical-align: middle; }
+        .table tbody tr:hover { background-color: rgba(0, 0, 0, 0.02); }
+        .table .time-col { width: 18%; min-width: 11em; white-space: nowrap; font-weight: 500; }
+        /* Row types for readability */
+        tr.schedule-breakfast td { background-color: #f0f7ff; }
+        tr.schedule-coffee td { background-color: #f8f6f0; }
+        tr.schedule-lunch td { background-color: #f5f9f0; }
+        tr.schedule-breakfast:hover td { background-color: #e6eef9 !important; }
+        tr.schedule-coffee:hover td { background-color: #eeece4 !important; }
+        tr.schedule-lunch:hover td { background-color: #e8f0e4 !important; }
+        .ha-text h4 { color: #0A3D62; font-size: 1.5rem; margin-top: 40px; margin-bottom: 15px; }
+        .ha-text h4:first-of-type { margin-top: 0; }
+        .schedule-notes { margin-bottom: 25px; padding-left: 20px; color: #555; }
+        .schedule-notes li { margin-bottom: 6px; }
+        .program-legend { margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #0A3D62; }
+        .program-legend ul { margin-bottom: 0; padding-left: 20px; color: #333; }
+        .program-legend li { margin-bottom: 4px; }
+        /* Session details (chair + papers per session) */
+        .session-details-section { margin-top: 45px; }
+        .session-details-section > h4 { border-bottom: 2px solid #0A3D62; padding-bottom: 8px; }
+        .session-detail-block { margin-bottom: 28px; padding: 18px; background: #fafafa; border-radius: 6px; border-left: 4px solid #0A3D62; }
+        .session-detail-block h5 { color: #0A3D62; font-size: 1.1rem; margin-bottom: 6px; }
+        .session-detail-meta { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
+        .session-detail-chair { font-size: 0.95rem; color: #333; margin-bottom: 10px; }
+        .session-papers-list { list-style: none; padding-left: 0; margin: 0; }
+        .session-papers-list li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+        .session-papers-list li:last-child { border-bottom: none; }
+        .session-papers-list .paper-type { font-size: 0.8rem; color: #666; margin-left: 6px; }
+        /* Workshop/session list inside table cell (SIGIR-style) */
+        .schedule-event-list { list-style: none; padding-left: 0; margin: 0; font-size: 0.95rem; }
+        .schedule-event-list li { padding: 3px 0; border-bottom: 1px solid #eee; line-height: 1.4; }
+        .schedule-event-list li:last-child { border-bottom: none; }
+        .schedule-event-list .event-room { font-size: 0.85rem; color: #5a6c7d; margin-left: 0.75em; font-weight: 500; }
+        /* Room/location info: distinct color and space from main text */
+        .event-room { font-size: 0.85rem; color: #5a6c7d; margin-left: 0.75em; font-weight: 500; }
+        /* Expandable session row (CHI-style: papers inline, no per-paper time) */
+        .session-toggle { cursor: pointer; }
+        .table .toggle-icon { font-size: 0.7em; margin-left: 4px; opacity: 0.85; vertical-align: 1px; display: inline-block; }
+        tr.session-detail-row td { background: #f8f9fa; padding: 16px 12px; border-left: 4px solid #0A3D62; vertical-align: top; }
+        .session-inline-detail { padding-left: 8px; }
+        .session-inline-detail h5 { color: #0A3D62; font-size: 1.05rem; margin: 0 0 6px 0; }
+        .session-inline-detail .session-chair { font-size: 0.9rem; color: #333; margin-bottom: 10px; }
+        .session-papers-inline { list-style: none; padding-left: 0; margin: 0; font-size: 0.9rem; }
+        .session-papers-inline li { padding: 6px 0; border-bottom: 1px solid #e5e5e5; line-height: 1.4; }
+        .session-papers-inline li:last-child { border-bottom: none; }
+        .session-papers-inline .paper-type { font-size: 0.8rem; color: #666; margin-left: 6px; }
+        /* Day tables as cards */
+        .schedule-day-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: box-shadow 0.25s ease, transform 0.2s ease;
+        }
+        .schedule-day-card:hover {
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .schedule-day-card .schedule-day-header {
+            background: linear-gradient(135deg, #0A3D62 0%, #0d5280 100%);
+            color: #fff;
+            padding: 16px 20px;
+            margin: 0;
+        }
+        .schedule-day-card .schedule-day-header strong { font-weight: 600; }
+        .schedule-day-card .schedule-notes { padding: 12px 20px 8px; margin: 0; background: #fafbfc; border-bottom: 1px solid #eee; }
+        .schedule-day-card .table { margin-bottom: 0; border-radius: 0; }
+        .schedule-day-card .table thead th { border-top: none; }
+    </style>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="img/logo.png" alt="" style="width: 140px; height: auto;">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <br><br>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#">Calls</a>
+                            <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
+                                <li><a href="full-paper.html">Call for Full Papers</a></li>
+                                <li><a href="short-paper.html">Call for Short Papers</a></li>
+                                <li><a href="resource-papers.html">Call for Resource Papers</a></li>
+                                <li><a href="perspective-paper.html">Call for Perspective Papers</a></li>
+                                <li><a href="demo-paper.html">Call for Demonstration Papers</a></li>
+                                <li><a href="tutorials.html">Call for Tutorials</a></li>
+                                <li><a href="workshops.html">Call for Workshops</a></li>
+                                <li><a href="dc-paper.html">Call for Doctoral Consortium Papers</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a href="topics.html">Relevant Topics</a></li>
+                                <li><a href="arxiv-policy.html">Pre-print/arXiv Policy</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="program.html">Program</a>
+                            <ul class="dropdown" style="font-size: 14px;">
+                                <li><a href="program.html#keynotes">Keynotes</a></li>
+                                <li><a href="schedule.html">Program Overview</a></li>
+                                <li><a href="detailed_schedule.html">Detailed Program</a></li>
+                                <li><a href="events.html">Special Events</a></li>
+                                <li><a href="industry-panel.html">Industry Panel</a></li>
+                                <li><a href="accepted-papers.html">Accepted Papers</a></li>
+                                <li><a href="workshops-program.html">Workshops</a></li>
+                                <li><a href="tutorials-program.html">Tutorials</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#sponsors">Sponsors</a>
+                            <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
+                                <li><a href="index.html#sponsors">Sponsors</a></li>
+                                <li><a href="sponsorship.html">Call for Sponsorship</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="attend.html">Attend</a>
+                            <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
+                                <li><a href="attend.html#venue">Venue</a></li>
+                                <li><a href="attend.html#visa">Invitation Letter for Visa</a></li>
+                                <li><a href="attend.html#travel">Travel</a></li>
+                                <li><a href="attend.html#hotels">Accommodation</a></li>
+                                <li><a href="attend.html#why-chiir">Why CHIIR</a></li>
+                                <li><a href="attend.html#why-seattle">Why Seattle</a></li>
+                                <li><a href="attend.html#sightseeing">Things to do in Seattle</a></li>
+                                <li><a href="volunteers.html">Call for Volunteers</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./register.html">Register</a></li>
+                        <li><a href="./organizers.html">Organizers</a>
+                            <ul class="dropdown" style="min-width: max-content; white-space: nowrap;">
+                                <li><a href="organizers.html">Organizers</a></li>
+                                <li><a href="committees.html">Program Committees</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section" style="position: relative; background-image: url('img/1.png') !important; background-size: cover !important; background-repeat: no-repeat !important; background-position: center center !important; min-height: 50vh !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; text-align: center !important; color: white !important; width: 100% !important;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 1;"></div>
+        <div style="position: relative; z-index: 2;">
+            <h2 style="color: white !important; font-family: 'Pauta One', sans-serif; font-weight: bold;">DETAILED PROGRAM</h2>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Home About Section Begin -->
+    <section class="home-about-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ha-text">
+                        <!-- Conference Venue (SIGIR-style: floor plan + room info) -->
+                        <h4 id="conference-venue"><strong>Conference Venue</strong></h4>
+                        <p style="margin-bottom: 16px;">All program below takes place at the <a href="attend.html#venue"><strong>HUB (Husky Union Building)</strong></a> on the University of Washington campus.</p>
+
+                        <p style="margin-bottom: 6px;"><strong>HUB Second Floor Plan</strong></p>
+                        <p style="margin-bottom: 16px;"><a href="https://hub.washington.edu/about/plan-your-visit/hub-floor-plans/hub_second-2/" target="_blank" rel="noopener">View HUB Second Floor Plan (PDF)</a></p>
+
+                        <p style="margin-bottom: 6px;"><strong>Rooms</strong></p>
+                        <ul style="margin-bottom: 24px; padding-left: 20px; color: #333;">
+                            <li><strong>Main conference</strong>: <strong>South Ballroom (211B, 2nd Floor)</strong></li>
+                            <li>Other events: TBA</li>
+                        </ul>
+
+                        <p style="margin-bottom: 30px; font-size: 0.95rem;">Click a session in the daily tables below to expand and see the chair and papers in that session.</p>
+
+                        <p style="margin-top: 5px; margin-bottom: 25px; color: #726f6f; font-size: 0.9rem; font-style: italic;">* All times are in Pacific Time (PT).</p>
+
+                        <!-- ========== Sunday, March 22nd, 2026 ========== -->
+                        <div class="schedule-day-card">
+                        <h4 id="sun" class="schedule-day-header"><strong>Sunday, March 22nd, 2026</strong></h4>
+                        <ul class="schedule-notes">
+                            <li><strong>CHIIR Registration</strong> – [Location TBA]</li>
+                        </ul>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="time-col">Time</th>
+                                    <th>DC / Tutorials</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="schedule-breakfast">
+                                    <td>08:30–09:00 AM</td>
+                                    <td>Breakfast</td>
+                                </tr>
+                                <tr>
+                                    <td>09:00–10:30 AM</td>
+                                    <td>
+                                        <ul class="schedule-event-list">
+                                            <li><strong>Doctoral Consortium</strong> <span class="event-room">[Room TBA]</span></li>
+                                            <li><a href="tutorials-program.html">Controlled Experimentation of Model Search Behaviour with Geniie-Lab</a> — Hideo Joho <span class="event-room">[Room TBA]</span></li>
+                                            <li><a href="tutorials-program.html">Information Seeking in the Age of Agentic AI: A Half-Day Tutorial</a> — Preetam Prabhu Srikar Dammu and Tanya Roosta <span class="event-room">[Room TBA]</span></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-coffee">
+                                    <td>10:30–11:00 AM</td>
+                                    <td>Coffee Break</td>
+                                </tr>
+                                <tr>
+                                    <td>11:00–12:30 PM</td>
+                                    <td>
+                                        <ul class="schedule-event-list">
+                                            <li><strong>Doctoral Consortium</strong><span class="event-room">[Room TBA]</span></li>
+                                            <li><a href="tutorials-program.html">Controlled Experimentation of Model Search Behaviour with Geniie-Lab</a> — Hideo Joho <span class="event-room">[Room TBA]</span></li>
+                                            <li><a href="tutorials-program.html">Information Seeking in the Age of Agentic AI: A Half-Day Tutorial</a> — Preetam Prabhu Srikar Dammu and Tanya Roosta <span class="event-room">[Room TBA]</span></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-lunch">
+                                    <td>12:30–01:30 PM</td>
+                                    <td>Lunch</td>
+                                </tr>
+                                <tr>
+                                    <td>01:30–03:00 PM</td>
+                                    <td>
+                                        <ul class="schedule-event-list">
+                                            <li><strong>Doctoral Consortium</strong> <span class="event-room">[Room TBA]</span></li>
+                                            <li><a href="tutorials-program.html">Simulation of Interactive Information Retrieval: A Guided Tour</a> — Saber Zerhoudi, Adam Roegiest and Johanne R. Trippas <span class="event-room">[Room TBA]</span></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-coffee">
+                                    <td>03:00–03:30 PM</td>
+                                    <td>Coffee Break</td>
+                                </tr>
+                                <tr>
+                                    <td>03:30–05:00 PM</td>
+                                    <td>
+                                        <ul class="schedule-event-list">
+                                            <li><strong>Doctoral Consortium</strong> <span class="event-room">[Room TBA]</span></li>
+                                            <li><a href="tutorials-program.html">Simulation of Interactive Information Retrieval: A Guided Tour</a> — Saber Zerhoudi, Adam Roegiest and Johanne R. Trippas <span class="event-room">[Room TBA]</span></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>06:00–08:00 PM</td>
+                                    <td><a href="events.html">Welcome Reception</a> <span class="event-room"><a href="events.html#welcome-reception">Burke Museum</a></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+
+                        <!-- ========== Monday, March 23rd, 2026 ========== -->
+                        <div class="schedule-day-card">
+                        <h4 id="mon" class="schedule-day-header"><strong>Monday, March 23rd, 2026</strong></h4>
+                        <ul class="schedule-notes">
+                            <li><strong>CHIIR Registration</strong> – [Location TBA]</li>
+                        </ul>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="time-col">Time</th>
+                                    <th>Sessions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="schedule-breakfast">
+                                    <td>08:30–09:00 AM</td>
+                                    <td>Breakfast</td>
+                                </tr>
+                                <tr>
+                                    <td>09:00–09:30 AM</td>
+                                    <td>Opening Session <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr>
+                                    <td>09:30–10:30 AM</td>
+                                    <td><a href="program.html#keynote1">Keynote 1 — Ben Shneiderman </a><span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="schedule-coffee">
+                                    <td>10:30–11:00 AM</td>
+                                    <td>Coffee Break</td>
+                                </tr>
+                                <tr>
+                                    <td>11:00–12:15 PM</td>
+                                    <td><a href="#" class="session-toggle" data-target="session1-detail" aria-expanded="false">Session 1 — Cognitive Factors and Measurements</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="session-detail-row" id="session1-detail" style="display: none;">
+                                    <td colspan="2">
+                                        <div class="session-inline-detail">
+                                            <!-- <h5>Cognitive Factors and Measurements</h5> -->
+                                            <ul class="session-papers-inline">
+                                                <li>Attention! Rethinking What We Measure in CHIIR Studies — Dan Zhang, Gavindya Jayawardena and Jacek Gwizdka</li>
+                                                <li>Effects of Working Memory Capacity and Search Task Complexity on Cognitive Load — Gavindya Jayawardena, Li Shi and Jacek Gwizdka</li>
+                                                <li>Characterizing Personality from Eye-Tracking: The Role of Gaze and Its Absence in Interactive Search Environments — Jiaman He, Marta Micheli, Damiano Spina, Dana McKay, Johanne R. Trippas and Noriko Kando</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-lunch">
+                                    <td>12:15–01:00 PM</td>
+                                    <td>Lunch</td>
+                                </tr>
+                                <tr>
+                                    <td>01:00–02:15 PM</td>
+                                    <td><a href="#" class="session-toggle" data-target="session2-detail" aria-expanded="false">Session 2: Trust, verification, and mis/disinformation</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="session-detail-row" id="session2-detail" style="display: none;">
+                                    <td colspan="2">
+                                        <div class="session-inline-detail">
+                                            <!-- <h5>Trust, verification, and mis/disinformation</h5> -->
+                                            <ul class="session-papers-inline">
+                                                <li>"Although Powerful, it's not Infallible": Investigating Academic Researchers' Verification Challenges with LLMs — Monica Visani Scozzi, Stephann Makri and Pranava Madhyastha</li>
+                                                <li>Bias or Balance? Analyzing Stance in Google and Bing Results for the 2024 EU Parliament Election — Sebastian Schultheiß, Katja Niemann and Dirk Lewandowski</li>
+                                                <li>Does Cognitive Load Affect Human Accuracy in Detecting Voice-Based Deepfakes? — Marcel Gohsen, Nicola Libera, Johannes Kiesel, Jan Ehlers and Benno Stein</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-coffee">
+                                    <td>02:15–02:45 PM</td>
+                                    <td>Coffee Break</td>
+                                </tr>
+                                <tr>
+                                    <td>02:45–04:00 PM</td>
+                                    <td><a href="#" class="session-toggle" data-target="session3-detail" aria-expanded="false">Session 3: Accessibility and real-world applications</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="session-detail-row" id="session3-detail" style="display: none;">
+                                    <td colspan="2">
+                                        <div class="session-inline-detail">
+                                            <!-- <h5>Accessibility and real-world applications</h5> -->
+                                            <ul class="session-papers-inline">
+                                                <li>Micro-Behavioral Analysis of Online Shopping Patterns for Blind Users — Yash Prakash, Akshay Kolgar Nayak, Nithiya Venkatraman, Sampath Jayarathna, Hae-Na Lee and Vikas Ashok</li>
+                                                <li>VoxVista: Enhancing Screen Reading Experience for Online User Comments — Yash Prakash, Akshay Kolgar Nayak, Nithiya Venkatraman, Sampath Jayarathna, Hae-Na Lee and Vikas Ashok</li>
+                                                <li>Technology Use in Community Work: Operational Realities and Implications for Smart Cities — Sunyoung Kim, Phaneendra Shivangula and Ge Gao</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>04:00–05:00 PM</td>
+                                    <td><a href="industry-panel.html">Industry Panel</a> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr>
+                                    <td>05:00–07:00 PM</td>
+                                    <td><a href="events.html">Pizza + Bowling</a> <span class="event-room">[HUB Games]</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+
+                        <!-- ========== Tuesday, March 24th, 2026 ========== -->
+                        <div class="schedule-day-card">
+                        <h4 id="tue" class="schedule-day-header"><strong>Tuesday, March 24th, 2026</strong></h4>
+                        <ul class="schedule-notes">
+                            <li><strong>CHIIR Registration</strong> – [Location TBA]</li>
+                        </ul>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="time-col">Time</th>
+                                    <th>Sessions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="schedule-breakfast">
+                                    <td>08:45–09:15 AM</td>
+                                    <td>Breakfast</td>
+                                </tr>
+                                <tr>
+                                    <td>09:15–10:30 AM</td>
+                                    <td><a href="#" class="session-toggle" data-target="session4-detail" aria-expanded="false">Session 4: Conversational interactions and personalisation</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="session-detail-row" id="session4-detail" style="display: none;">
+                                    <td colspan="2">
+                                        <div class="session-inline-detail">
+                                            <!-- <h5>Conversational interactions and personalisation</h5> -->
+                                            <ul class="session-papers-inline">
+                                                <li>"I don't know anything about laptops!" – User Perception of Digital Product Advisors Adapting to Their Knowledge Levels — Kevin Schott, Andrea Papenmeier, Daniel Hienert and Dagmar Kern</li>
+                                                <li>Cooking Up Politeness in Human–AI Dialogue — David Elsweiler, Christine Elsweiler and Anna Ziegner</li>
+                                                <li>Understanding the Effects of Conversational Agent Personality on the Credibility of LLM-Based Conversational Search — Hyeonjeong Byeon, Uran Oh and Gary Hsieh</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-coffee">
+                                    <td>10:30–11:00 AM</td>
+                                    <td>Coffee Break</td>
+                                </tr>
+                                <tr>
+                                    <td>11:00–12:15 PM</td>
+                                    <td><a href="#" class="session-toggle" data-target="session5-detail" aria-expanded="false">Session 5: Search as Learning and Education</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="session-detail-row" id="session5-detail" style="display: none;">
+                                    <td colspan="2">
+                                        <div class="session-inline-detail">
+                                            <!-- <h5>Search as Learning and Education</h5> -->
+                                            <ul class="session-papers-inline">
+                                                <li>A Multi-Year Survey of Use and Perceptions of Generative AI in Higher Education — Anita Crescenzi, Bogeum Choi, Pao-Pei Huang, Emma Gautier, Riley Little and Siddhida Pandya</li>
+                                                <li>From Tool to Teacher: Rethinking Search Systems as Instructive Interfaces — David Elsweiler</li>
+                                                <li>The effects of goal-setting on learning during information seeking with generative AI — Kelsey Urgo, Yuan Li, Jaime Arguello and Robert Capra</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-lunch">
+                                    <td>12:15–01:00 PM</td>
+                                    <td>Lunch</td>
+                                </tr>
+                                <tr>
+                                    <td>01:00–02:15 PM</td>
+                                    <td><a href="#" class="session-toggle" data-target="session6-detail" aria-expanded="false">Session 6: Narrative and Multi-modality</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="session-detail-row" id="session6-detail" style="display: none;">
+                                    <td colspan="2">
+                                        <div class="session-inline-detail">
+                                            <!-- <h5>Narrative and Multi-modality</h5> -->
+                                            <ul class="session-papers-inline">
+                                                <li>From SERPs to Sound: How Search Engine Result Pages and AI-generated Podcasts Interact to Influence User Attitudes on Controversial Topics — Junjie Wang, Gaole He, Alisa Rieger and Ujwal Gadiraju</li>
+                                                <li>The Bayesian Storyteller: An Interactive System for Human-AI Collaborative Pitch Book Narrative Generation — Zichao Li</li>
+                                                <li>The Influence of the Communication Medium on Data Storytelling — Tamara Nagel and Toine Bogers</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-coffee">
+                                    <td>02:15–02:45 PM</td>
+                                    <td>Coffee Break</td>
+                                </tr>
+                                <tr>
+                                    <td>02:45–04:00 PM</td>
+                                    <td>Poster and Demo Sessions <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr>
+                                    <td>04:30–06:00 PM</td>
+                                    <td><a href="events.html">Social Event: "The Boys in the Boat" Tour</a> <span class="event-room">[Campus walking tour]</span></td>
+                                </tr>
+                                <tr>
+                                    <td>06:00–09:00 PM</td>
+                                    <td><a href="events.html">Social Dinner</a> <span class="event-room">[Conibear Shellhouse]</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+
+                        <!-- ========== Wednesday, March 25th, 2026 ========== -->
+                        <div class="schedule-day-card">
+                        <h4 id="wed" class="schedule-day-header"><strong>Wednesday, March 25th, 2026</strong></h4>
+                        <ul class="schedule-notes">
+                            <li><strong>CHIIR Registration</strong> – [Location TBA]</li>
+                        </ul>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="time-col">Time</th>
+                                    <th>Sessions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="schedule-breakfast">
+                                    <td>08:30–09:00 AM</td>
+                                    <td>Breakfast</td>
+                                </tr>
+                                <tr>
+                                    <td>09:00–10:00 AM</td>
+                                    <td><a href="program.html#keynote2">Keynote 2 — Xin Luna Dong</a> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="schedule-coffee">
+                                    <td>10:00–10:30 AM</td>
+                                    <td>Coffee Break</td>
+                                </tr>
+                                <tr>
+                                    <td>10:30–11:45 AM</td>
+                                    <td><a href="#" class="session-toggle" data-target="session7-detail" aria-expanded="false">Session 7: Information Requests and Needs</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="session-detail-row" id="session7-detail" style="display: none;">
+                                    <td colspan="2">
+                                        <div class="session-inline-detail">
+                                            <!-- <h5>Information Requests and Needs</h5> -->
+                                            <ul class="session-papers-inline">
+                                                <li>Designing for Complex Information Needs: A Case Study in Special Education Health Services and Future Information Retrieval Systems — Amir Reza Asadi, Jess Kropczynski, Jennifer Johnson, Corey O'Connor, Wesley Reed and Hazem Said</li>
+                                                <li>Rules, Resources, and Restrictions: A Taxonomy of Task-Based Information Request Intents — Melanie A. Kilian and David Elsweiler</li>
+                                                <li>Tip-of-the-Tongue Search in the Wild: Analyzing Human and LLM Performance and Success Factors on Complex Search Requests — Toine Bogers, Maria Gaede, Mark Hall, Marijn Koolen, Vivien Petras and Mette Skov</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-lunch">
+                                    <td>11:45–01:00 PM</td>
+                                    <td>Lunch + CHIIR-It-Forward (Business Meeting)</td>
+                                </tr>
+                                <tr>
+                                    <td>01:00–02:15 PM</td>
+                                    <td><a href="#" class="session-toggle" data-target="session8-detail" aria-expanded="false">Session 8: Searching over Time</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="session-detail-row" id="session8-detail" style="display: none;">
+                                    <td colspan="2">
+                                        <div class="session-inline-detail">
+                                            <!-- <h5>Searching over Time</h5> -->
+                                            <ul class="session-papers-inline">
+                                                <li>Does It Still Make Sense? Organizing and Summarizing Resources in Cross-Session Aggregated Search — Milad Momeni and Orland Hoeber</li>
+                                                <li>Don't Break the Flow: Supporting Deferral and Review of Potentially Serendipitous Information in Library Search — Orland Hoeber, Abbas Pirmoradi, Ei Ei Mon and Stephann Makri</li>
+                                                <li>Information Farming: From Berry Pickers to Berry Growers — Leif Azzopardi and Adam Roegiest</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-coffee">
+                                    <td>02:15–02:45 PM</td>
+                                    <td>Coffee Break</td>
+                                </tr>
+                                <tr>
+                                    <td>02:45–04:15 PM</td>
+                                    <td><a href="#" class="session-toggle" data-target="session9-detail" aria-expanded="false">Session 9: Human-AI Collaboration</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="session-detail-row" id="session9-detail" style="display: none;">
+                                    <td colspan="2">
+                                        <div class="session-inline-detail">
+                                            <!-- <h5>Human-AI Collaboration</h5> -->
+                                            <ul class="session-papers-inline">
+                                                <li>"Can You Tell Me?": Designing Copilots to Support Human Judgment in Online Information Seeking — Markus Bink, Marten Risius, David Elsweiler and Udo Kruschwitz</li>
+                                                <li>CollabSearch: A Study of User–LLM Collaboration in Task-Based Search — Gloris Denisse Cedeño Batista, Joemon Jose and Hideo Joho</li>
+                                                <li>Rethinking Human-AI Collaboration in Information Seeking: Why Epistemic Incompatibility Demands New Design Paradigms — Chirag Shah</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>04:15–04:45 PM</td>
+                                    <td>Closing Session <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+
+                        <!-- ========== Thursday, March 26th, 2026 ========== -->
+                        <div class="schedule-day-card">
+                        <h4 id="thu" class="schedule-day-header"><strong>Thursday, March 26th, 2026</strong></h4>
+                        <ul class="schedule-notes">
+                            <li><strong>CHIIR Registration</strong> – [Location TBA]</li>
+                        </ul>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="time-col">Time</th>
+                                    <th>Workshops</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="schedule-breakfast">
+                                    <td>08:30–09:00 AM</td>
+                                    <td>Breakfast</td>
+                                </tr>
+                                <tr>
+                                    <td>09:00–10:30 AM</td>
+                                    <td>
+                                        <ul class="schedule-event-list">
+                                            <li><a href="workshops-program.html">Workshop on Generative AI and Academic Search (GAI&AS)</a> — Yifan Liu, Jaime Arguello, Orland Hoeber, Chang Liu, Soo Young Rieh and Luanne Sinnamon <span class="event-room">[Room TBA]</span></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-coffee">
+                                    <td>10:30–11:00 AM</td>
+                                    <td>Coffee Break</td>
+                                </tr>
+                                <tr>
+                                    <td>11:00–12:30 PM</td>
+                                    <td>
+                                        <ul class="schedule-event-list">
+                                            <li><a href="workshops-program.html">Workshop on Generative AI and Academic Search (GAI&AS)</a> — Yifan Liu, Jaime Arguello, Orland Hoeber, Chang Liu, Soo Young Rieh and Luanne Sinnamon <span class="event-room">[Room TBA]</span></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-lunch">
+                                    <td>12:30–01:30 PM</td>
+                                    <td>Lunch</td>
+                                </tr>
+                                <tr>
+                                    <td>01:30–03:00 PM</td>
+                                    <td>
+                                        <ul class="schedule-event-list">
+                                            <li><a href="workshops-program.html">Workshop on Human-Centered Proactive and Personalized Agents for Interactive Information Access</a> — Kirandeep Kaur, Vinayak Gupta, Madhura Raju, Tanya Roosta, Grace Hui Yang and Chirag Shah <span class="event-room">[Room TBA]</span></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr class="schedule-coffee">
+                                    <td>03:00–03:30 PM</td>
+                                    <td>Coffee Break</td>
+                                </tr>
+                                <tr>
+                                    <td>03:30–05:00 PM</td>
+                                    <td>
+                                        <ul class="schedule-event-list">
+                                            <li><a href="workshops-program.html">Workshop on Human-Centered Proactive and Personalized Agents for Interactive Information Access</a> — Kirandeep Kaur, Vinayak Gupta, Madhura Raju, Tanya Roosta, Grace Hui Yang and Chirag Shah <span class="event-room">[Room TBA]</span></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+
+                        <!-- Paper types / presentation time legend (SIGIR-style) -->
+                        <div class="program-legend">
+                            <h5 style="color: #0A3D62; margin-bottom: 12px;">Paper types and presentation time</h5>
+                            <ul>
+                                <li>[fp] Full paper (e.g. 15 + 3 min presentation + Q&amp;A)</li>
+                                <li>[pp] Perspective paper (e.g. 15 + 3 min)</li>
+                                <li>[sp] Short paper (e.g. 10 + 2 min)</li>
+                                <li>[rr] Resource paper (e.g. 5 min, no Q&amp;A)</li>
+                                <li>[demo] Demonstration (e.g. 10 + 2 min)</li>
+                            </ul>
+                            <p style="margin-top: 12px; margin-bottom: 0; font-size: 0.9rem; color: #666;">Replace with your actual presentation and Q&amp;A times.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home About Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-text">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./attend.html">Attend</a></li>
+                            <li><a href="./organizers.html">Organizers</a></li>
+                        </ul>
+                        <div class="copyright-text"><p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p></div>
+                        <div class="ft-social">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    document.querySelectorAll('.session-toggle').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var id = this.getAttribute('data-target');
+            var row = document.getElementById(id);
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            if (row) {
+                row.style.display = expanded ? 'none' : 'table-row';
+                this.setAttribute('aria-expanded', !expanded);
+                var icon = this.parentElement.querySelector('.toggle-icon');
+                if (icon) icon.textContent = expanded ? ' \u25BC' : ' \u25B2';
+            }
+        });
+    });
+    </script>
+</body>
+</html>
