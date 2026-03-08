@@ -86,6 +86,8 @@
         .session-papers-inline li { padding: 6px 0; border-bottom: 1px solid #e5e5e5; line-height: 1.4; }
         .session-papers-inline li:last-child { border-bottom: none; }
         .session-papers-inline .paper-type { font-size: 0.8rem; color: #666; margin-left: 6px; }
+        .session-inline-detail ul.poster-demo-list { font-size: 0.8rem; line-height: 1.35; }
+        .session-inline-detail ul.poster-demo-list .paper-type { font-size: 0.7rem; }
         /* Day tables as cards */
         .schedule-day-card {
             background: #fff;
@@ -293,7 +295,7 @@
                                 </tr>
                                 <tr>
                                     <td>06:00–08:00 PM</td>
-                                    <td><a href="events.html">Welcome Reception</a> <span class="event-room"><a href="events.html#welcome-reception">Burke Museum</a></span></td>
+                                    <td><a href="events.html#welcome-reception">Welcome Reception</a> <span class="event-room">[Burke Museum]</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -351,7 +353,7 @@
                                 </tr>
                                 <tr>
                                     <td>01:00–02:15 PM</td>
-                                    <td><a href="#" class="session-toggle" data-target="session2-detail" aria-expanded="false">Session 2: Trust, verification, and mis/disinformation</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                    <td><a href="#" class="session-toggle" data-target="session2-detail" aria-expanded="false">Session 2: Trust, Verification, and Mis/Disinformation</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
                                 </tr>
                                 <tr class="session-detail-row" id="session2-detail" style="display: none;">
                                     <td colspan="2">
@@ -371,7 +373,7 @@
                                 </tr>
                                 <tr>
                                     <td>02:45–04:00 PM</td>
-                                    <td><a href="#" class="session-toggle" data-target="session3-detail" aria-expanded="false">Session 3: Accessibility and real-world applications</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                    <td><a href="#" class="session-toggle" data-target="session3-detail" aria-expanded="false">Session 3: Accessibility and Real-World Applications</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
                                 </tr>
                                 <tr class="session-detail-row" id="session3-detail" style="display: none;">
                                     <td colspan="2">
@@ -391,7 +393,7 @@
                                 </tr>
                                 <tr>
                                     <td>05:00–07:00 PM</td>
-                                    <td><a href="events.html">Pizza + Bowling</a> <span class="event-room">[HUB Games]</span></td>
+                                    <td><a href="events.html#pizza-bowling">Social Event: Pizza + Bowling</a> <span class="event-room">[HUB Games]</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -417,7 +419,7 @@
                                 </tr>
                                 <tr>
                                     <td>09:15–10:30 AM</td>
-                                    <td><a href="#" class="session-toggle" data-target="session4-detail" aria-expanded="false">Session 4: Conversational interactions and personalisation</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                    <td><a href="#" class="session-toggle" data-target="session4-detail" aria-expanded="false">Session 4: Conversational Interactions and Personalization</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
                                 </tr>
                                 <tr class="session-detail-row" id="session4-detail" style="display: none;">
                                     <td colspan="2">
@@ -457,7 +459,7 @@
                                 </tr>
                                 <tr>
                                     <td>01:00–02:15 PM</td>
-                                    <td><a href="#" class="session-toggle" data-target="session6-detail" aria-expanded="false">Session 6: Narrative and Multi-modality</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                    <td><a href="#" class="session-toggle" data-target="session6-detail" aria-expanded="false">Session 6: Narrative and Multi-Modality</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
                                 </tr>
                                 <tr class="session-detail-row" id="session6-detail" style="display: none;">
                                     <td colspan="2">
@@ -477,15 +479,63 @@
                                 </tr>
                                 <tr>
                                     <td>02:45–04:00 PM</td>
-                                    <td>Poster and Demo Sessions <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                    <td><a href="#" class="session-toggle" data-target="poster-demo-detail" aria-expanded="false">Poster and Demo Sessions</a><span class="toggle-icon" aria-hidden="true"> ▼</span> <span class="event-room">[South Ballroom (211B, 2nd Floor)]</span></td>
+                                </tr>
+                                <tr class="session-detail-row" id="poster-demo-detail" style="display: none;">
+                                    <td colspan="2">
+                                        <div class="session-inline-detail">
+                                            <!-- <h5>Short Papers (Posters)</h5> -->
+                                            <ul class="session-papers-inline poster-demo-list">
+                                                <li>Beyond the Query: A Survey Design for Eliciting Underlying Motivations in Web Search — Elsa Lichtenegger, Aleksandra Urman and Aniko Hannak <span class="paper-type">[sp]</span></li>
+                                                <li>The Effects of Thinking Aloud on Participants during Search and Sensemaking — Bogeum Choi and Jaime Arguello <span class="paper-type">[sp]</span></li>
+                                                <li>Privacy Discourse and Emotional Dynamics in Mental Health Information Interaction on Reddit — Jai Kruthunz Naveen Kumar, Aishwarya Surani, Harkirat Singh and Sanchari Das <span class="paper-type">[sp]</span></li>
+                                                <li>Rare but Respected: Sustainable Intent in Online Product Search — Florian Meier and David Elsweiler <span class="paper-type">[sp]</span></li>
+                                                <li>A Questionnaire for Capturing Perceptions of Self-Regulated Learning Processes during Information Seeking — Kelsey Urgo, Jaime Arguello and Robert Capra <span class="paper-type">[sp]</span></li>
+                                                <li>Do LLMs Understand Collaborative Signals? Diagnosis and Repair — Shahrooz Pouryousef and Ali Montazeralghaem <span class="paper-type">[sp]</span></li>
+                                                <li>The Martian Game: Exploring Open-Ended Question-Asking via an Online Gaming Environment — Gili Cohen and Yoed N. Kenett <span class="paper-type">[sp]</span></li>
+                                                <li>Confirmation, Framing, and Position Biases in LLM Responses — Liana Ermakova, Anton Firsov and Jaap Kamps <span class="paper-type">[sp]</span></li>
+                                                <li>Information Overload in Information Seeking with Conversational Agents: A Survey and Design Considerations — Paul Compensis <span class="paper-type">[sp]</span></li>
+                                                <li>Implicit Humanization in Everyday LLM Moral Judgments — Hoda Ayad and Tanu Mitra <span class="paper-type">[sp]</span></li>
+                                                <li>Measuring the credibility of generative AI-produced information: An exploratory factor analysis — Anita Crescenzi, Bogeum Choi, Pao-Pei Huang, Siddhida Pandya, Emma Gautier and Riley Little <span class="paper-type">[sp]</span></li>
+                                                <li>Can Instructed Retrieval Models Really Support Exploration? — Piyush Maheshwari, Sheshera Mysore and Hamed Zamani <span class="paper-type">[sp]</span></li>
+                                                <li>Information Infrastructures of Play: Metadata, Discourse, and Storytelling in Iranian Video Games — Melinda Cohoon <span class="paper-type">[sp]</span></li>
+                                                <li>Not All Transparency Is Equal: Source Presentation Effects on Attention, Interaction, and Persuasion in Conversational Search — Jiangen He and Jiqun Liu <span class="paper-type">[sp]</span></li>
+                                                <li>Offscript: Automated Auditing of Instruction Adherence in LLMs — Nicholas Clark, Ryan Bai and Tanu Mitra <span class="paper-type">[sp]</span></li>
+                                                <li>Improving Data Reusability in Interactive IR: Insights from the Community — Tianji Jiang, Wenqi Li and Jiqun Liu <span class="paper-type">[sp]</span></li>
+                                                <li>Interest-Driven Search in AI-Mediated Information Environments: An Audio Diary Study — Yujin Choi and Soo Young Rieh <span class="paper-type">[sp]</span></li>
+                                                <li>Length Effects in Conversation-Style Sustainability Information for Ethical Consumption: An Eye-tracking Study — Letizia Sangoi and Frans van der Sluis <span class="paper-type">[sp]</span></li>
+                                            </ul>
+                                            <!-- <h5 style="margin-top: 1rem;">Demos</h5> -->
+                                            <ul class="session-papers-inline poster-demo-list">
+                                                <li>SEA-u-lator: Privacy Preserving Social Engineering Attack Simulator for Gmail — Marcin Pawlukiewicz and Shaun Wallace <span class="paper-type">[demo]</span></li>
+                                                <li>Cleo: A Transparent and Controllable Chatbot for Conversational Commerce — Kevin Schott, Jan Lattenkamp, Daniel Hienert and Dagmar Kern <span class="paper-type">[demo]</span></li>
+                                                <li>PulseSearch: Modeling Long- and Short-term Patterns for Personalized Music Search Suggestions — Antonios Anagnostou, José Luis Redondo García, Emelie Jin, Jonathan Warburton, Vinay Rao, Yannis Kantarelis, Daniel Lazarovski, Dani Doro, Francesco Cucari, Christine Doig Cardet, Hugues Bouchard, Dominic Child, Jonathan C. Brooks-Bartlett and Mounia Lalmas-Roelleke <span class="paper-type">[demo]</span></li>
+                                                <li>Exploring Art through Internet Aesthetics: A Serendipitous Interface for Artpedia. — Sophia Rangelova, Bruno Nadalic Sotic and Jaap Kamps <span class="paper-type">[demo]</span></li>
+                                                <li>Building a Test Collection for Social Science Dataset Retrieval — Ji Eun Kim, Sara Lafia and Libby Hemphill <span class="paper-type">[demo]</span></li>
+                                                <li>In-Browser Agents for Search Assistance — Saber Zerhoudi and Michael Granitzer <span class="paper-type">[demo]</span></li>
+                                                <li>Expanded Tag Genomes for Cross-Domain Recommendation — Denis Kotkov, Alan Medlar, Dorota Glowacka and Martin Halvey <span class="paper-type">[demo]</span></li>
+                                                <li>Interactive Taxonomy Development with Hybrid Methods — Jiaming Qu, Madhu Gopinathan, Shayan Ali Akbar and Omar Alonso <span class="paper-type">[demo]</span></li>
+                                                <li>Retrieval-Augmented Search for Large-Scale Map Collections with ColPali — Jamie Mahowald and Benjamin Lee <span class="paper-type">[demo]</span></li>
+                                                <li>CHARISMA: Character-Based Interaction Simulation with Multi-LLM Agents Toward Computational Social Psychology — Vahid Sadiri Javadi, Fryderyk Róg, Aksa Aksa, Johanne Trippas, Svitlana Vakulenko and Lucie Flek <span class="paper-type">[demo]</span></li>
+                                                <li>Seek and You Shall Find: Design &amp; Evaluation of a Context-Aware Interactive Search Companion — Markus Bink, Marten Risius, Udo Kruschwitz and David Elsweiler <span class="paper-type">[demo]</span></li>
+                                                <li>Result Assessment Tool (RAT): An Open-Source Toolkit for Conducting Studies based on Search Results — Sebastian Sünkler, Kardelen Bilir, Tuhina Kumar, Oliver Koop, Sebastian Schultheiß and Dirk Lewandowski <span class="paper-type">[demo]</span></li>
+                                                <li>SearchPath: A Visual Reminder of Past Search Activity to Support Students with Dyslexia when Undertaking Exploratory Searches — Anita Seihoon, Lynne Beveridge and Orland Hoeber <span class="paper-type">[demo]</span></li>
+                                                <li>ImmiGo - An Adaptive Multilingual Chatbot for Immigration Assistance — Stephen Toriola, Anirban Chakraborty and Ingo Frommholz <span class="paper-type">[demo]</span></li>
+                                                <li>Measuring What Matters: Aligning System-Level RAG Metrics with User Trust in a High-Stakes Compliance Domain — Paul Momoh and Julius Odede <span class="paper-type">[demo]</span></li>
+                                                <li>AskAda: An AI-Anchored Conversational Agent for Scholarly Information Seeking in Educational Contexts to Improve Learning — Ruochen Zhao, Nibras Ar Rakib, Qianru Shi, Sangeun Han and Javed Mostafa <span class="paper-type">[demo]</span></li>
+                                                <li>Supporting Humans in Evaluating AI Summaries of Legal Depositions — Naghmeh Farzi, Laura Dietz and David D. Lewis <span class="paper-type">[demo]</span></li>
+                                                <li>From SERPs to Agents: A Platform for Comparative Studies of Information Interaction — Saber Zerhoudi and Michael Granitzer <span class="paper-type">[demo]</span></li>
+                                            </ul>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>04:30–06:00 PM</td>
-                                    <td><a href="events.html">Social Event: "The Boys in the Boat" Tour</a> <span class="event-room">[Campus walking tour]</span></td>
+                                    <td><a href="events.html#social-dinner">Social Event: "The Boys in the Boat" Tour</a></td>
                                 </tr>
                                 <tr>
                                     <td>06:00–09:00 PM</td>
-                                    <td><a href="events.html">Social Dinner</a> <span class="event-room">[Conibear Shellhouse]</span></td>
+                                    <td><a href="events.html#social-dinner">Social Dinner</a> <span class="event-room">[Conibear Shellhouse]</span></td>
                                 </tr>
                             </tbody>
                         </table>
