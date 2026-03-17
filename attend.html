@@ -409,7 +409,7 @@
     <div class="cherry-blossom-notice">
         <div class="container">
             <span class="cherry-icon">🌸</span>
-            <span>Cherry blossoms will be in bloom just in time for CHIIR! Check the <a href="https://www.washington.edu/cherryblossoms/" target="_blank" rel="noopener">UW Cherry Blossoms website</a> for bloom updates.</span>
+            <span>Cherry blossoms will be in bloom just in time for CHIIR! Check the <a href="https://www.washington.edu/cherryblossoms/" target="_blank" rel="noopener">UW Cherry Blossoms website</a> for bloom updates and check the <a href="https://udistrictseattle.com/cherryblossomfestival" target="_blank" rel="noopener">Cherry Blossom Festival</a> for events and activities.</span>
         </div>
     </div>
 
@@ -486,29 +486,16 @@
                             The HUB is located on the Seattle campus at the University of Washington. For detailed information about directions, parking, public transit, biking, floor plans, and building access, please visit the HUB website.
                         </p>
                         
-                        <!-- Embedded Google Map -->
+                        <!-- Campus Venue Map (Leaflet) -->
                         <div style="margin: 40px 0;">
                             <h4 style="color: #0A3D62; margin-bottom: 20px; text-align: center;">
-                                <i class="fa fa-map-marker" style="margin-right: 8px; color: #dc3545;"></i>Location Map
+                                <i class="fa fa-map-marker" style="margin-right: 8px; color: #dc3545;"></i>CHIIR 2026 Campus Venues
                             </h4>
-                            <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; overflow: hidden; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.5!2d-122.3035!3d47.6556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549014929d8535eb%3A0x6b7c8b8c8b8c8b8c!2sHusky%20Union%20Building!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
-                                    width="100%" 
-                                    height="100%" 
-                                    style="position: absolute; top: 0; left: 0; border: 0;" 
-                                    allowfullscreen="" 
-                                    loading="lazy" 
-                                    referrerpolicy="no-referrer-when-downgrade"
-                                    title="Husky Union Building Location">
-                                </iframe>
-                            </div>
-                            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #666;">
-                                <a href="https://www.google.com/maps/place/Husky+Union+Building/@47.6556,-122.3035,17z/data=!3m1!4b1!4m6!3m5!1s0x549014929d8535eb:0x6b7c8b8c8b8c8b8c!8m2!3d47.6556!4d-122.3035!16s%2Fg%2F11c0vx8x8x" 
-                                   target="_blank" 
-                                   style="color: #007bff; text-decoration: none;">
-                                    <i class="fa fa-external-link" style="margin-right: 5px;"></i>Open in Google Maps
-                                </a>
+                            <div id="venue-map" style="width: 100%; height: 420px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);"></div>
+                            <p style="text-align: center; margin-top: 12px; font-size: 14px; color: #666;">
+                                Colored pins show the <strong>HUB (conference venue)</strong>, <strong>Burke Museum</strong> (welcome reception),
+                                <strong>Conibear Shellhouse</strong> (social dinner), and nearby campus landmarks such as <strong>Mary Gates Hall</strong> and
+                                <strong>Allen Library South</strong>.
                             </p>
                         </div>
                         
@@ -1018,9 +1005,9 @@
                                     <ul style="line-height: 1.8; color: #666; margin-top: 10px;">
                                         <li>Visit the iconic "Harry Potter" Suzzallo Library.</li>
                                         <li>Walk around Red Square, Union Bay and Drumheller Fountain for stunning views of Mount Rainier on clear days.</li>
-                                        <li><strong>Cherry Blossoms:</strong> The famous 29 Yoshino cherry trees in the Liberal Arts Quad (the "Quad") typically reach peak bloom in late March to early April—just in time for CHIIR! Check the <a href="https://www.washington.edu/cherryblossoms/" target="_blank" rel="noopener" style="color: #007bff;">official UW Cherry Blossoms website</a> for bloom updates and best viewing times.</li>
+                                        <li><strong>Cherry Blossoms:</strong> The famous 29 Yoshino cherry trees in the Liberal Arts Quad (the "Quad") typically reach peak bloom in late March to early April—just in time for CHIIR! Check the <a href="https://www.washington.edu/cherryblossoms/" target="_blank" rel="noopener" style="color: #007bff;">official UW Cherry Blossoms website</a> for bloom updates and best viewing times. Check the <a href="https://udistrictseattle.com/cherryblossomfestival" target="_blank" rel="noopener" style="color: #007bff;">Cherry Blossom Festival</a> for events and activities.</li>
                                     </ul>
-                                    <p style="margin-top: 15px; color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <strong>Located:</strong> <a href="https://maps.app.goo.gl/o38KHFUKv5jTpaiE7" target="_blank" style="color: #007bff;">University of Washington</a></p>
+                                    <p style="margin-top: 15px; color: #666;"><i class="fa fa-map-marker" style="color: #0A3D62; margin-right: 5px;"></i> <strong>Located:</strong> <a href="https://maps.app.goo.gl/o38KHFUKv5jTpaiE7" target="_blank" style="color: #007bff;">University of Washington and U District</a></p>
                                 </div>
                             </div>
                         </div>
@@ -1347,6 +1334,86 @@
                 $('.section-nav a').removeClass('active');
                 $('.section-nav a[href="' + hash + '"]').addClass('active');
             }
+        });
+        
+        // Initialize Venue Map with Leaflet (HUB, Burke, Conibear, Mary Gates Hall, Allen Library South)
+        $(document).ready(function() {
+            setTimeout(function() {
+                const venueContainer = document.getElementById('venue-map');
+                if (venueContainer && typeof L !== 'undefined') {
+                    const venueMap = L.map('venue-map').setView([47.6556, -122.3050], 15);
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                        maxZoom: 19
+                    }).addTo(venueMap);
+                    
+                    function createVenueIcon(color) {
+                        const size = 20;
+                        return L.divIcon({
+                            className: 'custom-marker',
+                            html: '<div style="background-color: ' + color + '; width: ' + size + 'px; height: ' + size + 'px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>',
+                            iconSize: [size, size],
+                            iconAnchor: [size / 2, size / 2]
+                        });
+                    }
+                    
+                    const venues = [
+                        {
+                            name: 'Husky Union Building (HUB)',
+                            role: 'Conference Venue',
+                            lat: 47.6553893,
+                            lng: -122.3050845,
+                            color: '#dc3545',
+                            gmaps: 'https://www.google.com/maps/place/Husky+Union+Building/@47.6553893,-122.3050845,17z/data=!3m1!4b1!4m6!3m5!1s0x5490148d64534c71:0xc91793fd02335246!8m2!3d47.6553893!4d-122.3050845!16s%2Fm%2F08065l4'
+                        },
+                        {
+                            name: 'Burke Museum',
+                            role: 'Welcome Reception',
+                            lat: 47.6606147,
+                            lng: -122.3115987,
+                            color: '#6a1b9a',
+                            gmaps: 'https://www.google.com/maps/place/Burke+Museum+of+Natural+History+and+Culture/@47.6606147,-122.3115987,17z/data=!3m1!4b1!4m6!3m5!1s0x5490148b0b6c61a5:0xce1313c2cca564ca!8m2!3d47.6606147!4d-122.3115987!16zL20vMDM1cHNk'
+                        },
+                        {
+                            name: 'Conibear Shellhouse',
+                            role: 'Social Dinner',
+                            lat: 47.6528,
+                            lng: -122.2998,
+                            color: '#007bff',
+                            gmaps: 'https://www.google.com/maps/place/Conibear+Shellhouse/'
+                        },
+                        {
+                            name: 'Mary Gates Hall',
+                            role: 'Campus building',
+                            lat: 47.6549716,
+                            lng: -122.3079505,
+                            color: '#2e7d32',
+                            gmaps: 'https://www.google.com/maps/place/Mary+Gates+Hall+(MGH)/@47.6549716,-122.3079505,17z/data=!3m1!4b1!4m6!3m5!1s0x549014f2a95c2899:0xb2525ccd291489c!8m2!3d47.6549716!4d-122.3079505!16s%2Fg%2F1tfqqnbx'
+                        },
+                        {
+                            name: 'Suzzallo & Allen Libraries (South Entrance)',
+                            role: 'Campus building',
+                            lat: 47.6558835,
+                            lng: -122.3084354,
+                            color: '#ff9800',
+                            gmaps: 'https://www.google.com/maps/place/Suzzallo+and+Allen+Libraries/@47.6558835,-122.3084354,17z/data=!3m1!4b1!4m6!3m5!1s0x549014ec45555555:0x6c6be15ffe62e371!8m2!3d47.6558835!4d-122.3084354!16zL20vMDNrZ2df'
+                        }
+                    ];
+                    
+                    venues.forEach(function(venue) {
+                        L.marker([venue.lat, venue.lng], {
+                            icon: createVenueIcon(venue.color)
+                        }).addTo(venueMap).bindPopup(
+                            '<div style="min-width: 220px;">' +
+                            '<h4 style="margin: 0 0 8px 0; color: #0A3D62;">' + venue.name + '</h4>' +
+                            (venue.role ? '<p style="margin: 0 0 6px 0; color: #666; font-size: 12px;"><strong>' + venue.role + '</strong></p>' : '') +
+                            (venue.gmaps ? '<a href=\"' + venue.gmaps + '\" target=\"_blank\" style=\"display: inline-block; margin-top: 4px; color: #007bff; font-size: 12px; text-decoration: none; font-weight: 600;\">Open in Google Maps <i class=\"fa fa-external-link\" style=\"font-size: 10px;\"></i></a>' : '') +
+                            '</div>'
+                        );
+                    });
+                }
+            }, 500);
         });
         
         // Initialize Hotels Map with Leaflet
