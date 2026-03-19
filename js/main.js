@@ -119,4 +119,39 @@
         $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Days</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Hrs</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Mins</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Secs</p> </div>"));
     });
 
+    /*------------------
+        Cherry blossom notice (site-wide)
+    --------------------*/
+    (function() {
+        // Avoid duplicates on pages that already contain the banner (e.g., attend.html).
+        if (document.querySelector('.cherry-blossom-notice')) return;
+
+        var notice = document.createElement('div');
+        notice.className = 'cherry-blossom-notice';
+        notice.setAttribute('role', 'note');
+        notice.innerHTML =
+            '<div class="container d-flex align-items-center justify-content-center flex-wrap">' +
+                '<span class="cherry-icon">🌸</span>' +
+                '<span>Cherry blossoms will be in bloom just in time for CHIIR! Check ' +
+                    '<a href="https://www.washington.edu/cherryblossoms/" target="_blank" rel="noopener">UW Cherry Blossoms website</a>' +
+                    ' and <a href="https://udistrictseattle.com/cherryblossomfestival" target="_blank" rel="noopener">Cherry Blossom Festival</a> for details</span>' +
+            '</div>';
+
+        // Place it right below the main header/nav (like attend.html).
+        var header = document.querySelector('header.header-section');
+        if (header && header.parentNode) {
+            header.insertAdjacentElement('afterend', notice);
+        } else {
+            // Fallback: insert near the top.
+            var preloader = document.getElementById('preloder');
+            if (preloader && preloader.parentNode) {
+                preloader.insertAdjacentElement('afterend', notice);
+            } else if (document.body && document.body.firstChild) {
+                document.body.insertBefore(notice, document.body.firstChild);
+            } else if (document.body) {
+                document.body.appendChild(notice);
+            }
+        }
+    })();
+
 })(jQuery);
