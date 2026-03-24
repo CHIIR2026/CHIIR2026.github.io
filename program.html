@@ -6,6 +6,7 @@
     <meta name="description" content="CHIIR2026">
     <meta name="keywords" content="CHIIR2026">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CHIIR2026</title>
     <style>
@@ -53,12 +54,106 @@
         border-radius: 8px;
     }
     
-    .keynote-card:first-child {
+    #keynote1 {
         background: #f6faff;
     }
     
-    .keynote-card:nth-of-type(2) {
+    #keynote2 {
         background: #f8f9fa;
+    }
+
+    .keynote-ben-row,
+    .keynote-luna-row {
+        margin-bottom: 50px;
+        justify-content: flex-start;
+    }
+
+    .keynote-ben-row .keynote-main-col,
+    .keynote-luna-row .keynote-main-col {
+        padding-right: 8px;
+    }
+
+    @media (min-width: 992px) {
+        .keynote-ben-row .keynote-main-col,
+        .keynote-luna-row .keynote-main-col {
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+        }
+        .keynote-ben-row .keynote-video-col,
+        .keynote-luna-row .keynote-video-col {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            padding-left: 12px;
+            padding-top: 4px;
+        }
+    }
+
+    .keynote-video-col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .keynote-video-col .keynote-video-embed {
+        max-width: 340px;
+        width: 100%;
+    }
+
+    .keynote-video-col .keynote-video-placeholder {
+        max-width: 340px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 991px) {
+        .keynote-video-col {
+            margin-top: 1rem;
+        }
+    }
+
+    .keynote-video-embed {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 18px rgba(10, 61, 98, 0.12);
+        background: #111;
+    }
+
+    .keynote-video-embed iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .keynote-video-label {
+        font-size: 13px;
+        color: #666;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .keynote-video-col .keynote-video-label {
+        max-width: 340px;
+    }
+
+    .keynote-video-placeholder {
+        border: 1px dashed #ccc;
+        border-radius: 8px;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fafafa;
+        color: #888;
+        font-size: 14px;
+        text-align: center;
+        padding: 24px;
     }
     
     .keynote-header {
@@ -337,89 +432,108 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <!-- Keynote Speaker 1: Ben Shneiderman -->
-                    <div class="keynote-card" id="keynote1">
-                        <div class="keynote-header">
-                            <img src="img/ben.jpg" alt="Ben Shneiderman">
-                            <div class="keynote-info">
-                                <h3><a href="https://www.cs.umd.edu/~ben/" target="_blank">Ben Shneiderman</a></h3>
-                                <p><strong>Emeritus Distinguished University Professor, Dept. of Computer Science & Human-Computer Interaction Lab</strong></p>
-                                <p>University of Maryland, College Park, MD, USA</p>
+                    <!-- Keynote Speaker 1: Ben Shneiderman + video -->
+                    <div class="row keynote-ben-row">
+                        <div class="col-lg-8 col-md-12 keynote-main-col">
+                            <div class="keynote-card" id="keynote1">
+                                <div class="keynote-header">
+                                    <img src="img/ben.jpg" alt="Ben Shneiderman">
+                                    <div class="keynote-info">
+                                        <h3><a href="https://www.cs.umd.edu/~ben/" target="_blank">Ben Shneiderman</a></h3>
+                                        <p><strong>Emeritus Distinguished University Professor, Dept. of Computer Science & Human-Computer Interaction Lab</strong></p>
+                                        <p>University of Maryland, College Park, MD, USA</p>
+                                    </div>
+                                </div>
+                                <div class="keynote-title">
+                                    <div class="keynote-title-label">Talk:</div>
+                                    Human-Centered AI: Supertools for Taking Control of Search
+                                </div>
+                                <button class="expand-btn" onclick="toggleKeynote(this)">
+                                    More <i class="fa fa-chevron-down"></i>
+                                </button>
+                                <div class="keynote-bio">
+                                    <p style="margin-bottom: 20px;">
+                                        <strong>Abstract:</strong>
+                                    </p>
+                                    
+                                    <p>
+                                        A new synthesis is emerging that integrates AI technologies with Human-Computer Interaction to produce Human-Centered AI (HCAI). Advocates of this new synthesis design supertools that amplify, augment, enhance human abilities, and empower people. Effective supertools build the user's self-efficacy, support creativity, clarify responsibility, and promote social connections.
+                                    </p>
+                                    
+                                    <p>
+                                        The foundational design principles suggest offering comprehensible, predictable, and controllable user interfaces that have compact control panels, clear sequences of action, show abundant information, and allow rapid exploration or alternatives.
+                                    </p>
+                                    
+                                    <p>
+                                        Improved search tools will come from researchers who embrace human-centered approaches by giving users control over the scope of search (personal collections as in NotebookLM, time periods as in Google Scholar, limited tasks as in digital navigation), offering rich sets of options (as in Amazon shopping's faceted menus and the Bloomberg Terminal), and ranking/clustering search results (as in Google Search and Netflix). These strategies are especially important when using Generative AI, which is startlingly impressive, but alarmingly flawed.
+                                    </p>
+                                    
+                                    <p style="margin-top: 25px; margin-bottom: 10px;">
+                                        <strong>About the Speaker:</strong>
+                                    </p>
+                                    
+                                    <p>
+                                        <a href="http://www.cs.umd.edu/~ben" target="_blank" style="color: #007bff;"><strong>Ben Shneiderman</strong></a> is an Emeritus Distinguished University Professor in the Department of Computer Science, Founding Director (1983-2000) of the <a href="http://hcil.umd.edu" target="_blank" style="color: #007bff;">Human-Computer Interaction Laboratory</a>, and a Member of the UM Institute for Advanced Computer Studies (UMIACS) at the University of Maryland. He is a Fellow of the AAAS, ACM, IEEE, NAI, and the Visualization Academy and a Member of the U.S. National Academy of Engineering. He has received six honorary doctorates in recognition of his pioneering contributions to human-computer interaction and information visualization. His widely-used contributions include the clickable highlighted web-links, high-precision touchscreen keyboards for mobile devices, and tagging for photos. Shneiderman's information visualization innovations include dynamic query sliders for Spotfire, development of treemaps for viewing hierarchical data, novel network visualizations for NodeXL, and event sequence analysis for electronic health records.
+                                    </p>
+                                    
+                                    <p>
+                                        Ben is the lead author of <em>Designing the User Interface: Strategies for Effective Human-Computer Interaction</em> (6th ed., 2016). He co-authored <em>Readings in Information Visualization: Using Vision to Think</em> (1999) and <em>Analyzing Social Media Networks with NodeXL</em> (2nd edition, 2019). His book <em>Leonardo's Laptop</em> (MIT Press) won the IEEE book award for Distinguished Literary Contribution. <em>The New ABCs of Research: Achieving Breakthrough Collaborations</em> (Oxford, 2016) describes how research can produce higher impacts. His book, <a href="https://global.oup.com/academic/product/human-centered-ai-9780192845290" target="_blank" style="color: #007bff;"><em>Human-Centered AI</em></a>, published by Oxford University Press, won the Association of American Publishers award for Computer and Information Systems.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="keynote-title">
-                            <div class="keynote-title-label">Talk:</div>
-                            Human-Centered AI: Supertools for Taking Control of Search
-                        </div>
-                        <button class="expand-btn" onclick="toggleKeynote(this)">
-                            More <i class="fa fa-chevron-down"></i>
-                        </button>
-                        <div class="keynote-bio">
-                            <p style="margin-bottom: 20px;">
-                                <strong>Abstract:</strong>
-                            </p>
-                            
-                            <p>
-                                A new synthesis is emerging that integrates AI technologies with Human-Computer Interaction to produce Human-Centered AI (HCAI). Advocates of this new synthesis design supertools that amplify, augment, enhance human abilities, and empower people. Effective supertools build the user's self-efficacy, support creativity, clarify responsibility, and promote social connections.
-                            </p>
-                            
-                            <p>
-                                The foundational design principles suggest offering comprehensible, predictable, and controllable user interfaces that have compact control panels, clear sequences of action, show abundant information, and allow rapid exploration or alternatives.
-                            </p>
-                            
-                            <p>
-                                Improved search tools will come from researchers who embrace human-centered approaches by giving users control over the scope of search (personal collections as in NotebookLM, time periods as in Google Scholar, limited tasks as in digital navigation), offering rich sets of options (as in Amazon shopping's faceted menus and the Bloomberg Terminal), and ranking/clustering search results (as in Google Search and Netflix). These strategies are especially important when using Generative AI, which is startlingly impressive, but alarmingly flawed.
-                            </p>
-                            
-                            <p style="margin-top: 25px; margin-bottom: 10px;">
-                                <strong>About the Speaker:</strong>
-                            </p>
-                            
-                            <p>
-                                <a href="http://www.cs.umd.edu/~ben" target="_blank" style="color: #007bff;"><strong>Ben Shneiderman</strong></a> is an Emeritus Distinguished University Professor in the Department of Computer Science, Founding Director (1983-2000) of the <a href="http://hcil.umd.edu" target="_blank" style="color: #007bff;">Human-Computer Interaction Laboratory</a>, and a Member of the UM Institute for Advanced Computer Studies (UMIACS) at the University of Maryland. He is a Fellow of the AAAS, ACM, IEEE, NAI, and the Visualization Academy and a Member of the U.S. National Academy of Engineering. He has received six honorary doctorates in recognition of his pioneering contributions to human-computer interaction and information visualization. His widely-used contributions include the clickable highlighted web-links, high-precision touchscreen keyboards for mobile devices, and tagging for photos. Shneiderman's information visualization innovations include dynamic query sliders for Spotfire, development of treemaps for viewing hierarchical data, novel network visualizations for NodeXL, and event sequence analysis for electronic health records.
-                            </p>
-                            
-                            <p>
-                                Ben is the lead author of <em>Designing the User Interface: Strategies for Effective Human-Computer Interaction</em> (6th ed., 2016). He co-authored <em>Readings in Information Visualization: Using Vision to Think</em> (1999) and <em>Analyzing Social Media Networks with NodeXL</em> (2nd edition, 2019). His book <em>Leonardo's Laptop</em> (MIT Press) won the IEEE book award for Distinguished Literary Contribution. <em>The New ABCs of Research: Achieving Breakthrough Collaborations</em> (Oxford, 2016) describes how research can produce higher impacts. His book, <a href="https://global.oup.com/academic/product/human-centered-ai-9780192845290" target="_blank" style="color: #007bff;"><em>Human-Centered AI</em></a>, published by Oxford University Press, won the Association of American Publishers award for Computer and Information Systems.
-                            </p>
+                        <div class="col-lg-4 col-md-12 keynote-video-col">
+                            <div class="keynote-video-embed">
+                                <iframe src="https://www.youtube-nocookie.com/embed/dxquh1h-xFA" title="Ben Shneiderman — Human-Centered AI: Supertools for Taking Control of Search" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <p class="keynote-video-label">Keynote talk recording — <a href="https://www.youtube.com/watch?v=dxquh1h-xFA" target="_blank" rel="noopener noreferrer">Watch on YouTube</a> if the player does not load.</p>
                         </div>
                     </div>
                     
-                    <!-- Keynote Speaker 2: Xin Luna Dong -->
-                    <div class="keynote-card" id="keynote2">
-                        <div class="keynote-header">
-                            <img src="img/lunadong.jpeg" alt="Luna Dong">
-                            <div class="keynote-info">
-                                <h3><a href="https://lunadong.com/" target="_blank">Xin Luna Dong</a></h3>
-                                <p><strong>Principal Scientist</strong></p>
-                                <p>Meta Reality Labs, Redmond, WA, USA</p>
+                    <!-- Keynote Speaker 2: Xin Luna Dong (video placeholder) -->
+                    <div class="row keynote-luna-row">
+                        <div class="col-lg-8 col-md-12 keynote-main-col">
+                            <div class="keynote-card" id="keynote2">
+                                <div class="keynote-header">
+                                    <img src="img/lunadong.jpeg" alt="Luna Dong">
+                                    <div class="keynote-info">
+                                        <h3><a href="https://lunadong.com/" target="_blank">Xin Luna Dong</a></h3>
+                                        <p><strong>Principal Scientist</strong></p>
+                                        <p>Meta Reality Labs, Redmond, WA, USA</p>
+                                    </div>
+                                </div>
+                                <div class="keynote-title">
+                                    <div class="keynote-title-label">Talk:</div>
+                                    From Sight to Insight: Visual Memory for Smarter Assistants
+                                </div>
+                                <button class="expand-btn" onclick="toggleKeynote(this)">
+                                    More <i class="fa fa-chevron-down"></i>
+                                </button>
+                                <div class="keynote-bio">
+                                    <p style="margin-bottom: 20px;">
+                                        <strong>Abstract:</strong>
+                                    </p>
+                                    <p>
+                                        Imagine a personal assistant that, with user permission, persistently remembers moments from daily life—answering questions like "When and where did I see this lady?" or offering personalized suggestions like "You might enjoy The Little Prince—it relates to the statue you liked in Lyon." Realizing this vision requires overcoming major challenges: capturing visual memories under hardware constraints (e.g., memory, battery, thermal limits, bandwidth), extracting meaningful personalization signals from noisy, task-agnostic visual histories, and supporting real-time question answering and recommendations under tight latency requirements.
+                                    </p>
+
+                                    <p>
+                                        In this talk, we present our early work toward this goal. Pensieve, our memory-based QA system, improves accuracy by 11% over state-of-the-art multimodal RAG baselines. VisualLens infers user interests from casual photos, outperforming leading recommendation systems by 5-10%. We also share initial results on efficient, event-triggered memory capture and compression. Our work points to a broad landscape of research opportunities in building richer, more context-aware personal assistants capable of learning from and reasoning over users' visual experiences.
+                                    </p>
+
+                                    <p style="margin-top: 25px; margin-bottom: 10px;">
+                                        <strong>About the Speaker:</strong>
+                                    </p>
+                                    <p>
+                                        Xin Luna Dong is a Principal Scientist at Meta Wearables AI, where she leads the Agentic AI efforts for building trustworthy and personalized assistants on wearable devices. Previously, she spent over a decade advancing knowledge graph technology, including the Amazon Product Graph and the Google Knowledge Graph. She is co-author of Machine Knowledge: Creation and Curation of Comprehensive Knowledge Bases and Big Data Integration. She was named an ACM Fellow and an IEEE Fellow for "significant contributions to knowledge graph construction and data integration", awarded the VLDB Women in Database Research Award and VLDB Early Career Research Contribution Award, and invited as an ACM Distinguished Speaker. She serves in the PVLDB advisory committee, was a member of the VLDB endowment, a PC co-chair for KDD'2022 ADS track, WSDM'2022, VLDB'2021, and Sigmod'2018.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="keynote-title">
-                            <div class="keynote-title-label">Talk:</div>
-                            From Sight to Insight: Visual Memory for Smarter Assistants
-                        </div>
-                        <button class="expand-btn" onclick="toggleKeynote(this)">
-                            More <i class="fa fa-chevron-down"></i>
-                        </button>
-                        <div class="keynote-bio">
-                            <p style="margin-bottom: 20px;">
-                                <strong>Abstract:</strong>
-                            </p>
-                            <p>
-                                Imagine a personal assistant that, with user permission, persistently remembers moments from daily life—answering questions like "When and where did I see this lady?" or offering personalized suggestions like "You might enjoy The Little Prince—it relates to the statue you liked in Lyon." Realizing this vision requires overcoming major challenges: capturing visual memories under hardware constraints (e.g., memory, battery, thermal limits, bandwidth), extracting meaningful personalization signals from noisy, task-agnostic visual histories, and supporting real-time question answering and recommendations under tight latency requirements.
-                            </p>
-
-                            <p>
-                                In this talk, we present our early work toward this goal. Pensieve, our memory-based QA system, improves accuracy by 11% over state-of-the-art multimodal RAG baselines. VisualLens infers user interests from casual photos, outperforming leading recommendation systems by 5-10%. We also share initial results on efficient, event-triggered memory capture and compression. Our work points to a broad landscape of research opportunities in building richer, more context-aware personal assistants capable of learning from and reasoning over users' visual experiences.
-                            </p>
-
-                            <p style="margin-top: 25px; margin-bottom: 10px;">
-                                <strong>About the Speaker:</strong>
-                            </p>
-                            <p>
-                                Xin Luna Dong is a Principal Scientist at Meta Wearables AI, where she leads the Agentic AI efforts for building trustworthy and personalized assistants on wearable devices. Previously, she spent over a decade advancing knowledge graph technology, including the Amazon Product Graph and the Google Knowledge Graph. She is co-author of Machine Knowledge: Creation and Curation of Comprehensive Knowledge Bases and Big Data Integration. She was named an ACM Fellow and an IEEE Fellow for "significant contributions to knowledge graph construction and data integration", awarded the VLDB Women in Database Research Award and VLDB Early Career Research Contribution Award, and invited as an ACM Distinguished Speaker. She serves in the PVLDB advisory committee, was a member of the VLDB endowment, a PC co-chair for KDD'2022 ADS track, WSDM'2022, VLDB'2021, and Sigmod'2018.
-                            </p>
+                        <div class="col-lg-4 col-md-12 keynote-video-col">
+                            <div class="keynote-video-placeholder" id="keynote2-video-placeholder">
+                                Keynote recording will be posted here.
+                            </div>
                         </div>
                     </div>
                 </div>
