@@ -62,25 +62,21 @@
         background: #f8f9fa;
     }
 
-    .keynote-ben-row,
-    .keynote-luna-row {
+    .keynote-ben-row {
         margin-bottom: 50px;
         justify-content: flex-start;
     }
 
-    .keynote-ben-row .keynote-main-col,
-    .keynote-luna-row .keynote-main-col {
+    .keynote-ben-row .keynote-main-col {
         padding-right: 8px;
     }
 
     @media (min-width: 992px) {
-        .keynote-ben-row .keynote-main-col,
-        .keynote-luna-row .keynote-main-col {
+        .keynote-ben-row .keynote-main-col {
             flex: 0 0 66.666667%;
             max-width: 66.666667%;
         }
-        .keynote-ben-row .keynote-video-col,
-        .keynote-luna-row .keynote-video-col {
+        .keynote-ben-row .keynote-video-col {
             flex: 0 0 33.333333%;
             max-width: 33.333333%;
             padding-left: 12px;
@@ -97,12 +93,6 @@
     .keynote-video-col .keynote-video-embed {
         max-width: 340px;
         width: 100%;
-    }
-
-    .keynote-video-col .keynote-video-placeholder {
-        max-width: 340px;
-        width: 100%;
-        box-sizing: border-box;
     }
 
     @media (max-width: 991px) {
@@ -142,20 +132,6 @@
         max-width: 340px;
     }
 
-    .keynote-video-placeholder {
-        border: 1px dashed #ccc;
-        border-radius: 8px;
-        min-height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #fafafa;
-        color: #888;
-        font-size: 14px;
-        text-align: center;
-        padding: 24px;
-    }
-    
     .keynote-header {
         display: flex;
         align-items: center;
@@ -490,50 +466,41 @@
                         </div>
                     </div>
                     
-                    <!-- Keynote Speaker 2: Xin Luna Dong (video placeholder) -->
-                    <div class="row keynote-luna-row">
-                        <div class="col-lg-8 col-md-12 keynote-main-col">
-                            <div class="keynote-card" id="keynote2">
-                                <div class="keynote-header">
-                                    <img src="img/lunadong.jpeg" alt="Luna Dong">
-                                    <div class="keynote-info">
-                                        <h3><a href="https://lunadong.com/" target="_blank">Xin Luna Dong</a></h3>
-                                        <p><strong>Principal Scientist</strong></p>
-                                        <p>Meta Reality Labs, Redmond, WA, USA</p>
-                                    </div>
-                                </div>
-                                <div class="keynote-title">
-                                    <div class="keynote-title-label">Talk:</div>
-                                    From Sight to Insight: Visual Memory for Smarter Assistants
-                                </div>
-                                <button class="expand-btn" onclick="toggleKeynote(this)">
-                                    More <i class="fa fa-chevron-down"></i>
-                                </button>
-                                <div class="keynote-bio">
-                                    <p style="margin-bottom: 20px;">
-                                        <strong>Abstract:</strong>
-                                    </p>
-                                    <p>
-                                        Imagine a personal assistant that, with user permission, persistently remembers moments from daily life—answering questions like "When and where did I see this lady?" or offering personalized suggestions like "You might enjoy The Little Prince—it relates to the statue you liked in Lyon." Realizing this vision requires overcoming major challenges: capturing visual memories under hardware constraints (e.g., memory, battery, thermal limits, bandwidth), extracting meaningful personalization signals from noisy, task-agnostic visual histories, and supporting real-time question answering and recommendations under tight latency requirements.
-                                    </p>
-
-                                    <p>
-                                        In this talk, we present our early work toward this goal. Pensieve, our memory-based QA system, improves accuracy by 11% over state-of-the-art multimodal RAG baselines. VisualLens infers user interests from casual photos, outperforming leading recommendation systems by 5-10%. We also share initial results on efficient, event-triggered memory capture and compression. Our work points to a broad landscape of research opportunities in building richer, more context-aware personal assistants capable of learning from and reasoning over users' visual experiences.
-                                    </p>
-
-                                    <p style="margin-top: 25px; margin-bottom: 10px;">
-                                        <strong>About the Speaker:</strong>
-                                    </p>
-                                    <p>
-                                        Xin Luna Dong is a Principal Scientist at Meta Wearables AI, where she leads the Agentic AI efforts for building trustworthy and personalized assistants on wearable devices. Previously, she spent over a decade advancing knowledge graph technology, including the Amazon Product Graph and the Google Knowledge Graph. She is co-author of Machine Knowledge: Creation and Curation of Comprehensive Knowledge Bases and Big Data Integration. She was named an ACM Fellow and an IEEE Fellow for "significant contributions to knowledge graph construction and data integration", awarded the VLDB Women in Database Research Award and VLDB Early Career Research Contribution Award, and invited as an ACM Distinguished Speaker. She serves in the PVLDB advisory committee, was a member of the VLDB endowment, a PC co-chair for KDD'2022 ADS track, WSDM'2022, VLDB'2021, and Sigmod'2018.
-                                    </p>
-                                </div>
+                    <!-- Keynote Speaker 2: Xin Luna Dong -->
+                    <div class="keynote-card" id="keynote2">
+                        <div class="keynote-header">
+                            <img src="img/lunadong.jpeg" alt="Luna Dong">
+                            <div class="keynote-info">
+                                <h3><a href="https://lunadong.com/" target="_blank">Xin Luna Dong</a></h3>
+                                <p><strong>Principal Scientist</strong></p>
+                                <p>Meta Reality Labs, Redmond, WA, USA</p>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-12 keynote-video-col">
-                            <div class="keynote-video-placeholder" id="keynote2-video-placeholder">
-                                Keynote recording will be posted here.
-                            </div>
+                        <div class="keynote-title">
+                            <div class="keynote-title-label">Talk:</div>
+                            From Sight to Insight: Visual Memory for Smarter Assistants
+                        </div>
+                        <button class="expand-btn" onclick="toggleKeynote(this)">
+                            More <i class="fa fa-chevron-down"></i>
+                        </button>
+                        <div class="keynote-bio">
+                            <p style="margin-bottom: 20px;">
+                                <strong>Abstract:</strong>
+                            </p>
+                            <p>
+                                Imagine a personal assistant that, with user permission, persistently remembers moments from daily life—answering questions like "When and where did I see this lady?" or offering personalized suggestions like "You might enjoy The Little Prince—it relates to the statue you liked in Lyon." Realizing this vision requires overcoming major challenges: capturing visual memories under hardware constraints (e.g., memory, battery, thermal limits, bandwidth), extracting meaningful personalization signals from noisy, task-agnostic visual histories, and supporting real-time question answering and recommendations under tight latency requirements.
+                            </p>
+
+                            <p>
+                                In this talk, we present our early work toward this goal. Pensieve, our memory-based QA system, improves accuracy by 11% over state-of-the-art multimodal RAG baselines. VisualLens infers user interests from casual photos, outperforming leading recommendation systems by 5-10%. We also share initial results on efficient, event-triggered memory capture and compression. Our work points to a broad landscape of research opportunities in building richer, more context-aware personal assistants capable of learning from and reasoning over users' visual experiences.
+                            </p>
+
+                            <p style="margin-top: 25px; margin-bottom: 10px;">
+                                <strong>About the Speaker:</strong>
+                            </p>
+                            <p>
+                                Xin Luna Dong is a Principal Scientist at Meta Wearables AI, where she leads the Agentic AI efforts for building trustworthy and personalized assistants on wearable devices. Previously, she spent over a decade advancing knowledge graph technology, including the Amazon Product Graph and the Google Knowledge Graph. She is co-author of Machine Knowledge: Creation and Curation of Comprehensive Knowledge Bases and Big Data Integration. She was named an ACM Fellow and an IEEE Fellow for "significant contributions to knowledge graph construction and data integration", awarded the VLDB Women in Database Research Award and VLDB Early Career Research Contribution Award, and invited as an ACM Distinguished Speaker. She serves in the PVLDB advisory committee, was a member of the VLDB endowment, a PC co-chair for KDD'2022 ADS track, WSDM'2022, VLDB'2021, and Sigmod'2018.
+                            </p>
                         </div>
                     </div>
                 </div>
